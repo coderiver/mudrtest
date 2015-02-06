@@ -1,0 +1,26 @@
+=size($width, $height)
+  font-size: $width
+  font-size: ($width / 10)+rem
+  height: ($height / $width)+em
+
+svg
+  fill: inherit
+  *
+    fill: inherit
+
+.icon
+  display: inline-block
+  width: 1em
+  fill: #FFF
+  svg
+    display: block
+    width: 100%
+    height: 100%
+    fill: inherit
+
+  &-logo
+    +size(100,72)
+  &-play
+    +size(30,20)
+  &-arrow
+    +size(43,24)

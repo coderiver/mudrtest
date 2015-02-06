@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="21px" viewBox="0 0 31 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="PC" sketch:type="MSArtboardGroup" transform="translate(-512.000000, -434.000000)" fill="#FFFFFF">
+            <g id="Intro" sketch:type="MSLayerGroup">
+                <g id="Text" transform="translate(182.000000, 219.000000)" sketch:type="MSShapeGroup">
+                    <g id="Video" transform="translate(330.000000, 215.000000)">
+                        <path d="M0.25,7.49502945 C0.25,3.63178136 3.37562706,0.5 7.24580545,0.5 L23.2541946,0.5 C27.1178712,0.5 30.25,3.625 30.25,7.49502945 L30.25,13.5049706 C30.25,17.3682186 27.1243729,20.5 23.2541946,20.5 L7.24580545,20.5 C3.38212879,20.5 0.25,17.375 0.25,13.5049706 L0.25,7.49502945 Z M19.5531359,10.5 L12.4102787,5.74390244 L12.4102787,15.2560976 L19.5531359,10.5 Z" id="Icon"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Index</title>
-    <meta name="viewport" content="initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" media="all" href="css/screen.css"><!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
-  </head>
-  <body>
-    <div class="svg-sprite"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
 
 <symbol id="icon-arrow" viewBox="0 0 43 24">
         <path d="M19.815 22.61l.03.03c.95.952 2.475.946 3.42.002l19.5-19.5-1.71-1.71c-.946-.947-2.476-.947-3.42-.003L21.67 17.393 5.65 1.378C4.674.4 3.09.398 2.112 1.374L.346 3.14l19.438 19.44.032.03z" fill="#fff"/>
@@ -22,67 +12,3 @@
         <path d="M.25 7.495C.25 3.632 3.376.5 7.246.5h16.008c3.864 0 6.996 3.125 6.996 6.995v6.01c0 3.863-3.126 6.995-6.996 6.995H7.246C3.382 20.5.25 17.375.25 13.505v-6.01zM19.553 10.5L12.41 5.744v9.512l7.143-4.756z" fill="#fff"/>
 </symbol>
 </svg>
-    </div>
-    <!--begin out-->
-    <div class="out">
-      <!--begin toparea-->
-      <div class="toparea">
-        <div class="toparea__outer">
-          <!--begin toparea__header-->
-          <div class="toparea__header">
-            <div class="l">
-              <header class="header"><a href="/" class="logo"><i class="icon icon-logo">
-                    <svg>
-                      <use xlink:href="#icon-logo"></use>
-                    </svg></i></a>
-                <!--begin menu-->
-                <nav class="menu">
-                  <ul class="menu__list">
-                    <li><a href="#" class="menu__link">что это</a></li>
-                    <li><a href="#" class="menu__link">зачем</a></li>
-                    <li><a href="#" class="menu__link">как</a></li>
-                    <li><a href="#" class="menu__link">отзывы</a></li>
-                  </ul>
-                </nav>
-                <!--end menu-->
-                <button type="button" class="btn">Свяжитесь с нами</button>
-              </header>
-            </div>
-          </div>
-          <!--end toparea__header-->
-          <!--begin toparea__inner-->
-          <div class="toparea__inner">
-            <div class="l">
-              <h1 class="title title_toparea">Помогаем повышать прибыльность проектов и отрываться от конкурентов</h1><strong class="subtitle subtitle_toparea">
-                Узнаём с помощью тестирования интерфейсов, насколько удобно людям
-                 пользоваться вашим продуктом и помогаем его улучшить.</strong><a href="#" class="video-link"><i class="icon icon-play">
-                  <svg>
-                    <use xlink:href="#icon-play"></use>
-                  </svg></i><span>видео-презентация</span></a>
-            </div>
-          </div>
-          <!--end toparea__inner-->
-          <!--begin toparea__center-->
-          <div class="toparea__footer">
-            <div class="l">
-              <button class="btn">Свяжитесь с нами</button>
-              <button type="button" class="arrows-down"><i class="icon icon-arrow">
-                  <svg>
-                    <use xlink:href="#icon-arrow"></use>
-                  </svg></i><i class="icon icon-arrow">
-                  <svg>
-                    <use xlink:href="#icon-arrow"></use>
-                  </svg></i>
-              </button>
-            </div>
-          </div>
-          <!--end toparea__center-->
-        </div>
-      </div>
-      <!--end toparea-->
-    </div>
-    <!--end out-->
-    <!--load scripts-->
-    <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
-  </body>
-</html>

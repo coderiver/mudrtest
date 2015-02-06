@@ -1,0 +1,70 @@
+extend _layout
+
+block title
+  title Index
+
+block svg-sprite
+  .svg-sprite
+    include ../img/icons.svg
+
+block content
+
+  //begin toparea
+  .toparea
+    .toparea__outer
+
+      //begin toparea__header
+      .toparea__header
+        .l
+          header.header
+            a(href="/").logo
+              +icon("logo")
+
+            //begin menu
+            nav.menu
+              ul.menu__list
+                li
+                  a(href="#").menu__link
+                    | что это
+                li
+                  a(href="#").menu__link
+                    | зачем
+                li
+                  a(href="#").menu__link
+                    | как
+                li
+                  a(href="#").menu__link
+                    | отзывы
+            //end menu
+
+            button(type="button").btn
+              | Свяжитесь с нами
+      //end toparea__header
+
+      //begin toparea__inner
+      .toparea__inner
+        .l
+          h1.title.title_toparea
+            | Помогаем повышать прибыльность проектов и отрываться от конкурентов
+
+          strong.subtitle.subtitle_toparea
+            | Узнаём с помощью тестирования интерфейсов, насколько удобно людям
+            |  пользоваться вашим продуктом и помогаем его улучшить.
+
+          a(href="#").video-link
+            +icon("play")
+            span видео-презентация
+      //end toparea__inner
+
+      //begin toparea__center
+      .toparea__footer
+        .l
+          button.btn
+                | Свяжитесь с нами
+
+          button(type="button").arrows-down
+            +icon("arrow")
+            +icon("arrow")
+      //end toparea__center
+
+  //end toparea

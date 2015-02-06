@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="43px" height="24px" viewBox="0 0 43 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 7</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="PC" sketch:type="MSArtboardGroup" transform="translate(-579.000000, -571.000000)" fill="#FFFFFF">
+            <g id="Intro" sketch:type="MSLayerGroup">
+                <g id="Arrows" transform="translate(578.000000, 538.000000)" sketch:type="MSShapeGroup">
+                    <g id="Big-Arrow" transform="translate(22.707107, 35.585786) rotate(-45.000000) translate(-22.707107, -35.585786) translate(7.207107, 20.085786)">
+                        <path d="M0.000373283819,28.3230862 C0.000124772768,28.3373528 2.77111667e-13,28.3516496 2.77111667e-13,28.3659754 C2.77111667e-13,29.7114637 1.08210536,30.7853303 2.41694996,30.7853303 L30,30.7853303 C30,28.3659754 30,28.3659754 30,28.3659754 C30,27.0289251 28.9178946,25.9466206 27.58305,25.9466206 L5,25.9466206 L5,3.29151349 C5,1.90738671 3.88161868,0.785330251 2.5,0.785330251 C2.5,0.785330251 2.5,0.785330251 2.73558953e-13,0.785330251 L2.7533531e-13,28.279147 C2.7533531e-13,28.2938232 0.000124757352,28.3084699 0.000373283819,28.3230862 Z" id="Rectangle-7"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
