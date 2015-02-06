@@ -143,9 +143,12 @@ a
 .arrows-down
   display: inline-block
   background: none
+  perspective: 200px
   > .icon
     display: block
     margin: auto
     &:first-child
-      +fs(29)
-      fill: #9CA5BF
+      // fill: #9CA5BF
+      animation: arrow-anim 2s ease infinite
+    &:last-child
+      animation: arrow-anim-second 2s ease infinite

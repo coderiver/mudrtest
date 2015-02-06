@@ -21,14 +21,27 @@ ul, ol { list-style-type: none; }
 
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
+@-webkit-keyframes arrow-anim { 0% { fill: #9CA5BF; -webkit-transform: translateZ(0) scale(0.67); transform: translateZ(0) scale(0.67); }
+  50% { fill: #FFF; -webkit-transform: translateZ(0) scale(1); transform: translateZ(0) scale(1); }
+  100% { fill: #9CA5BF; -webkit-transform: translateZ(0) scale(0.67); transform: translateZ(0) scale(0.67); } }
+
+@keyframes arrow-anim { 0% { fill: #9CA5BF; -webkit-transform: translateZ(0) scale(0.67); transform: translateZ(0) scale(0.67); }
+  50% { fill: #FFF; -webkit-transform: translateZ(0) scale(1); transform: translateZ(0) scale(1); }
+  100% { fill: #9CA5BF; -webkit-transform: translateZ(0) scale(0.67); transform: translateZ(0) scale(0.67); } }
+@-webkit-keyframes arrow-anim-second { 0% { fill: #FFF; -webkit-transform: translateZ(0) scale(1); transform: translateZ(0) scale(1); }
+  50% { fill: #9CA5BF; -webkit-transform: translateZ(0) scale(0.67); transform: translateZ(0) scale(0.67); }
+  100% { fill: #FFF; -webkit-transform: translateZ(0) scale(1); transform: translateZ(0) scale(1); } }
+@keyframes arrow-anim-second { 0% { fill: #FFF; -webkit-transform: translateZ(0) scale(1); transform: translateZ(0) scale(1); }
+  50% { fill: #9CA5BF; -webkit-transform: translateZ(0) scale(0.67); transform: translateZ(0) scale(0.67); }
+  100% { fill: #FFF; -webkit-transform: translateZ(0) scale(1); transform: translateZ(0) scale(1); } }
 svg { fill: inherit; }
 svg * { fill: inherit; }
 
 .icon { display: inline-block; width: 1em; fill: #FFF; }
 .icon svg { display: block; width: 100%; height: 100%; fill: inherit; }
-.icon-logo { font-size: 100; font-size: 10rem; height: 0.72em; }
-.icon-play { font-size: 30; font-size: 3rem; height: 0.66667em; }
-.icon-arrow { font-size: 43; font-size: 4.3rem; height: 0.55814em; }
+.icon-logo { font-size: 100px; font-size: 10rem; height: 0.72em; }
+.icon-play { font-size: 30px; font-size: 3rem; height: 0.66667em; }
+.icon-arrow { font-size: 43px; font-size: 4.3rem; height: 0.55814em; }
 
 @font-face { font-family: "Kelson Sans Bold"; src: url("../fonts/kelson_sans_bold_ru.eot"); src: url("../fonts/kelson_sans_bold_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_bold_ru.woff") format("woff"), url("../fonts/kelson_sans_bold_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "Kelson Sans Light"; src: url("../fonts/kelson_sans_light_ru.eot"); src: url("../fonts/kelson_sans_light_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_light_ru.woff") format("woff"), url("../fonts/kelson_sans_light_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
@@ -61,9 +74,10 @@ a { color: #2196F3; }
 .video-link:hover, .video-link:focus { color: #2196F3; }
 .video-link:hover .icon, .video-link:focus .icon { fill: #2196F3; }
 
-.arrows-down { display: inline-block; background: none; }
+.arrows-down { display: inline-block; background: none; -webkit-perspective: 200px; perspective: 200px; }
 .arrows-down > .icon { display: block; margin: auto; }
-.arrows-down > .icon:first-child { font-size: 29px; font-size: 2.9rem; fill: #9CA5BF; }
+.arrows-down > .icon:first-child { -webkit-animation: arrow-anim 2s ease infinite; animation: arrow-anim 2s ease infinite; }
+.arrows-down > .icon:last-child { -webkit-animation: arrow-anim-second 2s ease infinite; animation: arrow-anim-second 2s ease infinite; }
 
 .l { max-width: 940px; padding: 0 40px; margin: auto; }
 @media only screen and (max-width: 600px) { .l { padding: 0 20px; } }
