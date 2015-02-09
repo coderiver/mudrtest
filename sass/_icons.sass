@@ -10,6 +10,8 @@ svg
 
 .icon
   display: inline-block
+  background-repeat: no-repeat
+  background-position: center center
   width: 1em
   fill: #FFF
   svg
@@ -24,3 +26,27 @@ svg
     +size(30,20)
   &-arrow
     +size(43,24)
+
+  &-cloud
+    +size(60,49)
+  &-computer
+    +size(60,54)
+  &-phone
+    +size(36,60)
+  &-stample
+    +size(52,60)
+  &-store
+    +size(60,53)
+  &-windows
+    +size(60,50)
+  &-step
+    +size(60,60)
+  &-business
+    +size(60,60)
+
+@function gradient-icon($name)
+  @return url("../img/svg/gradient-icons/#{$name}.svg")
+
+@each $i in cloud,computer,phone,stample,store,windows,step,business
+  .icon-#{$i}
+    background-image: gradient-icon(#{$i})

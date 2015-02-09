@@ -1,6 +1,7 @@
 var gulp         = require('gulp'),
     sass         = require('gulp-ruby-sass'),
     sourcemaps   = require('gulp-sourcemaps'),
+    filter       = require('gulp-filter'),
     autoprefixer = require('gulp-autoprefixer'),
     jade         = require('gulp-jade'),
     notify       = require('gulp-notify'),
@@ -47,20 +48,43 @@ gulp.task('jade-all', function() {
 });
 
 //sass
+// gulp.task('sass', function() {
+//     return gulp.src('sass/**/*.sass')
+//         .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
+//         .pipe(sourcemaps.init())
+//             .pipe(sass({
+//                 "sourcemap=file" : true,
+
+//                 style : 'compact'
+//             }))
+            // .pipe(filter('*.css'))
+            // .pipe(autoprefixer({
+            //     browsers: ['last 4 versions'],
+            //     cascade: false
+            // }))
+            // .pipe(filter('*.css').restore())
+//         .pipe(sourcemaps.write('./'))
+//         .pipe(gulp.dest('css'));
+// });
+
+//sass
 gulp.task('sass', function() {
-    return gulp.src('sass/**/*.sass')
-        .pipe(plumber({errorHandler: notify.onError(function(error){return error.message;})}))
-        .pipe(sourcemaps.init())
-            .pipe(sass({
-                "sourcemap=none" : true,
-                style : 'compact'
-            }))
-            .pipe(autoprefixer({
-                browsers: ['last 4 versions'],
-                cascade: false
-            }))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('css'));
+    return sass('sass', {
+        sourcemap: true,
+        style: 'compact'
+    })
+    .on('error', function (err) {
+      console.error('Error', err.message);
+    })
+    .pipe(autoprefixer({
+        browsers: ['last 4 versions'],
+        cascade: false
+    }))
+    .pipe(sourcemaps.write('./', {
+        includeContent: false,
+        sourceRoot: '../sass'
+    }))
+    .pipe(gulp.dest('css'));
 });
 
 //svg sprite

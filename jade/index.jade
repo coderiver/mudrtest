@@ -8,7 +8,6 @@ block svg-sprite
     include ../img/icons.svg
 
 block content
-
   //begin toparea
   .toparea
     .toparea__outer
@@ -44,7 +43,7 @@ block content
       //begin toparea__inner
       .toparea__inner
         .l
-          h1.title.title_toparea
+          h1.heading.heading_toparea
             | Помогаем повышать прибыльность проектов и отрываться от конкурентов
 
           strong.subtitle.subtitle_toparea
@@ -66,5 +65,159 @@ block content
             +icon("arrow")
             +icon("arrow")
       //end toparea__center
-
   //end toparea
+
+  //begin section
+  .section
+    .l
+      h3.title
+        | Тестирование интерфейса
+
+      h2.heading
+        | Это объективное исследование, которое покажет, насколько удобно людям пользоваться вашим проектом
+
+      p.text.text_center
+        | Тестирование похоже на метод <a href="#">«тайного покупателя»</a>,
+        | только для цифровых продуктов и на подходящей вашему проекту целевой аудитории.
+        | С помощью серии экспериментов мы узнаем, с какими трудностями сталкиваются пользователи
+        | и чего им не хватает в вашем цифровом продукте. Мудрый Тест — закрытое исследование.
+        | О его проведении и результатах никто не узнает без вашего согласия, кроме сотрудников и респондентов.
+
+      h3.title
+        | подойдёт любому продукту, отображающемуся на экране
+
+      //begin icons
+      ul.icons
+        li.icons__item
+          .figure
+            .figure__icon
+              i.icon.icon-store
+            .figure__text
+              | интернет
+              br
+              | магазинам
+          //- +icon("store")
+          //- img(src="img/svg/icons/store.svg", alt="")
+        li.icons__item
+          .figure
+            .figure__icon
+              i.icon.icon-phone
+            .figure__text
+              | мобильным
+              br
+              | приложениям
+          //- +icon("phone")
+          //- img(src="img/svg/icons/phone.svg", alt="")
+        li.icons__item
+          .figure
+            .figure__icon
+              i.icon.icon-cloud
+            .figure__text
+              | онлайн
+              br
+              | сервисам
+          //- +icon("cloud")
+          //- img(src="img/svg/icons/cloud.svg", alt="")
+        li.icons__item
+          .figure
+            .figure__icon
+              i.icon.icon-computer
+            .figure__text
+              | компьютерным
+              br
+              | программам
+          //- +icon("computer")
+          //- img(src="img/svg/icons/computer.svg", alt="")
+        li.icons__item
+          .figure
+            .figure__icon
+              i.icon.icon-windows
+            .figure__text
+              | любым
+              br
+              | веб-сайтам
+          //- +icon("windows")
+          //- img(src="img/svg/icons/windows.svg", alt="")
+        li.icons__item
+          .figure
+            .figure__icon
+              i.icon.icon-stample
+            .figure__text
+              | др. цифровым
+              br
+              | проектам
+          //- img(src="img/svg/icons/stample.svg", alt="")
+      //end icons
+
+      p.text.text_center.text_light
+        | Однажды нам довелось протестировать даже автомобильный навигатор
+        | и интерфейс для телевизора, так что нас мало что может удивить :)
+  //end section
+
+  //begin photos
+  .photos
+    .photos__inner
+      .photos__block
+      .photos__block
+        .photos__block-smaller
+        .photos__block-smaller
+        .photos__block-smaller
+        .photos__block-smaller
+      .photos__block
+        .photos__block-small
+        .photos__block-small
+        .photos__block-small
+        .photos__block-small
+      .photos__block
+  //end photos
+
+  //begin section
+  .section
+    .l
+      h3.title
+        | несколько интересных особенностей тестирования
+
+      .l-columns.l-columns_four
+        .column
+          p.text
+            | Во время тестирования, вашим проектом будут пользоваться люди,
+            |  подходящие под целевую аудиторию и (чаще всего) ранее не знакомые с продуктом.
+        .column
+          p.text
+            | Они будут выполнять типовые (для вашего проекта) задачи, которые обычно решают пользователи.
+        .column
+          p.text
+            | Всё происходит под наблюдением профессионалов, которые снимают происходящее на фото видео,
+            | записывают на микрофон и ведут процесс в целом.
+        .column
+          p.text
+            | Исследователи анализируют записанные материалы и готовят отчёт
+            | о найденных проблемах с рекомендациями по их решению.
+
+      p.text.text_center.text_light
+        | Вы сможете совершенствовать свой проект, основываясь на решении
+        | пользовательских проблем, о которых ранее могли и не догадываться.
+
+
+      .l-columns
+        .column
+          .figure
+            .figure__icon
+              i.icon.icon-step
+            .figure__text
+              | на любой стадии разработки
+
+          p.text.text_center
+            | Для тестирования подойдёт как уже работающий проект, так и его интерактивный
+            | прототип. Скетчи на бумаге тестировать не рекомендуем.
+        .column
+          .figure
+            .figure__icon
+              i.icon.icon-business
+            .figure__text
+              | для всех типов бизнеса
+
+          p.text.text_center
+            | Не имеет значения новый у вас продукт или уже давно работающий. 
+            | Существующий, новая версия, стартап, ешё не на рынке.
+  //end section

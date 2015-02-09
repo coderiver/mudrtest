@@ -3,6 +3,12 @@ mixin icon(name)
     svg
       use(xlink:href="#icon-" + name)
 
+mixin icon-gradient(name, gradient)
+  i(class="icon icon-" + name)
+    svg
+      use(xlink:href="#icon-" + name)
+      use(xlink:href="#icon-gradient-" + gradient)
+
 doctype html
 html
   head
