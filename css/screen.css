@@ -38,8 +38,8 @@ table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 svg { fill: inherit; }
 svg * { fill: inherit; }
 
-.icon { display: inline-block; background-repeat: no-repeat; background-position: center center; width: 1em; fill: #FFF; }
-.icon svg { display: block; width: 100%; height: 100%; fill: inherit; }
+.icon { display: inline-block; vertical-align: middle; background-repeat: no-repeat; background-position: center center; width: 1em; fill: #FFF; }
+.icon svg { display: block; width: 100%; height: 100%; }
 .icon-logo { font-size: 100px; font-size: 10rem; height: 0.72em; }
 .icon-play { font-size: 30px; font-size: 3rem; height: 0.66667em; }
 .icon-arrow { font-size: 43px; font-size: 4.3rem; height: 0.55814em; }
@@ -51,22 +51,41 @@ svg * { fill: inherit; }
 .icon-windows { font-size: 60px; font-size: 6rem; height: 0.83333em; }
 .icon-step { font-size: 60px; font-size: 6rem; height: 1em; }
 .icon-business { font-size: 60px; font-size: 6rem; height: 1em; }
+.icon-separator { fill: initial; font-size: 170px; font-size: 17rem; height: 0.11765em; }
+.icon-separator svg * { fill: initial; }
+.icon-graph, .icon-chart, .icon-settings, .icon-sofa, .icon-flag, .icon-heart, .icon-clock, .icon-person { font-size: 60px; font-size: 6rem; height: 1em; }
+
+.icon-business { background-image: url("../img/svg/gradient-icons/business.svg"); }
+
+.icon-chart { background-image: url("../img/svg/gradient-icons/chart.svg"); }
+
+.icon-clock { background-image: url("../img/svg/gradient-icons/clock.svg"); }
 
 .icon-cloud { background-image: url("../img/svg/gradient-icons/cloud.svg"); }
 
 .icon-computer { background-image: url("../img/svg/gradient-icons/computer.svg"); }
 
+.icon-flag { background-image: url("../img/svg/gradient-icons/flag.svg"); }
+
+.icon-graph { background-image: url("../img/svg/gradient-icons/graph.svg"); }
+
+.icon-heart { background-image: url("../img/svg/gradient-icons/heart.svg"); }
+
+.icon-person { background-image: url("../img/svg/gradient-icons/person.svg"); }
+
 .icon-phone { background-image: url("../img/svg/gradient-icons/phone.svg"); }
 
+.icon-settings { background-image: url("../img/svg/gradient-icons/settings.svg"); }
+
+.icon-sofa { background-image: url("../img/svg/gradient-icons/sofa.svg"); }
+
 .icon-stample { background-image: url("../img/svg/gradient-icons/stample.svg"); }
+
+.icon-step { background-image: url("../img/svg/gradient-icons/step.svg"); }
 
 .icon-store { background-image: url("../img/svg/gradient-icons/store.svg"); }
 
 .icon-windows { background-image: url("../img/svg/gradient-icons/windows.svg"); }
-
-.icon-step { background-image: url("../img/svg/gradient-icons/step.svg"); }
-
-.icon-business { background-image: url("../img/svg/gradient-icons/business.svg"); }
 
 @font-face { font-family: "Kelson Sans Bold"; src: url("../fonts/kelson_sans_bold_ru.eot"); src: url("../fonts/kelson_sans_bold_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_bold_ru.woff") format("woff"), url("../fonts/kelson_sans_bold_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "Kelson Sans Light"; src: url("../fonts/kelson_sans_light_ru.eot"); src: url("../fonts/kelson_sans_light_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_light_ru.woff") format("woff"), url("../fonts/kelson_sans_light_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
@@ -180,7 +199,9 @@ a { color: #2196F3; }
 .menu__link:hover:after, .menu__link:focus:after { right: 0; }
 .menu__link:active { color: #2196F3; }
 
-.section { padding: 80px 0; }
+.section { position: relative; padding: 80px 0; }
+
+.section__separator { position: absolute; bottom: 0; left: 0; right: 0; text-align: center; }
 
 .icons { font-size: 0px; font-size: 0rem; text-align: center; margin-top: -40px; }
 @media only screen and (max-width: 900px) { .icons { max-width: 500px; margin-left: auto; margin-right: auto; }
@@ -198,6 +219,35 @@ a { color: #2196F3; }
 .photos__block-small { float: left; width: 33.33%; height: 33.33%; }
 
 .photos__block-smaller { float: left; width: 50%; height: 50%; }
+
+.features__text { margin: -35px -10px 0; font-size: 0px; font-size: 0rem; }
+
+.features__text-column { display: inline-block; width: 25%; box-sizing: border-box; padding: 0 10px; margin-top: 35px; vertical-align: top; font-size: 14px; font-size: 1.4rem; }
+@media only screen and (max-width: 1000px) { .features__text-column { width: 50%; } }
+
+.helping__table { display: table; table-layout: fixed; border-collapse: collapse; width: 100%; }
+@media only screen and (max-width: 400px) { .helping__table { display: block; max-width: 200px; margin: auto; } }
+
+.helping__row { display: table-row; }
+@media only screen and (max-width: 400px) { .helping__row { display: block; } }
+
+.helping__cell { width: 50%; padding: 30px 80px 30px 155px; display: table-cell; vertical-align: middle; box-sizing: border-box; position: relative; text-align: right; }
+.helping__cell .figure { display: block; position: static; text-align: right; }
+.helping__cell .figure__icon { position: absolute; top: 50%; right: 0; margin-top: -30px; }
+.helping__cell .figure__text { margin: 0; }
+.helping__cell:first-child { padding-left: 80px; padding-right: 155px; text-align: left; }
+.helping__cell:first-child .figure { text-align: left; }
+.helping__cell:first-child .figure__icon { right: auto; left: 0; }
+@media only screen and (max-width: 1000px) { .helping__cell { padding-right: 0; text-align: center; padding-top: 20px; padding-bottom: 20px; }
+  .helping__cell .figure { text-align: center; }
+  .helping__cell .figure__icon { position: static; margin-top: 0; }
+  .helping__cell .figure__text { margin-top: 15px; }
+  .helping__cell:first-child { padding-left: 0; }
+  .helping__cell:first-child .figure { text-align: center; } }
+@media only screen and (max-width: 700px) { .helping__cell { padding-left: 20px; padding-right: 0; }
+  .helping__cell:first-child { padding-left: 0; padding-right: 20px; } }
+@media only screen and (max-width: 400px) { .helping__cell { padding: 0; width: auto; display: block; margin-top: 40px; }
+  .helping__cell:first-child { padding: 0; } }
 
 
 

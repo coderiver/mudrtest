@@ -163,7 +163,15 @@
 
 
 .section
+  position: relative
   padding: 80px 0
+
+.section__separator
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  text-align: center
 
 
 
@@ -217,4 +225,95 @@
   float: left
   width: 50%
   height: 50%
+
+
+.features__text
+  margin: -35px -10px 0
+  +fs(0)
+
+.features__text-column
+  display: inline-block
+  width: 25%
+  box-sizing: border-box
+  padding: 0 10px
+  margin-top: 35px
+  vertical-align: top
+  +fs(14)
+  +tablet
+    width: 50%
+
+
+.helping__table
+  display: table
+  table-layout: fixed
+  border-collapse: collapse
+  width: 100%
+  +r(400)
+    display: block
+    max-width: 200px
+    margin: auto
+
+.helping__row
+  display: table-row
+  +r(400)
+    display: block
+
+.helping__cell
+  width: 50%
+  padding: 30px 80px 30px 155px
+  display: table-cell
+  vertical-align: middle
+  box-sizing: border-box
+  position: relative
+  text-align: right
+  .figure
+    display: block
+    position: static
+    text-align: right
+  .figure__icon
+    position: absolute
+    top: 50%
+    right: 0
+    margin-top: -30px
+  .figure__text
+    margin: 0
+  &:first-child
+    padding-left: 80px
+    padding-right: 155px
+    text-align: left
+    .figure
+      text-align: left
+    .figure__icon
+      right: auto
+      left: 0
+  +tablet
+    padding-right: 0
+    text-align: center
+    padding-top: 20px
+    padding-bottom: 20px
+    .figure
+      text-align: center
+    .figure__icon
+      position: static
+      margin-top: 0
+    .figure__text
+      margin-top: 15px
+    &:first-child
+      padding-left: 0
+      .figure
+        text-align: center
+  +r(700)
+    padding-left: 20px
+    padding-right: 0
+    &:first-child
+      padding-left: 0
+      padding-right: 20px
+  +r(400)
+    padding: 0
+    width: auto
+    display: block
+    margin-top: 40px
+    &:first-child
+      padding: 0
+
 

@@ -91,7 +91,7 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              i.icon.icon-store
+              +icon-grad("store")
             .figure__text
               | интернет
               br
@@ -101,7 +101,7 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              i.icon.icon-phone
+              +icon-grad("phone")
             .figure__text
               | мобильным
               br
@@ -111,7 +111,7 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              i.icon.icon-cloud
+              +icon-grad("cloud")
             .figure__text
               | онлайн
               br
@@ -121,7 +121,7 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              i.icon.icon-computer
+              +icon-grad("computer")
             .figure__text
               | компьютерным
               br
@@ -131,7 +131,7 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              i.icon.icon-windows
+              +icon-grad("windows")
             .figure__text
               | любым
               br
@@ -141,7 +141,7 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              i.icon.icon-stample
+              +icon-grad("stample")
             .figure__text
               | др. цифровым
               br
@@ -171,25 +171,25 @@ block content
       .photos__block
   //end photos
 
-  //begin section
-  .section
+  //begin features
+  .section.features
     .l
       h3.title
         | несколько интересных особенностей тестирования
 
-      .l-columns.l-columns_four
-        .column
+      .features__text
+        .features__text-column
           p.text
             | Во время тестирования, вашим проектом будут пользоваться люди,
             |  подходящие под целевую аудиторию и (чаще всего) ранее не знакомые с продуктом.
-        .column
+        .features__text-column
           p.text
             | Они будут выполнять типовые (для вашего проекта) задачи, которые обычно решают пользователи.
-        .column
+        .features__text-column
           p.text
             | Всё происходит под наблюдением профессионалов, которые снимают происходящее на фото видео,
             | записывают на микрофон и ведут процесс в целом.
-        .column
+        .features__text-column
           p.text
             | Исследователи анализируют записанные материалы и готовят отчёт
             | о найденных проблемах с рекомендациями по их решению.
@@ -203,21 +203,86 @@ block content
         .column
           .figure
             .figure__icon
-              i.icon.icon-step
+              +icon-grad("step")
             .figure__text
               | на любой стадии разработки
 
           p.text.text_center
             | Для тестирования подойдёт как уже работающий проект, так и его интерактивный
             | прототип. Скетчи на бумаге тестировать не рекомендуем.
+
         .column
           .figure
             .figure__icon
-              i.icon.icon-business
+              +icon-grad("business")
             .figure__text
               | для всех типов бизнеса
 
           p.text.text_center
             | Не имеет значения новый у вас продукт или уже давно работающий. 
             | Существующий, новая версия, стартап, ешё не на рынке.
-  //end section
+
+    .section__separator
+      +icon("separator")
+  //end features
+
+  //begin helping
+  .section.helping
+    .l
+      h2.heading
+        | Мудрый Тест поможет вашему проекту
+
+      .helping__table
+        .helping__row
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("graph")
+              .figure__text
+                | оторваться от конкурентов
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("flag")
+              .figure__text
+                | узнать насколько удобен продукт
+        .helping__row
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("chart")
+              .figure__text
+                | повысить эффективность и прибыльность
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("heart")
+              .figure__text
+                | найти технические, маркетинговые и другие недоработки
+        .helping__row
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("settings")
+              .figure__text
+                | автоматизировать и оптимизировать процессы
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("clock")
+              .figure__text
+                | сэкономить время и деньги на будущей разработке
+        .helping__row
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("sofa")
+              .figure__text
+                | облегчить  жизнь пользователям
+          .helping__cell
+            .figure
+              .figure__icon
+                +icon-grad("person")
+              .figure__text
+                | понять, что люди думают о проекте
+  //end helping
