@@ -29,6 +29,9 @@
 @function image-url($image)
   @return url('../img/#{$image}')
 
+@function em($size, $context: 14)
+  @return ($size/$context)+em
+
 
 
 
@@ -69,7 +72,7 @@ a
   +light
   +fs(32)
   line-height: 1.33
-  color: $main
+  color: inherit
 
 .heading_toparea
   +fs(40)
@@ -89,6 +92,7 @@ a
 
 .title
   display: block
+  position: relative
   margin: 80px 0 40px
   text-align: center
   +bold
@@ -99,14 +103,26 @@ a
   letter-spacing: (2/14)+em
   &:first-child
     margin-top: 0
-  &:before,
-  &:after
-    content: "•"
+  .title__text
     display: inline-block
-  &:before
-    margin-right: 1em
-  &:after
-    margin-left: 1em
+    padding: 0 em(24)
+    position: relative
+    &:before,
+    &:after
+      content: "•"
+      position: absolute
+      top: 50%
+      left: 0
+      margin-top: -0.6em
+    &:after
+      left: auto
+      right: 0
+  +r(750)
+    .title__text
+      padding: 0
+      &:before,
+      &:after
+        display: none
 
 
 .btn
@@ -189,6 +205,10 @@ a
 .text_center
   text-align: center
   margin: 40px 0
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
 
 .text_light
   +light
@@ -207,11 +227,86 @@ a
   .icon
     vertical-align: middle
 
-.figure__text
+.figure__text,
+.figure__text-small
   display: block
-  margin-top: 15px
+  margin-top: em(15)
   +fs(14)
-  line-height: 1.43
+  line-height: 1.7
+
+.figure__text
   +bold
-  letter-spacing: (2/14)+em
+  letter-spacing: em(2)
   text-transform: uppercase
+  + .figure__text-small
+    margin-top: em(10)
+
+.figure__text-small
+  +light
+
+.figure_regular
+  .figure__text-small
+    +regular
+
+.big-btn
+  display: inline-block
+  width: em(140)
+  height: em(84)
+  line-height: em(84)
+  box-sizing: border-box
+  border-radius: 10px
+  overflow: hidden
+  color: inherit
+  +fs(14)
+  +regular
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  +trans
+  .icon-play
+    +fs(40)
+
+.big-btn__inner
+  display: inline-block
+
+.big-btn_video
+  position: relative
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: none
+    border-radius: 10px
+    +trans
+  &:hover, &:focus, &:active
+    box-shadow: inset 0 0 0 5px #FFF
+  &:active
+    &:after
+      background: rgba(#FFF, 0.4)
+
+.big-btn_file
+  background: none
+  border: 2px solid #FFF
+  text-align: center
+  line-height: em(82)
+  &:hover, &:focus
+    background: $interactive
+    border-color: $interactive
+  &:active
+    background: $active
+    border-color: $active
+
+
+.file-name
+  display: inline-block
+  vertical-align: middle
+  line-height: 1.7
+  color: inherit
+  +fs(14)
+  small
+    font-size: 1em
+    display: block
+    +light

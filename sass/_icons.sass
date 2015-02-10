@@ -13,7 +13,9 @@ svg
   vertical-align: middle
   background-repeat: no-repeat
   background-position: center center
+  +fs(60)
   width: 1em
+  height: 1em
   fill: #FFF
   svg
     display: block
@@ -27,36 +29,49 @@ svg
   &-arrow
     +size(43,24)
 
-  &-cloud
-    +size(60,49)
-  &-computer
-    +size(60,54)
-  &-phone
-    +size(36,60)
-  &-stample
-    +size(52,60)
-  &-store
-    +size(60,53)
-  &-windows
-    +size(60,50)
-  &-step
-    +size(60,60)
-  &-business
-    +size(60,60)
   &-separator
     fill: initial
     +size(170,20)
     svg *
       fill: initial
-  &-graph,
-  &-chart,
-  &-settings,
-  &-sofa,
-  &-flag,
-  &-heart,
-  &-clock,
-  &-person
-    +size(60,60)
+
+  &-dotts-l,
+  &-dotts-r
+    +size(100,285)
+
+  &-dotts-t,
+  &-dotts-b
+    +size(285,100)
+  &-dotts-t-small,
+  &-dotts-b-small
+    +size(165,100)
+
+  // &-cloud
+  //   +size(60,49)
+  // &-computer
+  //   +size(60,54)
+  // &-phone
+  //   +size(36,60)
+  // &-stample
+  //   +size(52,60)
+  // &-store
+  //   +size(60,53)
+  // &-windows
+  //   +size(60,50)
+  // &-step
+  //   +size(60,60)
+  // &-business
+  //   +size(60,60)
+
+  // &-graph,
+  // &-chart,
+  // &-settings,
+  // &-sofa,
+  // &-flag,
+  // &-heart,
+  // &-clock,
+  // &-person
+  //   +size(60,60)
 
 @function gradient-icon($name)
   @return url("../img/svg/gradient-icons/#{$name}.svg")

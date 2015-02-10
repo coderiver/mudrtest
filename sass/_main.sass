@@ -168,29 +168,40 @@
 
 .section__separator
   position: absolute
-  bottom: 0
+  top: 0
   left: 0
   right: 0
   text-align: center
 
+.section_bg
+  background: url('../img/bg.jpg') no-repeat center center
+  background-size: cover
+  color: #FFF
 
 
 .icons
   +fs(0)
   text-align: center
-  margin-top: -40px
+  margin-top: -35px
   +r(900)
     max-width: 500px
     margin-left: auto
     margin-right: auto
     .icons__item
       width: 33.333%
+  +r(450)
+    margin-top: 0
+    .icons__item
+      display: block
+      width: auto
+      &:first-child
+        margin-top: 0
 
 .icons__item
   display: inline-block
   vertical-align: top
   width: (100%/6)
-  margin-top: 40px
+  margin-top: 35px
   box-sizing: border-box
   +fs(14)
   text-align: center
@@ -243,6 +254,36 @@
     width: 50%
 
 
+.helping
+  position: relative
+  margin: -40px 0
+  +r(700)
+    margin: 0
+    .helping__center
+      position: static
+      margin-top: 40px
+      padding: 0
+
+.helping__center
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 300px
+  margin: auto
+  padding: 40px 0
+  +vertical
+  img
+    display: block
+    max-width: 100%
+  // pointer-events: none
+
+.helping__center-inner
+  display: inline-block
+  vertical-align: middle
+  +fs(14)
+
 .helping__table
   display: table
   table-layout: fixed
@@ -260,7 +301,7 @@
 
 .helping__cell
   width: 50%
-  padding: 30px 80px 30px 155px
+  padding: 40px 80px 40px 180px
   display: table-cell
   vertical-align: middle
   box-sizing: border-box
@@ -279,7 +320,7 @@
     margin: 0
   &:first-child
     padding-left: 80px
-    padding-right: 155px
+    padding-right: 180px
     text-align: left
     .figure
       text-align: left
@@ -317,3 +358,107 @@
       padding: 0
 
 
+.how
+  margin: 65px -17px
+  font-size: 0
+  .figure
+    min-height: 250px
+  +r(1000)
+    margin-left: 0
+    margin-right: 0
+    .how__column
+      display: block
+      width: auto
+      padding: 0
+      max-width: 50%
+      margin: 20px auto
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+    .how__column_double
+      margin-left: -20px
+      margin-right: -20px
+      max-width: none
+      +clr
+    .how__cell
+      float: left
+      width: 50%
+      padding: 0 20px
+      margin: 0
+    .how__arrow
+      display: none
+    .how__arrow-hor
+      display: block
+
+    .figure
+      text-align: left
+      position: relative
+      padding-left: em(80)
+      min-height: 0
+    .figure__icon
+      position: absolute
+      top: 0
+      left: 0
+    .figure__text
+      margin-top: 0
+  +r(600)
+    .figure
+      padding-left: 0
+      text-align: center
+    .figure__icon
+      position: static
+    .figure__text
+      margin-top: em(15)
+
+.how__column
+  display: inline-block
+  vertical-align: middle
+  width: 20%
+  padding: 0 17px
+  box-sizing: border-box
+  +fs(14)
+
+.how__cell
+  position: relative
+  margin-top: em(40)
+  box-sizing: border-box
+  font-size: 1em
+  &:first-child
+    margin-top: 0
+
+.how__arrow
+  $left: em(-65)
+  position: absolute
+  top: em(30)
+  right: $left
+  font-size: 1em
+  opacity: 0.5
+  &:first-child
+    right: auto
+    left: $left
+
+.how__arrow-hor
+  display: none
+  text-align: center
+  opacity: 0.5
+  .icon-dotts-t-small,
+  .icon-dotts-b-small
+    display: none
+  +r(450)
+    .icon-dotts-t,
+    .icon-dotts-b
+      display: none
+    .icon-dotts-t-small,
+    .icon-dotts-b-small
+      display: inline-block
+
+
+.examples
+  +fs(0)
+
+.examples__item
+  display: inline-block
+  width: (100%/6)
+  +fs(14)
+  text-align: center

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="57px" viewBox="0 0 60 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+    <title>person-card</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icons-1" sketch:type="MSLayerGroup" transform="translate(0.000000, -2.000000)" fill="#FFFFFF">
+            <g id="person-card" transform="translate(0.000000, 2.000000)" sketch:type="MSShapeGroup">
+                <path d="M59,56.169 L1,56.169 C0.448,56.169 0,55.719 0,55.169 L0,12.999 C0,12.449 0.448,12 1,12 L23,12 L23,14 L2,14 L2,54.169 L58,54.169 L58,14 L37,14 L37,12 L59,12 C59.553,12 60,12.449 60,12.999 L60,55.169 C60,55.719 59.553,56.169 59,56.169" id="Fill-2477"></path>
+                <path d="M17,30.999 C14.795,30.999 13,32.79 13,35 C13,37.199 14.795,39 17,39 C19.206,39 21,37.199 21,35 C21,32.79 19.206,30.999 17,30.999 L17,30.999 Z M17,41 C13.692,41 11,38.31 11,35 C11,31.689 13.692,29 17,29 C20.309,29 23,31.689 23,35 C23,38.31 20.309,41 17,41 L17,41 Z" id="Fill-2478"></path>
+                <path d="M10.063,45.999 L23.937,45.999 C23.651,43.79 22.251,41 17,41 C11.75,41 10.35,43.79 10.063,45.999 L10.063,45.999 Z M26,48 L8,48 L8,47 C8,45.119 8.649,39 17,39 C25.351,39 26,45.119 26,47 L26,48 L26,48 Z" id="Fill-2479"></path>
+                <path d="M24,16.04 L36,16.04 L36,7.299 C36,4.739 33.589,2 30,2 C26.411,2 24,4.739 24,7.299 L24,16.04 L24,16.04 Z M37,18.039 L23,18.039 C22.448,18.039 22,17.589 22,17.04 L22,7.299 C22,3.339 25.664,0 30,0 C34.337,0 38,3.339 38,7.299 L38,17.04 C38,17.589 37.553,18.039 37,18.039 L37,18.039 Z" id="Fill-2480"></path>
+                <path d="M30,6.001 C29.449,6.001 29,6.45 29,7 C29,7.55 29.449,8.001 30,8.001 C30.552,8.001 31,7.55 31,7 C31,6.45 30.552,6.001 30,6.001 L30,6.001 Z M30,10 C28.346,10 27,8.65 27,7 C27,5.34 28.346,4 30,4 C31.655,4 33,5.34 33,7 C33,8.65 31.655,10 30,10 L30,10 Z" id="Fill-2481"></path>
+                <path d="M1,22 L59,22 L59,24 L1,24 L1,22 Z" id="Fill-2482"></path>
+                <path d="M33,46 L52.478,46 L52.478,48 L33,48 L33,46 Z" id="Fill-2483"></path>
+                <path d="M33,40 L52.478,40 L52.478,42 L33,42 L33,40 Z" id="Fill-2484"></path>
+                <path d="M33,34 L52.478,34 L52.478,36 L33,36 L33,34 Z" id="Fill-2485"></path>
+                <path d="M33,28 L42.478,28 L42.478,30 L33,30 L33,28 Z" id="Fill-2486"></path>
+            </g>
+        </g>
+    </g>
+</svg>

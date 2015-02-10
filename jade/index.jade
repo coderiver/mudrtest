@@ -3,9 +3,14 @@ extend _layout
 block title
   title Index
 
-block svg-sprite
-  .svg-sprite
-    include ../img/icons.svg
+//- block svg-sprite
+  //- .svg-sprite
+  //-   include ../img/icons.svg
+  //- script
+  //-   include ../js/load-svg-sprite.js
+
+block load-svg-sprite
+  script(type="text/javascript", src="js/load-svg-sprite.js")
 
 block content
   //begin toparea
@@ -71,7 +76,8 @@ block content
   .section
     .l
       h3.title
-        | Тестирование интерфейса
+        span.title__text
+          | Тестирование интерфейса
 
       h2.heading
         | Это объективное исследование, которое покажет, насколько удобно людям пользоваться вашим проектом
@@ -84,7 +90,8 @@ block content
         | О его проведении и результатах никто не узнает без вашего согласия, кроме сотрудников и респондентов.
 
       h3.title
-        | подойдёт любому продукту, отображающемуся на экране
+        span.title__text
+          | подойдёт любому продукту, отображающемуся на экране
 
       //begin icons
       ul.icons
@@ -175,7 +182,8 @@ block content
   .section.features
     .l
       h3.title
-        | несколько интересных особенностей тестирования
+        span.title__text
+          | несколько интересных особенностей тестирования
 
       .features__text
         .features__text-column
@@ -221,68 +229,252 @@ block content
           p.text.text_center
             | Не имеет значения новый у вас продукт или уже давно работающий. 
             | Существующий, новая версия, стартап, ешё не на рынке.
-
-    .section__separator
-      +icon("separator")
   //end features
 
   //begin helping
-  .section.helping
+  .section
+    .section__separator
+      +icon("separator")
     .l
       h2.heading
         | Мудрый Тест поможет вашему проекту
 
-      .helping__table
-        .helping__row
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("graph")
-              .figure__text
-                | оторваться от конкурентов
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("flag")
-              .figure__text
-                | узнать насколько удобен продукт
-        .helping__row
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("chart")
-              .figure__text
-                | повысить эффективность и прибыльность
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("heart")
-              .figure__text
-                | найти технические, маркетинговые и другие недоработки
-        .helping__row
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("settings")
-              .figure__text
-                | автоматизировать и оптимизировать процессы
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("clock")
-              .figure__text
-                | сэкономить время и деньги на будущей разработке
-        .helping__row
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("sofa")
-              .figure__text
-                | облегчить  жизнь пользователям
-          .helping__cell
-            .figure
-              .figure__icon
-                +icon-grad("person")
-              .figure__text
-                | понять, что люди думают о проекте
+
+      .helping
+        .helping__table
+          .helping__row
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("graph")
+                .figure__text
+                  | оторваться от конкурентов
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("flag")
+                .figure__text
+                  | узнать насколько удобен продукт
+          .helping__row
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("chart")
+                .figure__text
+                  | повысить эффективность и прибыльность
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("heart")
+                .figure__text
+                  | найти технические, маркетинговые и другие недоработки
+          .helping__row
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("settings")
+                .figure__text
+                  | автоматизировать и оптимизировать процессы
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("clock")
+                .figure__text
+                  | сэкономить время и деньги на будущей разработке
+          .helping__row
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("sofa")
+                .figure__text
+                  | облегчить  жизнь пользователям
+            .helping__cell
+              .figure
+                .figure__icon
+                  +icon-grad("person")
+                .figure__text
+                  | понять, что люди думают о проекте
+
+        .helping__center
+          .helping__center-inner
+            img(src="img/svg/pacman.svg", alt="pacman")
+
+            p.text.text_center.text_light
+              | Вы знаете свой продукт досконально, однако пользователи могут в нём теряться.
   //end helping
+
+  //begin section
+  .section.section_bg
+    .l
+      h2.heading
+        | Проводим исследование тщательно и профессионально
+
+      .l-columns.l-columns_three
+        .column
+          .figure.figure_regular
+            .figure__icon
+              +icon("video")
+            p.figure__text-small
+              | Для тестирования мы находим и приглашаем исключительно людей,
+              | подходящих под целевую аудиторию проекта. Например, если им будут
+              | пользоваться водители-женщины 20-30 лет с высшим образованиеми
+              | и высоким доходом, мы найдём именно таких людей.
+        .column
+          .figure.figure_regular
+            .figure__icon
+              +icon("location")
+            p.figure__text-small
+              | Эксперименты проходят в типичной для тестируемого продукта обстановке.
+              | Например, если мы тестируем авто-навигатор, то респонденты работают с ним в автомобиле на ходу.
+              | Если же речь об интернет-магазине, то — дома за планшетом и в комфорте.
+        .column
+          .figure.figure_regular
+            .figure__icon
+              +icon("mind")
+            p.figure__text-small
+              | Мы просим респондентов озвучивать все свои мысли (внутренний голос).
+              | Вместе с тестировщиком находится только ведущий, который не имеет
+              | права отвечать на вопросы человека и как-либо ему подсказывать.
+
+      //begin how
+      .how
+        .how__column
+          .figure
+            .figure__icon
+              +icon("bookmark")
+            .figure__text
+              | Собираем информацию
+            .figure__text-small
+              | Изучем проект: бизнес-модель, целевая аудитория, цели
+              | клиента и желания посетителей. Анализируем статистику.
+
+        .how__arrow-hor
+          +icon("dotts-t")
+          +icon("dotts-t-small")
+
+        .how__column.how__column_double
+
+          .how__cell
+            .how__arrow
+              +icon("dotts-l")
+
+            .figure
+              .figure__icon
+               +icon("tree")
+              .figure__text
+               | Готовим сценарии
+              .figure__text-small
+               | Готовим базовые и стрессовые наборы задач, которые следует
+               | выполнить респондентам. Объединяем их в последовательности.
+
+            .how__arrow
+              +icon("dotts-r")
+
+          .how__cell
+            .figure
+              .figure__icon
+                +icon("book")
+              .figure__text
+                | Находим респондентов
+              .figure__text-small
+                | Подбираем подходящих под целевую аудиторию людей и приглашаем
+                | их к нам в офис или сами приезжаем к ним для тестирования.
+
+        .how__arrow-hor
+          +icon("dotts-b")
+          +icon("dotts-b-small")
+
+        .how__column
+          .figure
+            .figure__icon
+              +icon("hand")
+            .figure__text
+              | Даём продукт респонденту
+            .figure__text-small
+              | Просим людей выполнить ранее подготовленные задачи,
+              | следим и управляем процессом, но ничего не подсказываем.
+
+        .how__arrow-hor
+          +icon("dotts-t")
+          +icon("dotts-t-small")
+
+        .how__column.how__column_double
+
+          .how__cell
+            .how__arrow
+              +icon("dotts-l")
+
+            .figure
+              .figure__icon
+                +icon("target")
+              .figure__text
+                | Записываем происходящее
+              .figure__text-small
+                | Фиксируем на видео содержимое экрана, лицо и позу респондента.
+                | Также записываем звук на качественные диктофоны.
+
+            .how__arrow
+              +icon("dotts-r")
+          .how__cell
+            .figure
+              .figure__icon
+                +icon("video")
+              .figure__text
+                | Монтируем материалы
+              .figure__text-small
+                | Полученные видео и аудио-файлы объединяем в универсальные
+                | записи каждой из множества сессий исследования.
+
+        .how__arrow-hor
+          +icon("dotts-b")
+          +icon("dotts-b-small")
+
+        .how__column
+          .figure
+            .figure__icon
+              +icon("checklist")
+            .figure__text
+              | Готовим отчёт о тестировании
+            .figure__text-small
+              | Просматриваем записи сессий тестирования, выписываем найденные людьми проблемы и предлагаем решения.
+      //end how
+
+      h3.title
+        span.title__text
+          | Взгляните на примеры смонтированых записей сессий и отчётов
+
+      //begin examples
+      ul.examples
+        li.examples__item
+          button(type="button", style="background-image:url('img/btn1.jpg')").big-btn.big-btn_video
+            .big-btn__inner
+              +icon("play")
+        li.examples__item
+          button(type="button", style="background-image:url('img/btn2.jpg')").big-btn.big-btn_video
+            .big-btn__inner
+              +icon("play")
+        li.examples__item
+          button(type="button", style="background-image:url('img/btn3.jpg')").big-btn.big-btn_video
+            .big-btn__inner
+              +icon("play")
+        li.examples__item
+          button(type="button").big-btn.big-btn_file
+            .big-btn__inner
+              span.file-name
+                | DriverNotes.pdf
+                small 38 мегабайт
+        li.examples__item
+          button(type="button").big-btn.big-btn_file
+            .big-btn__inner
+              span.file-name
+                | Nexticy.pdf
+                small 38 мегабайт
+        li.examples__item
+          button(type="button").big-btn.big-btn_file
+            .big-btn__inner
+              span.file-name
+                | NovaPoshta.pdf
+                small 38 мегабайт
+
+      //end examples
+  //end section
