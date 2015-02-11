@@ -252,6 +252,8 @@
   +fs(14)
   +tablet
     width: 50%
+  +mobile
+    width: 100%
 
 
 .helping
@@ -455,10 +457,197 @@
 
 
 .examples
+  margin: 0 -10px -35px
   +fs(0)
+  .text
+    display: block
+    margin-top: 20px
+  +r(1000)
+    max-width: 480px
+    margin-left: auto
+    margin-right: auto
+    .examples__item
+      width: 33.33333%
+  +r(500)
+    margin-left: -10px
+    margin-right: -10px
+    .examples__item
+      width: 50%
 
 .examples__item
   display: inline-block
+  vertical-align: top
   width: (100%/6)
+  margin-bottom: 35px
+  padding: 0 10px
+  box-sizing: border-box
   +fs(14)
   text-align: center
+
+
+.steps
+  margin: 0 -10px
+  +clr
+  +r(650)
+    margin: auto
+    max-width: 350px
+    .steps__item
+      float: none
+      width: auto
+      padding: 0
+      margin-top: 35px
+      &:first-child
+        margin-top: 0
+
+.steps__item
+  float: left
+  width: 33.3333%
+  box-sizing: border-box
+  padding: 0 10px
+
+
+.logos
+  font-size: 0
+  text-align: center
+  margin-bottom: -40px
+  .icon
+    fill: $passive
+    +trans
+    &:hover
+      fill: #4A90E2
+
+.logos__item
+  width: (100%/9)
+  display: inline-block
+  vertical-align: middle
+  margin-bottom: 40px
+  +tablet
+    width: 20%
+  +r(600)
+    width: 33.33333%
+
+
+.person
+  display: block
+  text-decoration: none
+
+.person__photo
+  width: em(100)
+  height: em(100)
+  margin: auto
+  border-radius: 50%
+  overflow: hidden
+  > img
+    display: block
+    max-width: 100%
+    max-height: 100%
+
+.person__name
+  display: block
+  margin-top: em(20)
+  +bold
+  text-transform: uppercase
+  letter-spacing: em(2)
+
+.person__about
+  display: block
+  margin-top: em(10)
+  +light
+
+
+.review
+  text-align: center
+
+.review__text
+  margin: em(20) 0 0
+  font-family: Georgia
+  font-style: italic
+  +fs(18)
+  line-height: 1.45
+
+.review__arrow
+  position: relative
+  margin: em(17) auto em(20)
+  max-width: em(236)
+  height: em(18)
+  border-bottom: 2px solid $passive
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 50%
+    +arr(36,18,$passive,t)
+    margin-left: -18px
+  &:after
+    border-bottom-color: #FFF
+    bottom: -3px
+
+
+.slider-wrap
+  position: relative
+  margin: 80px 0
+
+.slider
+  position: relative
+  padding-bottom: 40px
+
+.slider__slide
+  padding: 0 40px
+
+.slider__prev,
+.slider__next
+  background: none
+  position: absolute
+  padding: 15px
+  margin: -15px
+  top: 50%
+  .icon
+    fill: $interactive
+    +trans
+  &:hover, &:focus
+    .icon
+      fill: $action
+  &:active
+    .icon
+      fill: $active-green
+
+.slider__prev
+  left: 0
+
+.slider__next
+  right: 0
+
+
+
+.form
+  +mobile
+    .form__three
+      margin-left: 0
+      margin-right: 0
+      &:after
+        display: none
+      .form__field
+        float: none
+        width: auto
+        padding: 0
+        margin-top: 20px
+        &:first-child
+          margin-top: 0
+
+
+.form__three
+  margin: 0 -10px 20px
+  +clr
+
+.form__field
+  float: left
+  width: 33.33333%
+  box-sizing: border-box
+  padding: 0 10px
+
+.form__footer
+  margin-top: 20px
+  text-align: center
+
+

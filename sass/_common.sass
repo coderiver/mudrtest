@@ -99,7 +99,7 @@ a
   +fs(14)
   color: $passive
   text-transform: uppercase
-  line-height: 1.28
+  line-height: 1.5
   letter-spacing: (2/14)+em
   &:first-child
     margin-top: 0
@@ -113,7 +113,7 @@ a
       position: absolute
       top: 50%
       left: 0
-      margin-top: -0.6em
+      margin-top: -0.75em
     &:after
       left: auto
       right: 0
@@ -156,6 +156,17 @@ a
     border: 2px solid #FFF
     &:hover
       background: #FFF
+
+.btn_green
+  background: $action
+  box-shadow: none
+  &:hover, &:focus
+    background: $hover-green
+    box-shadow: none
+    color: #FFF
+  &:active
+    background: $active-green
+
 
 
 .video-link
@@ -249,8 +260,10 @@ a
     +regular
 
 .big-btn
-  display: inline-block
-  width: em(140)
+  display: block
+  width: 100%
+  margin: auto
+  max-width: em(140)
   height: em(84)
   line-height: em(84)
   box-sizing: border-box
@@ -310,3 +323,82 @@ a
     font-size: 1em
     display: block
     +light
+
+
+.step
+  +fs(14)
+  line-height: 1.7
+  +clr
+
+.step__num
+  display: block
+  float: left
+  width: em(40,18)
+  height: em(40,18)
+  font-size: em(18)
+  line-height: em(36,18)
+  box-sizing: border-box
+  +bold
+  border-radius: 50%
+  border: 2px solid
+  text-align: center
+  > span
+    display: inline-block
+    vertical-align: middle
+
+.step__text
+  display: block
+  font-size: 1em
+  padding-left: em(60)
+
+
+.field
+  position: relative
+  box-sizing: border-box
+  border: 1px solid $passive
+  border-radius: 4px
+  &.is-error
+    .field__back
+      opacity: 1
+      background: $error
+      box-shadow: none
+
+.field__back
+  opacity: 0
+  content: ""
+  position: absolute
+  top: -2px
+  left: -2px
+  bottom: -2px
+  right: -2px
+  background: #FFF
+  box-shadow: 0px 0px 10px 0px #87CAFF
+  border-radius: 4px
+  background: linear-gradient(to bottom, #4B81FF, #3DC4FF)
+  +trans
+  .field__input:focus ~ &
+    opacity: 1
+
+.field__input
+  display: block
+  position: relative
+  z-index: 1
+  width: 100%
+  padding: em(10)
+  margin: 0
+  box-sizing: border-box
+  background: #FFF
+  +light
+  +fs(14)
+  color: $main
+  border: 0
+  border-radius: 3px
+  +placeholder
+    +light
+    +fs(14)
+    color: $passive
+
+textarea.field__input
+  resize: none
+  border-top-width: 0
+  border-bottom-width: 0

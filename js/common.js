@@ -1,5 +1,12 @@
 head.ready(function() {
 
-    console.log('js is ok');
+    $('.js-slick').slick({
+        autoplay: true,
+        autoplaySpeed: 6000,
+        dots: true,
+        slide: '.slider__slide',
+        prevArrow: '.slider__prev',
+        nextArrow: '.slider__next'
+    });
 
 });

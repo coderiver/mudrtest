@@ -449,32 +449,182 @@ block content
           button(type="button", style="background-image:url('img/btn1.jpg')").big-btn.big-btn_video
             .big-btn__inner
               +icon("play")
+          span.text.text_light
+            | 1 из 22 записей
         li.examples__item
           button(type="button", style="background-image:url('img/btn2.jpg')").big-btn.big-btn_video
             .big-btn__inner
               +icon("play")
+          span.text.text_light
+            | 1 из 32 записей
         li.examples__item
           button(type="button", style="background-image:url('img/btn3.jpg')").big-btn.big-btn_video
             .big-btn__inner
               +icon("play")
+          span.text.text_light
+            | 1 из 64 записей
         li.examples__item
           button(type="button").big-btn.big-btn_file
             .big-btn__inner
               span.file-name
                 | DriverNotes.pdf
                 small 38 мегабайт
+          span.text.text_light
+            | 23 страницы
         li.examples__item
           button(type="button").big-btn.big-btn_file
             .big-btn__inner
               span.file-name
                 | Nexticy.pdf
                 small 38 мегабайт
+          span.text.text_light
+            | 13 страницы
         li.examples__item
           button(type="button").big-btn.big-btn_file
             .big-btn__inner
               span.file-name
                 | NovaPoshta.pdf
                 small 38 мегабайт
+          span.text.text_light
+            | 22 страницы
 
       //end examples
+
+      h3.title
+        span.title__text
+          | Что следует делать с результатами тестирования
+
+      ul.steps
+        li.steps__item
+          .step
+            span.step__num
+              span 1
+            span.step__text
+              | Попросить разработчиков или нас внедрить предложения.
+        li.steps__item
+          .step
+            span.step__num
+              span 2
+            span.step__text
+              | Отследить изменения показателей статистики и настроения людей.
+        li.steps__item
+          .step
+            span.step__num
+              span 3
+            span.step__text
+              | Радоваться повышению эффективности  работы проекта.
+  //end section
+
+  //begin section
+  .section
+    .l
+      h2.heading
+        | Нашей работой довольны
+
+      //begin logos
+      ul.logos
+        each logo in ["nova-poshta","capable-bits","spaces","rio","mobiads","driver-notes","startask","inspire-me","ux-fox"]
+          li.logos__item
+            +icon(logo)
+      //end logos
+
+      //begin reviews
+      .slider-wrap
+        .slider.js-slick
+          .slider__slide
+            .review
+              .person
+                .person__photo
+                  img(src="img/review.jpg", alt="")
+                strong.person__name
+                  | Евгений Плохой
+                span.person__about
+                  | Исполнительный директор в <a href="#">Capable Bits</a>
+
+              .review__arrow
+              .review__text
+                p
+                  |Благодаря Мудрому Тесту получили массу очень полезной информации,
+                  | которую не смогла собрать ни одна система аналитики. 
+                p
+                  | Увидели не только проблемные места в приложении, рекомендации по их устранению,
+                  | а также живую реакцию настоящих пользователей.
+
+          .slider__slide
+            .review
+              .person
+                .person__photo
+                  img(src="img/review.jpg", alt="")
+                strong.person__name
+                  | Евгений Плохой
+                span.person__about
+                  | Исполнительный директор в <a href="#">Capable Bits</a>
+
+              .review__arrow
+              .review__text
+                p
+                  | Благодаря Мудрому Тесту получили массу очень полезной информации,
+                | которую не смогла собрать ни одна система аналитики. 
+
+          .slider__slide
+            .review
+              .person
+                .person__photo
+                  img(src="img/review.jpg", alt="")
+                strong.person__name
+                  | Евгений Плохой
+                span.person__about
+                  | Исполнительный директор в <a href="#">Capable Bits</a>
+
+              .review__arrow
+              .review__text
+                p
+                  | Благодаря Мудрому Тесту получили массу очень полезной информации,
+                  | которую не смогла собрать ни одна система аналитики. 
+
+          button(type="button").slider__prev
+            +icon("arr-prev")
+          button(type="button").slider__next
+            +icon("arr-next")
+
+      //end reviews
+  //end section
+
+  //begin section
+  .section
+    .section__separator
+      +icon("separator")
+    .l
+      h3.title
+        span.title__text
+          | Вы столько всего прочли, осталось самое простое
+
+      h2.heading
+        | Напишите, с нами легко связаться и приятно работать
+
+      //begin form
+      form.form
+        .form__three
+          .form__field
+            .field
+              input.field__input(type="text", placeholder="Как к вам обращаться?")
+              .field__back
+          .form__field
+            .field
+              input.field__input(type="text", placeholder="Ваш контактный e-mail")
+              .field__back
+          .form__field
+            .field.is-error
+              input.field__input(type="text", placeholder="Ссылка на проект (не обязательно)")
+              .field__back
+        .field
+          textarea.field__input(rows="5", placeholder="Опишите свой продукт в двух предложениях (не обязательно)")
+          .field__back
+
+        .form__footer
+          .form__footer-cell
+          button.btn.btn_green(type="submit")
+            | Отправить нам сообщение
+
+      //end form
   //end section
