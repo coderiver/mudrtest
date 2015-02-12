@@ -19,11 +19,11 @@
 
 
 =tablet
-  +r(1000)
+  +r(900)
     @content
 
 =mobile
-  +r(800)
+  +r(750)
     @content
 
 @function image-url($image)
@@ -457,5 +457,6 @@ textarea.field__input
   .icon
     fill: $passive
     +trans
-    &:hover
+  &:hover, &:focus
+    .icon
       fill: #4A90E2

@@ -67,33 +67,83 @@
 
 .header
   position: relative
+  .l
+    position: relative
   .menu
     position: absolute
     top: 50%
-    left: 0
+    left: 40px
     margin-top: -0.5em
   .btn
     position: absolute
     top: 50%
-    right: 0
+    right: 40px
     margin-top: (-20/14)+em
   .logo
     vertical-align: top
   +mobile
     .menu
-      position: relative
+      position: static
       margin: 40px 0
     .btn
       display: none
 
+  &.is-fixed
+    position: fixed
+    z-index: 100
+    background: #FFF
+    color: $passive
+    top: 0
+    left: 0
+    right: 0
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.10)
+    .menu__link
+      color: $passive
+      &:hover
+        color: $interactive
+      &:active
+        color: $active
+        &:after
+          display: none
+    .btn
+      background: $action
+      box-shadow: none
+      &:hover, &:focus
+        background: $hover-green
+        box-shadow: none
+        color: #FFF
+      &:active
+        background: $active-green
+    .logo
+      padding: 7px 0 8px
+      .icon-logo
+        display: none
+      .icon-logo-small
+        display: block
+    +mobile
+      padding: 23px 0 19px
+      .menu
+        margin: 0
+      .logo
+        display: none
+      // .menu__list
+      //   li
+      //     margin-left: em(30)
+      //     &:first-child
+      //       margin-left: 0
+      //     &:before
+      //       left: em(-18)
 
 
 
 .logo
   display: inline-block
   text-decoration: none
-  .svg-icon
-    display: block
+  .icon-logo
+    fill: #FFF
+  .icon-logo-small
+    display: none
+    fill: $main
 
 
 .menu
@@ -106,13 +156,13 @@
     display: inline-block
     vertical-align: middle
     position: relative
-    margin-left: (30/14)+em
+    margin-left: em(30)
     +fs(14)
     &:before
       content: "•"
       position: absolute
       top: 0
-      left: (-18/14)+em
+      left: em(-18)
       +fs(14)
     &:first-child
       margin-left: 0
@@ -120,19 +170,16 @@
         display: none
   +tablet
     li
-      margin-left: (20/14)+em
+      margin-left: em(15)
       &:first-child
         margin-left: 0
       &:before
-        display: none
+        left: em(-11)
   +mobile
     li
-      // margin-left: (30/14)+em
-      // &:first-child
-      //   margin-left: 0
       &:before
         display: block
-        left: (-13/14)+em
+        left: em(-13)
 
 .menu__link
   display: inline-block
@@ -141,7 +188,7 @@
   +bold
   +fs(14)
   color: #FFF
-  letter-spacing: (2/14)+em
+  letter-spacing: em(2)
   text-transform: uppercase
   +trans(color, 100, linear)
   &:after
@@ -153,7 +200,7 @@
     height: 4px
     background: $interactive
     font-size: 1em
-    margin-top: (12/14)+em
+    margin-top: em(15)
     +tr(right 0.2s ease)
   &:hover, &:focus
     &:after
@@ -227,6 +274,9 @@
   font-size: 0
   overflow: hidden
   white-space: nowrap
+  img
+    display: block
+    max-width: 100%
 
 .photos__inner
   position: relative
@@ -239,17 +289,20 @@
   height: 30rem
   width: 30rem
   background: $main
+  overflow: hidden
   +clr
-
-.photos__block-small
-  float: left
-  width: 33.33%
-  height: 33.33%
 
 .photos__block-smaller
   float: left
+  width: 33.33%
+  height: 33.33%
+  overflow: hidden
+
+.photos__block-small
+  float: left
   width: 50%
   height: 50%
+  overflow: hidden
 
 
 .features__text

@@ -19,10 +19,11 @@ block content
 
       //begin toparea__header
       .toparea__header
-        .l
-          header.header
+        header.header
+          .l
             a(href="/").logo
               +icon("logo")
+              +icon("logo-small")
 
             //begin menu
             nav.menu
@@ -165,17 +166,37 @@ block content
   .photos
     .photos__inner
       .photos__block
+        img(src="img/photos/1.jpg", alt="")
       .photos__block
         .photos__block-smaller
+          img(src="img/photos/2.jpg", alt="")
         .photos__block-smaller
+          img(src="img/photos/3.jpg", alt="")
         .photos__block-smaller
+          img(src="img/photos/4.jpg", alt="")
         .photos__block-smaller
+          img(src="img/photos/5.jpg", alt="")
+        .photos__block-smaller
+          img(src="img/photos/6.jpg", alt="")
+        .photos__block-smaller
+          img(src="img/photos/7.jpg", alt="")
+        .photos__block-smaller
+          img(src="img/photos/8.jpg", alt="")
+        .photos__block-smaller
+          img(src="img/photos/9.jpg", alt="")
+        .photos__block-smaller
+          img(src="img/photos/10.jpg", alt="")
       .photos__block
         .photos__block-small
+          img(src="img/photos/11.jpg", alt="")
         .photos__block-small
+          img(src="img/photos/12.jpg", alt="")
         .photos__block-small
+          img(src="img/photos/13.jpg", alt="")
         .photos__block-small
+          img(src="img/photos/14.jpg", alt="")
       .photos__block
+        img(src="img/photos/15.jpg", alt="")
   //end photos
 
   //begin features
@@ -655,7 +676,7 @@ block content
               | Украина, Запорожье
 
         .contacts__column
-          button.link-form(type="button")
+          a.link-form(href="https://docs.google.com/forms/d/1EY8bWlTXqcxypvedJajSsUS3bqLFW2YEXdIWlJZnaCU/viewform", target="_blank")
             .link-form__inner
               +icon("questionnaire")
               span

@@ -9,4 +9,21 @@ head.ready(function() {
         nextArrow: '.slider__next'
     });
 
+    var changeHeader = function(scroll) {
+        var header       = $('.header'),
+            toparea      = $('.toparea'),
+            topPoint     = toparea.height(),
+            fixed        = 'is-fixed';
+
+        $(window).on('scroll', function(event) {
+            if ( $(window).scrollTop() >= topPoint ) {
+                header.addClass(fixed);
+            } else {
+                header.removeClass(fixed);
+            }
+        });
+    };
+
+    changeHeader();
+
 });
