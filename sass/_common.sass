@@ -46,12 +46,16 @@ body
   +fs(14)
   line-height: 1.43
 
+.out
+  overflow: hidden
 
 a
   color: $interactive
 
 .svg-sprite
-  display: none !important
+  width: 0 !important
+  height: 0 !important
+  overflow: hidden
 
 
 
@@ -171,7 +175,6 @@ a
 .link
   display: inline-block
   position: relative
-  padding-right: em(14)
   text-decoration: none
   color: $interactive
   +trans(color)
@@ -182,10 +185,19 @@ a
     left: 0
     right: 100%
     height: 4px
-    // background: $action
-    background: $interactive
+    background: $action
     margin-top: em(8)
     +tr(right 0.2s ease)
+  &:hover, &:focus
+    color: $action
+    text-decoration: none
+    &:before
+      right: 0
+
+.link_icon
+  padding-right: em(14)
+  &:before
+    background: $interactive
   &:after
     content: ""
     display: block
@@ -199,10 +211,12 @@ a
     background: no-repeat center center
     background-image: url('../img/svg/icons-other/link.svg')
   &:hover, &:focus
-    // color: $action
+    color: $interactive
     text-decoration: none
     &:before
       right: em(14)
+
+
 
 
 
@@ -436,3 +450,12 @@ textarea.field__input
   resize: none
   border-top-width: 0
   border-bottom-width: 0
+
+.logo-link
+  display: block
+  text-decoration: none
+  .icon
+    fill: $passive
+    +trans
+    &:hover
+      fill: #4A90E2

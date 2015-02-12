@@ -3,8 +3,8 @@ $main-padding: 40px
   max-width: 940px
   padding: 0 $main-padding
   margin: auto
-  +r(600)
-    padding: 0 20px
+  +mobile
+    padding: 0 10px
 
 .l-columns
   margin: 0 -20px
@@ -21,10 +21,12 @@ $main-padding: 40px
 
 .l-columns
   +mobile
-    margin: 0
+    margin-left: 0
+    margin-right: 0
     .column
       float: none
       width: auto
       margin-top: 40px
+      padding: 0
       &:first-child
         margin-top: 0

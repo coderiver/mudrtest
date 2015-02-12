@@ -83,7 +83,7 @@ block content
         | Это объективное исследование, которое покажет, насколько удобно людям пользоваться вашим проектом
 
       p.text.text_center
-        | Тестирование похоже на метод <a class="link" href="#">«тайного покупателя»</a>,
+        | Тестирование похоже на метод <a class="link link_icon" href="#">«тайного покупателя»</a>,
         | только для цифровых продуктов и на подходящей вашему проекту целевой аудитории.
         | С помощью серии экспериментов мы узнаем, с какими трудностями сталкиваются пользователи
         | и чего им не хватает в вашем цифровом продукте. Мудрый Тест — закрытое исследование.
@@ -525,7 +525,8 @@ block content
       ul.logos
         each logo in ["nova-poshta","capable-bits","spaces","rio","mobiads","driver-notes","startask","inspire-me","ux-fox"]
           li.logos__item
-            +icon(logo)
+            a(href="#").logo-link
+              +icon(logo)
       //end logos
 
       //begin reviews
@@ -539,7 +540,7 @@ block content
                 strong.person__name
                   | Евгений Плохой
                 span.person__about
-                  | Исполнительный директор в <a class="link" href="#">Capable Bits</a>
+                  | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
 
               .review__arrow
               .review__text
@@ -558,7 +559,7 @@ block content
                 strong.person__name
                   | Евгений Плохой
                 span.person__about
-                  | Исполнительный директор в <a class="link" href="#">Capable Bits</a>
+                  | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
 
               .review__arrow
               .review__text
@@ -574,7 +575,7 @@ block content
                 strong.person__name
                   | Евгений Плохой
                 span.person__about
-                  | Исполнительный директор в <a class="link" href="#">Capable Bits</a>
+                  | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
 
               .review__arrow
               .review__text
@@ -659,6 +660,24 @@ block content
               +icon("questionnaire")
               span
                 | Анкета для потенциальных респондентов
-
       //end contacts
+
+      //begin social
+      .social-wrap(style="overflow:hidden")
+        img(src="img/facebook.png", alt="", style="display:block;")
+      //end social
+  //end section
+
+  //begin section
+  footer.section.section_footer
+    .section__separator
+    .l
+      .footer
+        .footer__left
+          | © 2015, Мудрый Тест. Все права защищены.
+        .footer__right
+          | По всем вопросам пишите на <a class="link" href="#">hey@wisetest.me</a>
+        .footer__center
+          a.logo-link(href="#")
+            +icon("birzool")
   //end section
