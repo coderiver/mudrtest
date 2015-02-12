@@ -909,3 +909,59 @@
   width: em(100)
   margin: auto
   text-align: center
+
+
+.popup
+  position: fixed
+  z-index: 101
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  padding: 20px
+  background: rgba(0,0,0,0.75)
+  overflow: auto
+  +vertical
+  white-space: nowrap
+
+.popup__inner
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  +fs(14)
+  white-space: normal
+
+.popup__close
+  position: absolute
+  top: 80px
+  right: -58px
+  background: none
+  +fs(37)
+  line-height: 1
+  margin: -0.5em -0.5em 0 0
+  +trans(all, 0.2s)
+  .icon
+    vertical-align: top
+    font-size: inherit
+    fill: $passive
+  &:hover, &:focus
+    transform: rotate(90deg)
+    .icon
+      fill: $interactive
+  &:active
+    .icon
+      fill: $active
+  +tablet
+    top: 0
+    right: 0
+
+.popup_video
+  .popup__inner
+    max-width: 800px
+    width: 100%
+    min-width: 300px
+    border: 1px solid $interactive
+    &:before
+      content: ""
+      display: block
+      padding-bottom: 50%

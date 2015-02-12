@@ -15,6 +15,10 @@ head.ready(function() {
             topPoint     = toparea.height(),
             fixed        = 'is-fixed';
 
+        $(window).on('resize', function(event) {
+            topPoint = toparea.height();
+        });
+
         $(window).on('scroll', function(event) {
             if ( $(window).scrollTop() >= topPoint ) {
                 header.addClass(fixed);

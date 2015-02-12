@@ -12,6 +12,16 @@ block title
 block load-svg-sprite
   script(type="text/javascript", src="js/load-svg-sprite.js")
 
+block facebook
+  //- | <div id="fb-root"></div>
+  //- | <script>(function(d, s, id) {
+  //- |  var js, fjs = d.getElementsByTagName(s)[0];
+  //- |  if (d.getElementById(id)) return;
+  //- |  js = d.createElement(s); js.id = id;
+  //- |  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+  //- |  fjs.parentNode.insertBefore(js, fjs);
+  //- |}(document, 'script', 'facebook-jssdk'));</script>
+
 block content
   //begin toparea
   .toparea
@@ -685,7 +695,8 @@ block content
 
       //begin social
       .social-wrap(style="overflow:hidden")
-        img(src="img/facebook.png", alt="", style="display:block;")
+        | <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="1000" data-height="200"></div>
+        //- img(src="img/facebook.png", alt="", style="display:block;")
       //end social
   //end section
 
@@ -702,3 +713,14 @@ block content
           a.logo-link(href="#")
             +icon("birzool")
   //end section
+
+
+block popup
+  //begin popup
+  //- .popup.popup_video
+  //-   .popup__inner
+  //-     | video
+
+  //-     button.popup__close
+  //-       +icon("close")
+  //end popup
