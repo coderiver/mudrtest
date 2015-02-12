@@ -69,6 +69,14 @@ svg
   &-ux-fox
     +size(46,50)
 
+  &-phone,
+  &-email,
+  &-map
+    +size(20,20)
+
+  &-ukr-map
+    +size(153,100)
+
   // &-cloud
   //   +size(60,49)
   // &-computer
@@ -99,6 +107,6 @@ svg
 @function gradient-icon($name)
   @return url("../img/svg/gradient-icons/#{$name}.svg")
 
-@each $i in business,chart,clock,cloud,computer,flag,graph,heart,person,phone,settings,sofa,stample,step,store,windows
+@each $i in business,chart,clock,cloud,computer,flag,graph,heart,person,iphone,settings,sofa,stample,step,store,windows
   .icon-#{$i}
     background-image: gradient-icon(#{$i})

@@ -83,7 +83,7 @@ block content
         | Это объективное исследование, которое покажет, насколько удобно людям пользоваться вашим проектом
 
       p.text.text_center
-        | Тестирование похоже на метод <a href="#">«тайного покупателя»</a>,
+        | Тестирование похоже на метод <a class="link" href="#">«тайного покупателя»</a>,
         | только для цифровых продуктов и на подходящей вашему проекту целевой аудитории.
         | С помощью серии экспериментов мы узнаем, с какими трудностями сталкиваются пользователи
         | и чего им не хватает в вашем цифровом продукте. Мудрый Тест — закрытое исследование.
@@ -108,13 +108,13 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              +icon-grad("phone")
+              +icon-grad("iphone")
             .figure__text
               | мобильным
               br
               | приложениям
-          //- +icon("phone")
-          //- img(src="img/svg/icons/phone.svg", alt="")
+          //- +icon("iphone")
+          //- img(src="img/svg/icons/iphone.svg", alt="")
         li.icons__item
           .figure
             .figure__icon
@@ -539,7 +539,7 @@ block content
                 strong.person__name
                   | Евгений Плохой
                 span.person__about
-                  | Исполнительный директор в <a href="#">Capable Bits</a>
+                  | Исполнительный директор в <a class="link" href="#">Capable Bits</a>
 
               .review__arrow
               .review__text
@@ -558,7 +558,7 @@ block content
                 strong.person__name
                   | Евгений Плохой
                 span.person__about
-                  | Исполнительный директор в <a href="#">Capable Bits</a>
+                  | Исполнительный директор в <a class="link" href="#">Capable Bits</a>
 
               .review__arrow
               .review__text
@@ -574,7 +574,7 @@ block content
                 strong.person__name
                   | Евгений Плохой
                 span.person__about
-                  | Исполнительный директор в <a href="#">Capable Bits</a>
+                  | Исполнительный директор в <a class="link" href="#">Capable Bits</a>
 
               .review__arrow
               .review__text
@@ -623,8 +623,37 @@ block content
 
         .form__footer
           .form__footer-cell
-          button.btn.btn_green(type="submit")
-            | Отправить нам сообщение
-
+            | За консультацию о проекте денег не возьмём
+          .form__footer-cell.form__footer-btn
+            button.btn.btn_green(type="submit")
+              | Отправить нам сообщение
+          .form__footer-cell
+            | Постараемся ответить как можно скорее :)
       //end form
+
+      //begin contacts
+      .contacts.l-columns.l-columns_three
+        .column
+          .contacts__item
+            +icon("phone")
+            a(href="tel:+380913052712")
+              | +380 91 305-27-12
+          .contacts__item
+            +icon("email")
+            a.link(href="mailto:hey@wisetest.me")
+              | hey@wisetest.me
+          .contacts__item
+            +icon("map")
+            span
+              | Дзержинского, 84, офис 308
+        .column
+          .map
+            //- +icon("ukr-map")
+            img(src="img/svg/icons-other/ukr-map.svg", alt="")
+            span.map__baloon
+              | Украина, Запорожье
+
+        .column
+
+      //end contacts
   //end section
