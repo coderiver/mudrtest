@@ -242,6 +242,7 @@ svg * { fill: inherit; }
 .icon-ux-fox { font-size: 46px; font-size: 4.6rem; height: 1.08696em; }
 .icon-phone, .icon-email, .icon-map { font-size: 20px; font-size: 2rem; height: 1em; }
 .icon-ukr-map { font-size: 153px; font-size: 15.3rem; height: 0.65359em; }
+.icon-questionnaire { font-size: 42px; font-size: 4.2rem; height: 1.42857em; }
 
 .icon-business { background-image: url("../img/svg/gradient-icons/business.svg"); }
 
@@ -462,7 +463,7 @@ svg * { fill: inherit; }
 .review__arrow:before, .review__arrow:after { content: ""; position: absolute; bottom: 0; left: 50%; width: 0px; height: 0px; border-style: solid; border-width: 0 18px 18px 18px; border-color: transparent transparent #9CA5BF transparent; margin-left: -18px; }
 .review__arrow:after { border-bottom-color: #FFF; bottom: -3px; }
 
-.slider-wrap { position: relative; margin: 80px 0; }
+.slider-wrap { position: relative; margin: 80px 0 0; }
 
 .slider { position: relative; padding-bottom: 40px; }
 
@@ -495,14 +496,22 @@ svg * { fill: inherit; }
 .form__footer-cell .btn { display: block; width: 100%; }
 @media only screen and (max-width: 700px) { .form__footer-cell { display: block; width: auto; margin-top: 15px; } }
 
-.contacts { margin-top: 80px; margin-bottom: 80px; }
-.contacts .column:last-child { text-align: right; }
+.contacts { margin: 80px -10px; *zoom: 1; }
+.contacts:after { content: " "; display: table; clear: both; }
+@media only screen and (max-width: 750px) { .contacts { max-width: 235px; margin-left: auto; margin-right: auto; }
+  .contacts .contacts__column { float: none; width: auto; margin-top: 40px; }
+  .contacts .contacts__column:first-child { margin-top: 0; }
+  .contacts .contacts__column:last-child { text-align: center; }
+  .contacts .map { position: relative; left: -0.71429em; } }
 
-.contacts__item { margin-top: 15px; text-decoration: none; }
-.contacts__item:first-child { margin-top: 0; }
-.contacts__item .icon { margin-right: 0.5em; fill: currentColor; }
-.contacts__item a { text-decoration: none; color: inherit; }
-.contacts__item .link { color: #2196F3; }
+.contacts__column { float: left; width: 33.3333%; box-sizing: border-box; padding: 0 10px; }
+.contacts__column:last-child { text-align: right; }
+
+.contact { display: block; margin-top: 15px; text-decoration: none; padding-left: 2.14286em; position: relative; text-decoration: none; }
+.contact:first-child { margin-top: 0; }
+.contact .icon { position: absolute; top: 50%; left: 0; margin-top: -0.5em; fill: currentColor; }
+.contact a { text-decoration: none; color: inherit; }
+.contact .link { color: #2196F3; }
 
 .map { position: relative; width: 10.92857em; height: 7.14286em; margin: auto; }
 .map img { display: block; width: 100%; height: 100%; }
@@ -510,6 +519,18 @@ svg * { fill: inherit; }
 
 .map__baloon { position: absolute; width: 10.83333em; box-sizing: border-box; bottom: 58.0%; right: 28.10458%; font-size: 12px; font-size: 1.2rem; line-height: 1.2; padding: 0.66667em 0.83333em; background: #333333; border-radius: 3px; color: #FFF; margin-right: -42.48366%; }
 .map__baloon:after { content: ""; position: absolute; top: 100%; left: 50%; width: 0px; height: 0px; border-style: solid; border-width: 8px 10px 0 10px; border-color: #333333 transparent transparent transparent; margin-left: -10px; }
+
+.link-form { display: inline-block; font-size: 14px; font-size: 1.4rem; width: 14.28571em; height: 7.14286em; line-height: 6.85714em; box-sizing: border-box; background: none; text-align: left; border: 2px solid #2196F3; color: #2196F3; border-radius: 10px; text-decoration: none; font-family: "Kelson Sans Regular", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; -webkit-transition: all 0.1s ease; transition: all 0.1s ease; }
+.link-form .icon { margin-right: 0.47619em; fill: #2196F3; float: left; -webkit-transition: all 0.1s ease; transition: all 0.1s ease; }
+.link-form:hover, .link-form:focus { color: #FFF; background: #2196F3; }
+.link-form:hover .icon, .link-form:focus .icon { fill: #FFF; }
+.link-form:active { color: #FFF; background: #2868B3; border-color: #2868B3; }
+.link-form:active .icon { fill: #FFF; }
+.link-form:disabled, .link-form.is-inactive { color: #9CA5BF; border-color: #9CA5BF; }
+.link-form:disabled .icon, .link-form.is-inactive .icon { fill: #9CA5BF; }
+
+.link-form__inner { display: inline-block; vertical-align: middle; line-height: 1.5; padding: 0 0 0 1.42857em; *zoom: 1; }
+.link-form__inner:after { content: " "; display: table; clear: both; }
 
 
 

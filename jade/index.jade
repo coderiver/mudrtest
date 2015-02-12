@@ -632,28 +632,33 @@ block content
       //end form
 
       //begin contacts
-      .contacts.l-columns.l-columns_three
-        .column
-          .contacts__item
+      .contacts
+        .contacts__column
+          .contact
             +icon("phone")
             a(href="tel:+380913052712")
               | +380 91 305-27-12
-          .contacts__item
+          .contact
             +icon("email")
             a.link(href="mailto:hey@wisetest.me")
               | hey@wisetest.me
-          .contacts__item
+          .contact
             +icon("map")
             span
               | Дзержинского, 84, офис 308
-        .column
+        .contacts__column
           .map
             //- +icon("ukr-map")
             img(src="img/svg/icons-other/ukr-map.svg", alt="")
             span.map__baloon
               | Украина, Запорожье
 
-        .column
+        .contacts__column
+          button.link-form(type="button")
+            .link-form__inner
+              +icon("questionnaire")
+              span
+                | Анкета для потенциальных респондентов
 
       //end contacts
   //end section

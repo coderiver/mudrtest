@@ -596,7 +596,7 @@
 
 .slider-wrap
   position: relative
-  margin: 80px 0
+  margin: 80px 0 0
 
 .slider
   position: relative
@@ -690,19 +690,46 @@
     margin-top: 15px
 
 .contacts
-  margin-top: 80px
-  margin-bottom: 80px
-  .column:last-child
+  margin: 80px -10px
+  +clr
+  +r(750)
+    max-width: 235px
+    margin-left: auto
+    margin-right: auto
+    .contacts__column
+      float: none
+      width: auto
+      margin-top: 40px
+      &:first-child
+        margin-top: 0
+      &:last-child
+        text-align: center
+    .map
+      position: relative
+      left: em(-10)
+
+.contacts__column
+  float: left
+  width: 33.3333%
+  box-sizing: border-box
+  padding: 0 10px
+  &:last-child
     text-align: right
 
-
-.contacts__item
+.contact
+  display: block
   margin-top: 15px
+  text-decoration: none
+  padding-left: em(30)
+  position: relative
   text-decoration: none
   &:first-child
     margin-top: 0
   .icon
-    margin-right: em(10,20)
+    position: absolute
+    top: 50%
+    left: 0
+    margin-top: -0.5em
     fill: currentColor
   a
     text-decoration: none
@@ -745,4 +772,51 @@
     left: 50%
     +arr(20,8,$main,b)
     margin-left: -10px
+
+
+.link-form
+  display: inline-block
+  +fs(14)
+  width: em(200)
+  height: em(100)
+  // padding: em(20) 0 em(20) em(20)
+  line-height: em(96)
+  box-sizing: border-box
+  background: none
+  text-align: left
+  border: 2px solid $interactive
+  color: $interactive
+  border-radius: 10px
+  text-decoration: none
+  +regular
+  +trans
+  .icon
+    margin-right: em(20,42)
+    fill: $interactive
+    float: left
+    +trans
+  &:hover, &:focus
+    color: #FFF
+    background: $interactive
+    .icon
+      fill: #FFF
+  &:active
+    color: #FFF
+    background: $active
+    border-color: $active
+    .icon
+      fill: #FFF
+  &:disabled, &.is-inactive
+    color: $passive
+    border-color: $passive
+    .icon
+      fill: $passive
+
+.link-form__inner
+  display: inline-block
+  vertical-align: middle
+  line-height: 1.5
+  padding: 0 0 0 em(20)
+  +clr
+
 
