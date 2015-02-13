@@ -8,7 +8,20 @@
     <link rel="stylesheet" media="all" href="css/screen.css">
     <script type="text/javascript" src="js/load-svg-sprite.js"></script><!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   </head>
-  <body>
+  <body><div id="fb-root"></div>
+<script>
+
+  (function(d, s, id) {
+
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+
+  }(document, 'script', 'facebook-jssdk'));
+
+</script>
     <!--begin out-->
     <div class="out">
       <!--begin toparea-->
@@ -836,7 +849,7 @@
               </div>
             </div>
             <div class="contacts__column">
-              <div class="map"><img src="img/svg/icons-other/ukr-map.svg" alt=""><span class="map__baloon">Украина, Запорожье</span>
+              <div class="map"><span class="map__baloon">Украина, Запорожье</span>
               </div>
             </div>
             <div class="contacts__column"><a href="https://docs.google.com/forms/d/1EY8bWlTXqcxypvedJajSsUS3bqLFW2YEXdIWlJZnaCU/viewform" target="_blank" class="link-form">
@@ -850,7 +863,16 @@
           </div>
           <!--end contacts-->
           <!--begin social-->
-          <div style="overflow:hidden" class="social-wrap"><div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="1000" data-height="200"></div>
+          <div style="overflow:hidden" class="social-wrap"><div class="fb-like-box"
+    data-href="https://www.facebook.com/wisetestme"
+    data-colorscheme="light"
+    data-show-faces="true"
+    data-header="false"
+    data-stream="false"
+    data-show-border="false"
+    data-width="1000"
+    data-height="200">
+</div>
           </div>
           <!--end social-->
         </div>
@@ -878,7 +900,9 @@
     <!--end out-->
     <!--begin popup-->
     <div id="video" class="popup popup_video">
-      <div class="popup__inner">video
+      <div class="popup__inner">
+        <div class="video">
+        </div>
         <button class="popup__close">
           <div class="icon icon-close">
             <svg>

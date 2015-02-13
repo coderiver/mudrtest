@@ -73,7 +73,8 @@ head.ready(function() {
 
 
     var togglePopup = function(popupId) {
-        var popup;
+        var popup,
+            body = $('body');
 
         if ( typeof(popupId) == "object") {
             popup = $(popupId);
@@ -87,12 +88,22 @@ head.ready(function() {
 
         if ( !popup.is(':visible') ) {
 
+            body.css({
+                position : 'fixed',
+                top      : -body.scrollTop()
+            });
+
             popup.fadeIn(200);
             setTimeout(function() {
                 popupInner.addClass(visibleClass);
             }, 200);
 
         } else {
+
+            body.css({
+                position : '',
+                top      : ''
+            });
 
             popupInner.removeClass(visibleClass);
             setTimeout(function() {

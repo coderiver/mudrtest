@@ -13,14 +13,7 @@ block load-svg-sprite
   script(type="text/javascript", src="js/load-svg-sprite.js")
 
 block facebook
-  //- | <div id="fb-root"></div>
-  //- | <script>(function(d, s, id) {
-  //- |  var js, fjs = d.getElementsByTagName(s)[0];
-  //- |  if (d.getElementById(id)) return;
-  //- |  js = d.createElement(s); js.id = id;
-  //- |  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
-  //- |  fjs.parentNode.insertBefore(js, fjs);
-  //- |}(document, 'script', 'facebook-jssdk'));</script>
+  include includes/fb-script.html
 
 block content
   //begin toparea
@@ -692,7 +685,7 @@ block content
         .contacts__column
           .map
             //- +icon("ukr-map")
-            img(src="img/svg/icons-other/ukr-map.svg", alt="")
+            //- img(src="img/svg/icons-other/ukr-map.svg", alt="")
             span.map__baloon
               | Украина, Запорожье
 
@@ -706,8 +699,7 @@ block content
 
       //begin social
       .social-wrap(style="overflow:hidden")
-        | <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="1000" data-height="200"></div>
-        //- img(src="img/facebook.png", alt="", style="display:block;")
+        include includes/fb-tag.html
       //end social
   //end contact-us
 
@@ -730,7 +722,8 @@ block popup
   //begin popup
   #video.popup.popup_video
     .popup__inner
-      | video
+      .video
+        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")

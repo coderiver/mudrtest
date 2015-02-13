@@ -809,6 +809,7 @@
   width: em(153)
   height: em(100)
   margin: auto
+  background: url('../img/svg/icons-other/ukr-map.svg') no-repeat center center
   img
     display: block
     width: 100%
@@ -943,13 +944,13 @@
   display: inline-block
   vertical-align: middle
   position: relative
+  top: 500px
   +fs(14)
   white-space: normal
   opacity: 0
-  transform: translate3d(0,1000px,0)
   transition: all 0.5s ease
   &.is-visible
-    transform: translate3d(0,0,0)
+    top: 0
     opacity: 1
 
 
@@ -987,3 +988,9 @@
       content: ""
       display: block
       padding-bottom: 50%
+  .video
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
