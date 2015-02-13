@@ -12,12 +12,12 @@
     <!--begin out-->
     <div class="out">
       <!--begin toparea-->
-      <div class="toparea">
+      <div name="top" class="toparea">
         <div class="toparea__outer">
           <!--begin toparea__header-->
           <div class="toparea__header">
             <header class="header">
-              <div class="l"><a href="/" class="logo">
+              <div class="l"><a href="#top" class="logo">
                   <div class="icon icon-logo">
                     <svg>
                       <use xlink:href="#icon-logo"></use>
@@ -31,14 +31,13 @@
                 <!--begin menu-->
                 <nav class="menu">
                   <ul class="menu__list">
-                    <li><a href="#" class="menu__link">что это</a></li>
-                    <li><a href="#" class="menu__link">зачем</a></li>
-                    <li><a href="#" class="menu__link">как</a></li>
-                    <li><a href="#" class="menu__link">отзывы</a></li>
+                    <li><a href="#what-is-it" class="menu__link">что это</a></li>
+                    <li><a href="#what-for" class="menu__link">зачем</a></li>
+                    <li><a href="#how" class="menu__link">как</a></li>
+                    <li><a href="#reviews" class="menu__link">отзывы</a></li>
                   </ul>
                 </nav>
-                <!--end menu-->
-                <button type="button" class="btn">Свяжитесь с нами</button>
+                <!--end menu--><a href="#contact-us" class="btn">Свяжитесь с нами</a>
               </div>
             </header>
           </div>
@@ -48,20 +47,21 @@
             <div class="l">
               <h1 class="heading heading_toparea">Помогаем повышать прибыльность проектов и отрываться от конкурентов</h1><strong class="subtitle subtitle_toparea">
                 Узнаём с помощью тестирования интерфейсов, насколько удобно людям
-                 пользоваться вашим продуктом и помогаем его улучшить.</strong><a href="#" class="video-link">
+                 пользоваться вашим продуктом и помогаем его улучшить.</strong>
+              <button data-popup="video" class="video-link">
                 <div class="icon icon-play">
                   <svg>
                     <use xlink:href="#icon-play"></use>
                   </svg>
-                </div><span>видео-презентация</span></a>
+                </div><span>видео-презентация</span>
+              </button>
             </div>
           </div>
           <!--end toparea__inner-->
           <!--begin toparea__center-->
           <div class="toparea__footer">
             <div class="l">
-              <button class="btn">Свяжитесь с нами</button>
-              <button type="button" class="arrows-down">
+              <div class="toparea__footer-btn"><a href="#contact-us" class="btn">Свяжитесь с нами</a></div><a href="#what-is-it" class="arrows-down">
                 <div class="icon icon-arrow">
                   <svg>
                     <use xlink:href="#icon-arrow"></use>
@@ -71,16 +71,15 @@
                   <svg>
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
-                </div>
-              </button>
+                </div></a>
             </div>
           </div>
           <!--end toparea__center-->
         </div>
       </div>
       <!--end toparea-->
-      <!--begin section-->
-      <div class="section">
+      <!--begin section what-is-it-->
+      <div name="what-is-it" class="section">
         <div class="l">
           <h3 class="title"><span class="title__text">Тестирование интерфейса</span></h3>
           <h2 class="heading">Это объективное исследование, которое покажет, насколько удобно людям пользоваться вашим проектом</h2>
@@ -150,7 +149,7 @@
           </p>
         </div>
       </div>
-      <!--end section-->
+      <!--end section what-is-it-->
       <!--begin photos-->
       <div class="photos">
         <div class="photos__inner">
@@ -236,8 +235,8 @@
         </div>
       </div>
       <!--end features-->
-      <!--begin helping-->
-      <div class="section">
+      <!--begin what-for-->
+      <div name="what-for" class="section">
         <div class="section__separator">
           <div class="icon icon-separator">
             <svg>
@@ -330,9 +329,9 @@
           </div>
         </div>
       </div>
-      <!--end helping-->
-      <!--begin section-->
-      <div class="section section_bg">
+      <!--end what-for-->
+      <!--begin how-->
+      <div name="how" class="section section_bg">
         <div class="l">
           <h2 class="heading">Проводим исследование тщательно и профессионально</h2>
           <div class="l-columns l-columns_three">
@@ -582,54 +581,36 @@
           <h3 class="title"><span class="title__text">Взгляните на примеры смонтированых записей сессий и отчётов</span></h3>
           <!--begin examples-->
           <ul class="examples">
-            <li class="examples__item">
-              <button type="button" style="background-image:url('img/btn1.jpg')" class="big-btn big-btn_video">
+            <li class="examples__item"><a href="http://youtu.be/dbA8poWwqYg" target="_blank" style="background-image:url('img/btn1.jpg')" class="big-btn big-btn_video">
                 <div class="big-btn__inner">
                   <div class="icon icon-play">
                     <svg>
                       <use xlink:href="#icon-play"></use>
                     </svg>
                   </div>
-                </div>
-              </button><span class="text text_light">1 из 22 записей</span>
-            </li>
-            <li class="examples__item">
-              <button type="button" style="background-image:url('img/btn2.jpg')" class="big-btn big-btn_video">
+                </div></a><span class="text text_light">1 из 22 записей</span></li>
+            <li class="examples__item"><a href="http://youtu.be/5_-RoIjYbPY" target="_blank" style="background-image:url('img/btn2.jpg')" class="big-btn big-btn_video">
                 <div class="big-btn__inner">
                   <div class="icon icon-play">
                     <svg>
                       <use xlink:href="#icon-play"></use>
                     </svg>
                   </div>
-                </div>
-              </button><span class="text text_light">1 из 32 записей</span>
-            </li>
-            <li class="examples__item">
-              <button type="button" style="background-image:url('img/btn3.jpg')" class="big-btn big-btn_video">
+                </div></a><span class="text text_light">1 из 32 записей</span></li>
+            <li class="examples__item"><a href="http://youtu.be/IetWJs6SVW0" target="_blank" style="background-image:url('img/btn3.jpg')" class="big-btn big-btn_video">
                 <div class="big-btn__inner">
                   <div class="icon icon-play">
                     <svg>
                       <use xlink:href="#icon-play"></use>
                     </svg>
                   </div>
-                </div>
-              </button><span class="text text_light">1 из 64 записей</span>
-            </li>
-            <li class="examples__item">
-              <button type="button" class="big-btn big-btn_file">
-                <div class="big-btn__inner"><span class="file-name">DriverNotes.pdf<small>38 мегабайт</small></span></div>
-              </button><span class="text text_light">23 страницы</span>
-            </li>
-            <li class="examples__item">
-              <button type="button" class="big-btn big-btn_file">
-                <div class="big-btn__inner"><span class="file-name">Nexticy.pdf<small>38 мегабайт</small></span></div>
-              </button><span class="text text_light">13 страницы</span>
-            </li>
-            <li class="examples__item">
-              <button type="button" class="big-btn big-btn_file">
-                <div class="big-btn__inner"><span class="file-name">NovaPoshta.pdf<small>38 мегабайт</small></span></div>
-              </button><span class="text text_light">22 страницы</span>
-            </li>
+                </div></a><span class="text text_light">1 из 64 записей</span></li>
+            <li class="examples__item"><a href="https://dl.dropboxusercontent.com/u/238637/testing/drivernotes.pdf" target="_blank" class="big-btn big-btn_file">
+                <div class="big-btn__inner"><span class="file-name">DriverNotes.pdf<small>38 мегабайт</small></span></div></a><span class="text text_light">23 страницы</span></li>
+            <li class="examples__item"><a href="https://dl.dropboxusercontent.com/u/238637/testing/nexticy.pdf" target="_blank" class="big-btn big-btn_file">
+                <div class="big-btn__inner"><span class="file-name">Nexticy.pdf<small>38 мегабайт</small></span></div></a><span class="text text_light">13 страницы</span></li>
+            <li class="examples__item"><a href="https://dl.dropboxusercontent.com/u/238637/testing/novaposhta.pdf" target="_blank" class="big-btn big-btn_file">
+                <div class="big-btn__inner"><span class="file-name">NovaPoshta.pdf<small>38 мегабайт</small></span></div></a><span class="text text_light">22 страницы</span></li>
           </ul>
           <!--end examples-->
           <h3 class="title"><span class="title__text">Что следует делать с результатами тестирования</span></h3>
@@ -646,9 +627,9 @@
           </ul>
         </div>
       </div>
-      <!--end section-->
-      <!--begin section-->
-      <div class="section">
+      <!--end how-->
+      <!--begin reviews-->
+      <div name="reviews" class="section">
         <div class="l">
           <h2 class="heading">Нашей работой довольны</h2>
           <!--begin logos-->
@@ -737,14 +718,19 @@
                   </div>
                   <div class="review__arrow"></div>
                   <div class="review__text">
-                    <p>Благодаря Мудрому Тесту получили массу очень полезной информации,</p>которую не смогла собрать ни одна система аналитики. 
+                    <p>
+                      Благодаря Мудрому Тесту получили массу очень полезной информации,
+                      которую не смогла собрать ни одна система аналитики. 
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="slider__slide">
                 <div class="review">
                   <div class="person">
-                    <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a></span>
+                    <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">
+                      Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
+                      Длинная подпись, длинная подпись</span>
                   </div>
                   <div class="review__arrow"></div>
                   <div class="review__text">
@@ -774,9 +760,9 @@
           <!--end reviews-->
         </div>
       </div>
-      <!--end section-->
-      <!--begin section-->
-      <div class="section">
+      <!--end reviews-->
+      <!--begin contact-us-->
+      <div name="contact-us" class="section">
         <div class="section__separator">
           <div class="icon icon-separator">
             <svg>
@@ -793,19 +779,19 @@
               <div class="form__field">
                 <div class="field">
                   <input type="text" placeholder="Как к вам обращаться?" class="field__input">
-                  <div class="field__back"></div>
+                  <div class="field__back"></div><span class="error">Похоже, вы ввели в поле недопустимые символы</span>
                 </div>
               </div>
               <div class="form__field">
                 <div class="field">
                   <input type="text" placeholder="Ваш контактный e-mail" class="field__input">
-                  <div class="field__back"></div>
+                  <div class="field__back"></div><span class="error">Похоже, вы ввели в поле недопустимые символы</span>
                 </div>
               </div>
               <div class="form__field">
                 <div class="field is-error">
                   <input type="text" placeholder="Ссылка на проект (не обязательно)" class="field__input">
-                  <div class="field__back"></div>
+                  <div class="field__back"></div><span class="error">Похоже, вы ввели в поле недопустимые символы</span>
                 </div>
               </div>
             </div>
@@ -815,8 +801,10 @@
             </div>
             <div class="form__footer">
               <div class="form__footer-cell">За консультацию о проекте денег не возьмём</div>
-              <div class="form__footer-cell form__footer-btn">
-                <button type="submit" class="btn btn_green">Отправить нам сообщение</button>
+              <div class="form__footer-cell form__footer-btn is-error">
+                <button type="submit" class="btn btn_green">Отправить нам сообщение</button><span class="error">
+                  При отправке формы произошла ошибка.
+                  Пожалуйста, отправьте её повторно</span>
               </div>
               <div class="form__footer-cell">Постараемся ответить как можно скорее :)</div>
             </div>
@@ -837,7 +825,7 @@
                   <svg>
                     <use xlink:href="#icon-email"></use>
                   </svg>
-                </div><a href="mailto:hey@wisetest.me" class="link">hey@wisetest.me</a>
+                </div><a href="mailto:hey@wisetest.me?subject=Обсуждение тестирования интерфейсов в Мудром Тесте" class="link">hey@wisetest.me</a>
               </div>
               <div class="contact">
                 <div class="icon icon-map">
@@ -867,7 +855,7 @@
           <!--end social-->
         </div>
       </div>
-      <!--end section-->
+      <!--end contact-us-->
       <!--begin section-->
       <footer class="section section_footer">
         <div class="section__separator"></div>
@@ -875,7 +863,7 @@
           <div class="footer">
             <div class="footer__left">© 2015, Мудрый Тест. Все права защищены.</div>
             <div class="footer__right">По всем вопросам пишите на <a class="link" href="#">hey@wisetest.me</a></div>
-            <div class="footer__center"><a href="#" class="logo-link">
+            <div class="footer__center"><a href="http://birzool.com" target="_blank" class="logo-link">
                 <div class="icon icon-birzool">
                   <svg>
                     <use xlink:href="#icon-birzool"></use>
@@ -889,6 +877,17 @@
     </div>
     <!--end out-->
     <!--begin popup-->
+    <div id="video" class="popup popup_video">
+      <div class="popup__inner">video
+        <button class="popup__close">
+          <div class="icon icon-close">
+            <svg>
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
     <!--end popup-->
     <!--load scripts-->
     <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

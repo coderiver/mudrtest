@@ -132,10 +132,10 @@ a
 .btn
   display: inline-block
   box-sizing: border-box
-  height: (40/14)+em
-  padding: 0 (20/14)+em
+  height: em(40)
+  padding: 0 em(20)
   background: none
-  border-radius: (20/14)+em
+  border-radius: em(20)
   // border: 2px solid #FFF
   box-shadow: inset 0 0 0 2px #FFF
   +fs(14)
@@ -147,7 +147,7 @@ a
   +trans(all, 0.2s, linear)
   &:hover, &:focus
     // background: #FFF
-    box-shadow: inset 0 0 0 50px #FFF
+    box-shadow: inset 0 0 0 em(50) #FFF
     color: $main
   &:active
     color: #FFF
@@ -156,10 +156,14 @@ a
     // border-color: $active
 
   .ie8 &
-    padding: 0 (18/14)+em
+    padding: 0 em(18)
+    line-height: em(36)
     border: 2px solid #FFF
     &:hover
       background: #FFF
+
+a.btn
+  line-height: em(41)
 
 .btn_green
   background: $action
@@ -170,6 +174,9 @@ a
     color: #FFF
   &:active
     background: $active-green
+
+.is-error .btn
+  background: $alert
 
 
 .link
@@ -224,6 +231,7 @@ a
   +fs(14)
   line-height: 1.28
   color: #FFF
+  background: none
   text-decoration: none
   text-transform: uppercase
   +trans
@@ -442,11 +450,59 @@ a
     +light
     +fs(14)
     color: $passive
+    +trans(opacity)
+  &:focus
+    +placeholder
+      opacity: 0.5
 
 textarea.field__input
   resize: none
   border-top-width: 0
   border-bottom-width: 0
+
+
+.error
+  position: absolute
+  z-index: 1
+  left: 0
+  right: 0
+  bottom: 100%
+  max-width: 310px
+  margin-left: auto
+  margin-right: auto
+  padding: em(6,12) em(10,12)
+  background: $error
+  border-radius: 3px
+  +fs(12)
+  line-height: 1.5
+  color: #FFF
+  text-align: center
+  visibility: hidden
+  opacity: 0
+  transform: translateY(100%)
+  transition: all 0.1s ease
+  &:before
+    content: ""
+    position: absolute
+    top: 100%
+    left: 50%
+    +arr(20,8,$error,b)
+    margin-left: -10px
+  .field &
+    left: -2px
+    right: -2px
+    margin-bottom: 15px
+  .is-error &
+    visibility: visible
+    transform: translateY(0)
+    opacity: 1
+
+  .ie-8 &
+    display: none
+    .is-error &
+      display: block
+
+
 
 .logo-link
   display: block

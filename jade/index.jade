@@ -24,14 +24,14 @@ block facebook
 
 block content
   //begin toparea
-  .toparea
+  .toparea(name="top")
     .toparea__outer
 
       //begin toparea__header
       .toparea__header
         header.header
           .l
-            a(href="/").logo
+            a(href="#top").logo
               +icon("logo")
               +icon("logo-small")
 
@@ -39,20 +39,20 @@ block content
             nav.menu
               ul.menu__list
                 li
-                  a(href="#").menu__link
+                  a(href="#what-is-it").menu__link
                     | что это
                 li
-                  a(href="#").menu__link
+                  a(href="#what-for").menu__link
                     | зачем
                 li
-                  a(href="#").menu__link
+                  a(href="#how").menu__link
                     | как
                 li
-                  a(href="#").menu__link
+                  a(href="#reviews").menu__link
                     | отзывы
             //end menu
 
-            button(type="button").btn
+            a(href="#contact-us").btn
               | Свяжитесь с нами
       //end toparea__header
 
@@ -66,7 +66,7 @@ block content
             | Узнаём с помощью тестирования интерфейсов, насколько удобно людям
             |  пользоваться вашим продуктом и помогаем его улучшить.
 
-          a(href="#").video-link
+          button.video-link(data-popup="video")
             +icon("play")
             span видео-презентация
       //end toparea__inner
@@ -74,17 +74,18 @@ block content
       //begin toparea__center
       .toparea__footer
         .l
-          button.btn
-                | Свяжитесь с нами
+          .toparea__footer-btn
+            a(href="#contact-us").btn
+              | Свяжитесь с нами
 
-          button(type="button").arrows-down
+          a(href="#what-is-it").arrows-down
             +icon("arrow")
             +icon("arrow")
       //end toparea__center
   //end toparea
 
-  //begin section
-  .section
+  //begin section what-is-it
+  .section(name="what-is-it")
     .l
       h3.title
         span.title__text
@@ -170,7 +171,7 @@ block content
       p.text.text_center.text_light
         | Однажды нам довелось протестировать даже автомобильный навигатор
         | и интерфейс для телевизора, так что нас мало что может удивить :)
-  //end section
+  //end section what-is-it
 
   //begin photos
   .photos
@@ -262,8 +263,8 @@ block content
             | Существующий, новая версия, стартап, ешё не на рынке.
   //end features
 
-  //begin helping
-  .section
+  //begin what-for
+  .section(name="what-for")
     .section__separator
       +icon("separator")
     .l
@@ -332,10 +333,10 @@ block content
 
             p.text.text_center.text_light
               | Вы знаете свой продукт досконально, однако пользователи могут в нём теряться.
-  //end helping
+  //end what-for
 
-  //begin section
-  .section.section_bg
+  //begin how
+  .section.section_bg(name="how")
     .l
       h2.heading
         | Проводим исследование тщательно и профессионально
@@ -477,25 +478,25 @@ block content
       //begin examples
       ul.examples
         li.examples__item
-          button(type="button", style="background-image:url('img/btn1.jpg')").big-btn.big-btn_video
+          a.big-btn.big-btn_video(href="http://youtu.be/dbA8poWwqYg", target="_blank" style="background-image:url('img/btn1.jpg')")
             .big-btn__inner
               +icon("play")
           span.text.text_light
             | 1 из 22 записей
         li.examples__item
-          button(type="button", style="background-image:url('img/btn2.jpg')").big-btn.big-btn_video
+          a.big-btn.big-btn_video(href="http://youtu.be/5_-RoIjYbPY", target="_blank" style="background-image:url('img/btn2.jpg')")
             .big-btn__inner
               +icon("play")
           span.text.text_light
             | 1 из 32 записей
         li.examples__item
-          button(type="button", style="background-image:url('img/btn3.jpg')").big-btn.big-btn_video
+          a.big-btn.big-btn_video(href="http://youtu.be/IetWJs6SVW0", target="_blank" style="background-image:url('img/btn3.jpg')")
             .big-btn__inner
               +icon("play")
           span.text.text_light
             | 1 из 64 записей
         li.examples__item
-          button(type="button").big-btn.big-btn_file
+          a.big-btn.big-btn_file(href="https://dl.dropboxusercontent.com/u/238637/testing/drivernotes.pdf", target="_blank")
             .big-btn__inner
               span.file-name
                 | DriverNotes.pdf
@@ -503,7 +504,7 @@ block content
           span.text.text_light
             | 23 страницы
         li.examples__item
-          button(type="button").big-btn.big-btn_file
+          a.big-btn.big-btn_file(href="https://dl.dropboxusercontent.com/u/238637/testing/nexticy.pdf", target="_blank")
             .big-btn__inner
               span.file-name
                 | Nexticy.pdf
@@ -511,7 +512,7 @@ block content
           span.text.text_light
             | 13 страницы
         li.examples__item
-          button(type="button").big-btn.big-btn_file
+          a.big-btn.big-btn_file(href="https://dl.dropboxusercontent.com/u/238637/testing/novaposhta.pdf", target="_blank")
             .big-btn__inner
               span.file-name
                 | NovaPoshta.pdf
@@ -544,10 +545,10 @@ block content
               span 3
             span.step__text
               | Радоваться повышению эффективности  работы проекта.
-  //end section
+  //end how
 
-  //begin section
-  .section
+  //begin reviews
+  .section(name="reviews")
     .l
       h2.heading
         | Нашей работой довольны
@@ -596,7 +597,7 @@ block content
               .review__text
                 p
                   | Благодаря Мудрому Тесту получили массу очень полезной информации,
-                | которую не смогла собрать ни одна система аналитики. 
+                  | которую не смогла собрать ни одна система аналитики. 
 
           .slider__slide
             .review
@@ -607,6 +608,7 @@ block content
                   | Евгений Плохой
                 span.person__about
                   | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
+                  | Длинная подпись, длинная подпись
 
               .review__arrow
               .review__text
@@ -620,10 +622,10 @@ block content
             +icon("arr-next")
 
       //end reviews
-  //end section
+  //end reviews
 
-  //begin section
-  .section
+  //begin contact-us
+  .section(name="contact-us")
     .section__separator
       +icon("separator")
     .l
@@ -641,14 +643,20 @@ block content
             .field
               input.field__input(type="text", placeholder="Как к вам обращаться?")
               .field__back
+              span.error
+                | Похоже, вы ввели в поле недопустимые символы
           .form__field
             .field
               input.field__input(type="text", placeholder="Ваш контактный e-mail")
               .field__back
+              span.error
+                | Похоже, вы ввели в поле недопустимые символы
           .form__field
             .field.is-error
               input.field__input(type="text", placeholder="Ссылка на проект (не обязательно)")
               .field__back
+              span.error
+                | Похоже, вы ввели в поле недопустимые символы
         .field
           textarea.field__input(rows="5", placeholder="Опишите свой продукт в двух предложениях (не обязательно)")
           .field__back
@@ -656,9 +664,12 @@ block content
         .form__footer
           .form__footer-cell
             | За консультацию о проекте денег не возьмём
-          .form__footer-cell.form__footer-btn
+          .form__footer-cell.form__footer-btn.is-error
             button.btn.btn_green(type="submit")
               | Отправить нам сообщение
+            span.error
+              | При отправке формы произошла ошибка.
+              | Пожалуйста, отправьте её повторно
           .form__footer-cell
             | Постараемся ответить как можно скорее :)
       //end form
@@ -672,7 +683,7 @@ block content
               | +380 91 305-27-12
           .contact
             +icon("email")
-            a.link(href="mailto:hey@wisetest.me")
+            a.link(href="mailto:hey@wisetest.me?subject=Обсуждение тестирования интерфейсов в Мудром Тесте")
               | hey@wisetest.me
           .contact
             +icon("map")
@@ -698,7 +709,7 @@ block content
         | <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="1000" data-height="200"></div>
         //- img(src="img/facebook.png", alt="", style="display:block;")
       //end social
-  //end section
+  //end contact-us
 
   //begin section
   footer.section.section_footer
@@ -710,17 +721,17 @@ block content
         .footer__right
           | По всем вопросам пишите на <a class="link" href="#">hey@wisetest.me</a>
         .footer__center
-          a.logo-link(href="#")
+          a.logo-link(href="http://birzool.com", target="_blank")
             +icon("birzool")
   //end section
 
 
 block popup
   //begin popup
-  //- .popup.popup_video
-  //-   .popup__inner
-  //-     | video
+  #video.popup.popup_video
+    .popup__inner
+      | video
 
-  //-     button.popup__close
-  //-       +icon("close")
+      button.popup__close
+        +icon("close")
   //end popup
