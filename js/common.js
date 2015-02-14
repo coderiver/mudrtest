@@ -179,4 +179,29 @@ head.ready(function() {
         });
     })();
 
+    // (function() {
+    //     var path = document.querySelectorAll('#labirint path');
+    //     // var path = $('.labirint path');
+    //     if ( path.length ) {
+
+    //         for (var i = 0; i < path.length; i++) {
+    //             var length = Math.ceil(path[i].getTotalLength());
+
+    //             // Clear any previous transition
+    //             path[i].style.transition = path[i].style.WebkitTransition = 'none';
+    //             // Set up the starting positions
+    //             path[i].style.strokeDasharray = length + ' ' + length;
+    //             path[i].style.strokeDashoffset = length;
+    //             // Trigger a layout so styles are calculated & the browser
+    //             // picks up the starting position before animating
+    //             path[i].getBoundingClientRect();
+    //             // Define our transition
+    //             path[i].style.transition = path[i].style.WebkitTransition = 'stroke-dashoffset 5s linear';
+    //             // Go!
+    //             path[i].style.strokeDashoffset = '0';
+    //         }
+
+    //     }
+    // })();
+
 });

@@ -1,0 +1,247 @@
+@function percent($step)
+  $steps: 30
+  $percent: percentage($step/$steps)
+  @return $percent
+
+=move($X, $Y, $rotate)
+  transform: translate3d(em($X),em($Y),0) rotateZ(#{$rotate}deg)
+
+
+#pacman-labirint
+  position: relative
+  width: em(304)
+  height: em(338)
+  > svg
+    width: 100%
+    height: 100%
+
+  #borders
+    path
+      stroke-dashoffset: 1000
+      stroke-dasharray: 1000
+      transition: stroke-dashoffset 3s linear
+
+  #main-line
+    stroke-dashoffset: 982
+    stroke-dasharray: 982
+    transition: stroke-dashoffset 20s linear 3s
+
+  // #pacman
+  //   animation: pacman-move 20s linear infinite 3s
+  //   transform-origin: 50% 50%
+  //   animation-fill-mode: backwards
+  // #pacman-top
+  //   transform-origin: center bottom
+  //   animation: pacman-top 0.4s ease infinite
+  // #pacman-bottom
+  //   transform-origin: center top
+  //   animation: pacman-bottom 0.4s ease infinite
+
+  .pacman
+    // animation: pacman-move 20s linear infinite 3s
+    position: absolute
+    top: em(128)
+    left: em(127)
+    z-index: 1
+    transform-origin: 50% 50%
+    animation-fill-mode: backwards
+    width: em(16)
+    height: em(16)
+    overflow: hidden
+    &:before,
+    &:after
+      content: ""
+      position: absolute
+      z-index: 1
+      left: 0
+      width: 100%
+      height: 50%
+      background: $alert
+      overflow: hidden
+    &:before
+      top: 0
+      border-radius: em(16) em(16) 0 0
+      transform-origin: center bottom
+      // animation: pacman-top 0.7s ease infinite
+    &:after
+      bottom: 0
+      border-radius: 0 0 em(16) em(16)
+      transform-origin: center top
+      // animation: pacman-bottom 0.7s ease infinite
+
+
+  &.is-animate
+    #borders
+      path
+        stroke-dashoffset: 0
+    #main-line
+      stroke-dashoffset: 0
+    .pacman
+      animation: pacman-move 20s linear infinite 3s
+      &:before
+        animation: pacman-top 0.7s ease infinite
+      &:after
+        animation: pacman-bottom 0.7s ease infinite
+    #red-ghost
+      animation: red-ghost 5s linear infinite
+
+    #blue-ghost
+      animation: blue-ghost 3s linear infinite
+
+    #green-ghost
+      animation: green-ghost 4s linear infinite
+
+
+
+
+
+@keyframes red-ghost
+  0%, 100%
+    transform: translate3d(0,0,0)
+  50%
+    transform: translate3d(0,em(60),0)
+
+
+@keyframes blue-ghost
+  0%, 100%
+    transform: translate3d(0,0,0)
+  50%
+    transform: translate3d(em(60),0,0)
+
+
+@keyframes green-ghost
+  0%, 100%
+    transform: translate3d(0,0,0)
+  50%
+    transform: translate3d(em(-90),0,0)
+
+
+@keyframes pacman-top
+  to
+    transform: rotate(-40deg)
+
+
+@keyframes pacman-bottom
+  to
+    transform: rotate(40deg)
+
+
+@keyframes pacman-move
+  0%
+    opacity: 0
+  //point 1
+  3.33%
+    +move(30,0,0)
+    opacity: 1
+  3.5%
+    +move(30,0,90)
+  // point 2
+  6.66%
+    +move(30,30,90)
+  6.8%
+    +move(30,30,0)
+  // point 3
+  9.99%
+    +move(60,30,0)
+  10.1%
+    +move(60,30,-90)
+  // point 4
+  16.65%
+    +move(60,-30,-90)
+  16.8%
+    +move(60,-30,0)
+  // point 5
+  23.31%
+    +move(120,-30,0)
+  23.45%
+    +move(120,-30,90)
+  // point 6
+  26.64%
+    +move(120,0,90)
+  26.8%
+    +move(120,0,180)
+  //point 7
+  29.97%
+    +move(90,0,180)
+  30.1%
+    +move(90,0,90)
+  //point 8
+  36.63%
+    +move(90,60,90)
+  36.8%
+    +move(90,60,180)
+  // point 9
+  39.96%
+    +move(60,60,180)
+  40.1%
+    +move(60,60,90)
+  // point 10
+  43.29%
+    +move(60,90,90)
+  43.43%
+    +move(60,90,270)
+  // point 11(9)
+  46.62%
+    +move(60,60,270)
+  46.8%
+    +move(60,60,180)
+  // point 12
+  49.95%
+    +move(30,60,180)
+  50.1%
+    +move(30,60,90)
+  // point 13
+  53.28%
+    +move(30,90,90)
+  53.4%
+    +move(30,90,180)
+  //point 14
+  59.94%
+    +move(-30,90,180)
+  60.1%
+    +move(-30,90,90)
+  //point 15
+  63.27%
+    +move(-30,120,90)
+  63.4%
+    +move(-30,120,0)
+  //point 16
+  69.93%
+    +move(30,120,0)
+  70.1%
+    +move(30,120,90)
+  // point 17
+  73.26%
+    +move(30,150,90)
+  73.4%
+    +move(30,150,-90)
+  // point 18
+  76.59%
+    +move(30,120,-90)
+  76.72%
+    +move(30,120,0)
+  // point 19
+  79.92%
+    +move(60,120,0)
+  80.06%
+    +move(60,120,180)
+  // point 20
+  86.58%
+    +move(0,120,180)
+  86.73%
+    +move(0,120,90)
+  // point 21
+  93.24%
+    +move(0,180,90)
+  93.4%
+    +move(0,180,0)
+  // point 22
+  96.57%
+    +move(30,180,0)
+  96.7%
+    +move(30,180,90)
+    opacity: 1
+  // point 23
+  100%
+    +move(30,210,90)
+    opacity: 0
