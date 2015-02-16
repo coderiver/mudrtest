@@ -6,6 +6,8 @@
 =move($X, $Y, $rotate)
   transform: translate3d(em($X),em($Y),0) rotateZ(#{$rotate}deg)
 
+$draw-labirint-dur: 3s
+
 
 #pacman-labirint
   position: relative
@@ -17,29 +19,25 @@
 
   #borders
     path
-      stroke-dashoffset: 1000
-      stroke-dasharray: 1000
-      transition: stroke-dashoffset 3s linear
+      stroke-dashoffset: 400
+      stroke-dasharray: 400
+      transition: stroke-dashoffset $draw-labirint-dur linear
 
   #main-line
-    stroke-dashoffset: 982
+    stroke-dashoffset: 0
     stroke-dasharray: 982
-    transition: stroke-dashoffset 20s linear 3s
 
-  // #pacman
-  //   animation: pacman-move 20s linear infinite 3s
-  //   transform-origin: 50% 50%
-  //   animation-fill-mode: backwards
-  // #pacman-top
-  //   transform-origin: center bottom
-  //   animation: pacman-top 0.4s ease infinite
-  // #pacman-bottom
-  //   transform-origin: center top
-  //   animation: pacman-bottom 0.4s ease infinite
+  #red-ghost,
+  #green-ghost,
+  #blue-ghost,
+  #dots
+    opacity: 0
+    transition: opacity 1s linear
+
 
   .pacman
-    // animation: pacman-move 20s linear infinite 3s
     position: absolute
+    opacity: 0
     top: em(128)
     left: em(127)
     z-index: 1
@@ -47,7 +45,6 @@
     animation-fill-mode: backwards
     width: em(16)
     height: em(16)
-    overflow: hidden
     &:before,
     &:after
       content: ""
@@ -62,37 +59,45 @@
       top: 0
       border-radius: em(16) em(16) 0 0
       transform-origin: center bottom
-      // animation: pacman-top 0.7s ease infinite
     &:after
       bottom: 0
       border-radius: 0 0 em(16) em(16)
       transform-origin: center top
-      // animation: pacman-bottom 0.7s ease infinite
 
-
-  &.is-animate
+  &.show-pacman
     #borders
       path
         stroke-dashoffset: 0
+
+    #red-ghost,
+    #green-ghost,
+    #blue-ghost,
+    #dots
+      opacity: 1
+      transition: opacity 1s linear $draw-labirint-dur
     #main-line
-      stroke-dashoffset: 0
+      animation: hide-dots 21s linear 1 $draw-labirint-dur
     .pacman
-      animation: pacman-move 20s linear infinite 3s
+      animation: pacman-move 20s linear 1 $draw-labirint-dur
       &:before
-        animation: pacman-top 0.7s ease infinite
+        animation: pacman-top 0.7s ease infinite $draw-labirint-dur
       &:after
-        animation: pacman-bottom 0.7s ease infinite
+        animation: pacman-bottom 0.7s ease infinite $draw-labirint-dur
     #red-ghost
-      animation: red-ghost 5s linear infinite
+      animation: red-ghost 5s linear infinite $draw-labirint-dur
 
     #blue-ghost
-      animation: blue-ghost 3s linear infinite
+      animation: blue-ghost 3s linear infinite $draw-labirint-dur
 
     #green-ghost
-      animation: green-ghost 4s linear infinite
+      animation: green-ghost 4s linear infinite $draw-labirint-dur
 
 
-
+@keyframes hide-dots
+  from
+    stroke-dashoffset: 982
+  to
+    stroke-dashoffset: 0
 
 
 @keyframes red-ghost
@@ -133,112 +138,112 @@
   3.33%
     +move(30,0,0)
     opacity: 1
-  3.5%
+  3.34%
     +move(30,0,90)
   // point 2
   6.66%
     +move(30,30,90)
-  6.8%
+  6.67%
     +move(30,30,0)
   // point 3
   9.99%
     +move(60,30,0)
-  10.1%
+  10%
     +move(60,30,-90)
   // point 4
   16.65%
     +move(60,-30,-90)
-  16.8%
+  16.66%
     +move(60,-30,0)
   // point 5
   23.31%
     +move(120,-30,0)
-  23.45%
+  23.32%
     +move(120,-30,90)
   // point 6
   26.64%
     +move(120,0,90)
-  26.8%
+  26.65%
     +move(120,0,180)
   //point 7
   29.97%
     +move(90,0,180)
-  30.1%
+  29.98%
     +move(90,0,90)
   //point 8
   36.63%
     +move(90,60,90)
-  36.8%
+  36.64%
     +move(90,60,180)
   // point 9
   39.96%
     +move(60,60,180)
-  40.1%
+  39.97%
     +move(60,60,90)
   // point 10
   43.29%
     +move(60,90,90)
-  43.43%
+  43.30%
     +move(60,90,270)
   // point 11(9)
   46.62%
     +move(60,60,270)
-  46.8%
+  46.63%
     +move(60,60,180)
   // point 12
   49.95%
     +move(30,60,180)
-  50.1%
+  49.96%
     +move(30,60,90)
   // point 13
   53.28%
     +move(30,90,90)
-  53.4%
+  53.29%
     +move(30,90,180)
   //point 14
   59.94%
     +move(-30,90,180)
-  60.1%
+  60.95%
     +move(-30,90,90)
   //point 15
   63.27%
     +move(-30,120,90)
-  63.4%
+  63.28%
     +move(-30,120,0)
   //point 16
   69.93%
     +move(30,120,0)
-  70.1%
+  69.94%
     +move(30,120,90)
   // point 17
   73.26%
     +move(30,150,90)
-  73.4%
+  73.27%
     +move(30,150,-90)
   // point 18
   76.59%
     +move(30,120,-90)
-  76.72%
+  76.60%
     +move(30,120,0)
   // point 19
   79.92%
     +move(60,120,0)
-  80.06%
+  79.93%
     +move(60,120,180)
   // point 20
   86.58%
     +move(0,120,180)
-  86.73%
+  86.59%
     +move(0,120,90)
   // point 21
   93.24%
     +move(0,180,90)
-  93.4%
+  93.25%
     +move(0,180,0)
   // point 22
   96.57%
     +move(30,180,0)
-  96.7%
+  96.58%
     +move(30,180,90)
     opacity: 1
   // point 23

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <defs>
+        <linearGradient x1="50%" y1="1.41638472e-14%" x2="50%" y2="100%" id="blue-gradient">
+            <stop stop-color="#4A81FF" offset="0%"></stop>
+            <stop stop-color="#3CC4FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="-2.22044605e-14%" id="green-gradient">
+            <stop stop-color="#8BC34A" offset="0%"></stop>
+            <stop stop-color="#009620" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+</svg>

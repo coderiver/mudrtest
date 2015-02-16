@@ -10,6 +10,7 @@ var gulp         = require('gulp'),
     svgmin       = require('gulp-svgmin'),
     svgSprite    = require('gulp-svg-sprites'),
     browserSync  = require('browser-sync'),
+    cheerio      = require('gulp-cheerio'),
     reload       = browserSync.reload;
 
 //webserver
@@ -97,6 +98,12 @@ gulp.task('svgsprite', function() {
                 removeTitle: true
             }
         ]}))
+        .pipe(cheerio({
+            run: function ($, file) {
+                $('[fill]').removeAttr('fill');
+            },
+            parserOptions: { xmlMode: true }
+        }))
         .pipe(svgSprite({
             mode: "symbols",
             selector: "icon-%f",
@@ -125,4 +132,4 @@ gulp.task('watch', function() {
 
 gulp.task('build', ['sass', 'svgsprite', 'jade'], function() {});
 
-gulp.task('default', ['build', 'browser-sync', 'watch'], function() {});
+gulp.task('default', ['browser-sync', 'watch'], function() {});

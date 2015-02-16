@@ -272,40 +272,55 @@
 
 
 .photos
-  height: 300px
-  height: 30rem
-  font-size: 0
+  position: relative
+  height: em(300)
   overflow: hidden
-  white-space: nowrap
-  img
-    display: block
-    max-width: 100%
 
 .photos__inner
-  position: relative
+  position: absolute
+  z-index: 1
+  top: 0
+  left: 0
+  width: em(2400)
+  margin: auto
+  animation-fill-mode: backwards
+  +clr
+  .is-redy &
+    &:first-child
+      animation: photos 60s linear infinite
+    &:nth-child(2)
+      z-index: 2
+      animation: photos-cloned 60s linear infinite
 
-.photos__block
-  display: inline-block
-  vertical-align: top
-  height: 300px
-  width: 300px
-  height: 30rem
-  width: 30rem
+.photos__box
+  float: left
+  height: em(300)
+  width: em(300)
   background: $main
   overflow: hidden
   +clr
 
-.photos__block-smaller
-  float: left
-  width: 33.33%
-  height: 33.33%
-  overflow: hidden
+.photos__box_md
+  .photo
+    width: 50%
+    height: 50%
 
-.photos__block-small
+.photos__box_sm
+  .photo
+    width: 33.333%
+    height: 33.333%
+
+.photo
   float: left
-  width: 50%
-  height: 50%
-  overflow: hidden
+  width: 100%
+  height: 100%
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  img
+    display: block
+    max-width: 100%
+    max-height: 100%
 
 
 .features__text
@@ -342,7 +357,8 @@
   bottom: 0
   left: 0
   right: 0
-  width: 300px
+  width: percentage(300/940)
+  min-width: 300px
   margin: auto
   padding: 40px 0
   +vertical
@@ -375,7 +391,7 @@
 
 .helping__cell
   width: 50%
-  padding: 40px 80px 40px 180px
+  padding: em(40) em(80) em(40) em(180)
   display: table-cell
   vertical-align: middle
   box-sizing: border-box
@@ -393,8 +409,8 @@
   .figure__text
     margin: 0
   &:first-child
-    padding-left: 80px
-    padding-right: 180px
+    padding-left: em(80)
+    padding-right: em(180)
     text-align: left
     .figure
       text-align: left
@@ -810,6 +826,7 @@
   height: em(100)
   margin: auto
   background: url('../img/svg/icons-other/ukr-map.svg') no-repeat center center
+  background-size: cover
   img
     display: block
     width: 100%

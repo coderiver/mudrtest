@@ -181,27 +181,120 @@ head.ready(function() {
 
     // (function() {
     //     var path = document.querySelectorAll('#labirint path');
-    //     // var path = $('.labirint path');
+
     //     if ( path.length ) {
 
     //         for (var i = 0; i < path.length; i++) {
     //             var length = Math.ceil(path[i].getTotalLength());
 
-    //             // Clear any previous transition
-    //             path[i].style.transition = path[i].style.WebkitTransition = 'none';
-    //             // Set up the starting positions
-    //             path[i].style.strokeDasharray = length + ' ' + length;
-    //             path[i].style.strokeDashoffset = length;
-    //             // Trigger a layout so styles are calculated & the browser
-    //             // picks up the starting position before animating
-    //             path[i].getBoundingClientRect();
-    //             // Define our transition
-    //             path[i].style.transition = path[i].style.WebkitTransition = 'stroke-dashoffset 5s linear';
-    //             // Go!
-    //             path[i].style.strokeDashoffset = '0';
+    //             console.log(length);
+
+    //             // // Clear any previous transition
+    //             // path[i].style.transition = path[i].style.WebkitTransition = 'none';
+    //             // // Set up the starting positions
+    //             // path[i].style.strokeDasharray = length + ' ' + length;
+    //             // path[i].style.strokeDashoffset = length;
+    //             // // Trigger a layout so styles are calculated & the browser
+    //             // // picks up the starting position before animating
+    //             // path[i].getBoundingClientRect();
+    //             // // Define our transition
+    //             // path[i].style.transition = path[i].style.WebkitTransition = 'stroke-dashoffset 5s linear';
+    //             // // Go!
+    //             // path[i].style.strokeDashoffset = '0';
     //         }
 
     //     }
     // })();
+
+    (function(){
+        var labirint    = $('#pacman-labirint'),
+            initClass   = 'pacman-load',
+            activeClass = 'show-pacman';
+
+        var showPacman = function() {
+            labirint
+                .addClass(initClass)
+                .addClass(activeClass);
+
+            setTimeout(function() {
+                labirint.removeClass(activeClass);
+            }, 23000);
+        };
+
+        var calculatePosition = function() {
+            return $(window).scrollTop() + $(window).height() / 2;
+        };
+
+        $(window).on('scroll', function(){
+            if ( calculatePosition() >= labirint.offset().top && !labirint.hasClass(initClass)) {
+
+                showPacman();
+                setInterval(function() {
+                    showPacman();
+                }, 28000);
+
+            }
+        });
+    })();
+
+    (function() {
+        var wrapper = $('.photos');
+
+        if ( wrapper.length ) {
+
+            var photo  = wrapper.find('.photo'),
+                inner  = wrapper.find('.photos__inner'),
+                copy   = inner.html(),
+                dur    = 60000,
+                images = [],
+                cloned;
+
+            photo.each(function(index, el) {
+                var img = $(this).find('img');
+                images[index] = {'src': img.attr('src'), 'alt': img.attr('alt')};
+            });
+
+            var shuffle = function(array) {
+                var m = array.length, t, i;
+                // While there remain elements to shuffle…
+                while (m) {
+                    // Pick a remaining element…
+                    i = Math.floor(Math.random() * m--);
+                    // And swap it with the current element.
+                    t = array[m];
+                    array[m] = array[i];
+                    array[i] = t;
+                }
+                return array;
+            };
+
+            var shufflePhoto = function(container) {
+                shuffle(images);
+                container.find('.photo').each(function(index) {
+                    var img = $(this).find('img');
+                    img.attr('src', images[index].src);
+                    img.attr('alt', images[index].alt);
+                });
+            };
+
+            wrapper.append('<div class="photos__inner cloned"></div>');
+            cloned = wrapper.find('.cloned');
+
+            cloned.html(copy);
+
+            shuffle(images);
+
+            shufflePhoto(cloned);
+
+            wrapper.addClass('is-redy');
+
+            setInterval(function() {
+                shufflePhoto(cloned);
+                shufflePhoto(inner);
+            }, dur/2);
+
+        }
+
+    })();
 
 });

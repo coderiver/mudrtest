@@ -15,6 +15,10 @@ block load-svg-sprite
 block facebook
   //- include includes/fb-script.html
 
+block svg-sprite
+  .svg-sprite
+    include ../img/svg/gradients.svg
+
 block content
   //begin toparea
   .toparea(name="top")
@@ -103,62 +107,51 @@ block content
         li.icons__item
           .figure
             .figure__icon
-              +icon-grad("store")
+              +icon-green("store")
             .figure__text
               | интернет
               br
               | магазинам
-          //- +icon("store")
-          //- img(src="img/svg/icons/store.svg", alt="")
         li.icons__item
           .figure
             .figure__icon
-              +icon-grad("iphone")
+              +icon-green("iphone")
             .figure__text
               | мобильным
               br
               | приложениям
-          //- +icon("iphone")
-          //- img(src="img/svg/icons/iphone.svg", alt="")
         li.icons__item
           .figure
             .figure__icon
-              +icon-grad("cloud")
+              +icon-green("cloud")
             .figure__text
               | онлайн
               br
               | сервисам
-          //- +icon("cloud")
-          //- img(src="img/svg/icons/cloud.svg", alt="")
         li.icons__item
           .figure
             .figure__icon
-              +icon-grad("computer")
+              +icon-green("computer")
             .figure__text
               | компьютерным
               br
               | программам
-          //- +icon("computer")
-          //- img(src="img/svg/icons/computer.svg", alt="")
         li.icons__item
           .figure
             .figure__icon
-              +icon-grad("windows")
+              +icon-green("windows")
             .figure__text
               | любым
               br
               | веб-сайтам
-          //- +icon("windows")
-          //- img(src="img/svg/icons/windows.svg", alt="")
         li.icons__item
           .figure
             .figure__icon
-              +icon-grad("stample")
+              +icon-green("stample")
             .figure__text
               | др. цифровым
               br
               | проектам
-          //- img(src="img/svg/icons/stample.svg", alt="")
       //end icons
 
       p.text.text_center.text_light
@@ -169,38 +162,81 @@ block content
   //begin photos
   .photos
     .photos__inner
-      .photos__block
-        img(src="img/photos/1.jpg", alt="")
-      .photos__block
-        .photos__block-smaller
+      .photos__box
+        .photo
+          img(src="img/photos/1.jpg", alt="")
+
+      .photos__box.photos__box_sm
+        .photo
           img(src="img/photos/2.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/3.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/4.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/5.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/6.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/7.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/8.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/9.jpg", alt="")
-        .photos__block-smaller
+        .photo
           img(src="img/photos/10.jpg", alt="")
-      .photos__block
-        .photos__block-small
+
+      .photos__box.photos__box_md
+        .photo
           img(src="img/photos/11.jpg", alt="")
-        .photos__block-small
+        .photo
           img(src="img/photos/12.jpg", alt="")
-        .photos__block-small
+        .photo
           img(src="img/photos/13.jpg", alt="")
-        .photos__block-small
+        .photo
           img(src="img/photos/14.jpg", alt="")
-      .photos__block
-        img(src="img/photos/15.jpg", alt="")
+
+      .photos__box
+        .photo
+          img(src="img/photos/15.jpg", alt="")
+
+      .photos__box.photos__box_sm
+        .photo
+          img(src="img/photos/16.jpg", alt="")
+        .photo
+          img(src="img/photos/17.jpg", alt="")
+        .photo
+          img(src="img/photos/18.jpg", alt="")
+        .photo
+          img(src="img/photos/19.jpg", alt="")
+        .photo
+          img(src="img/photos/20.jpg", alt="")
+        .photo
+          img(src="img/photos/21.jpg", alt="")
+        .photo
+          img(src="img/photos/22.jpg", alt="")
+        .photo
+          img(src="img/photos/23.jpg", alt="")
+        .photo
+          img(src="img/photos/24.jpg", alt="")
+
+      .photos__box
+        .photo
+          img(src="img/photos/25.jpg", alt="")
+
+      .photos__box.photos__box_md
+        .photo
+          img(src="img/photos/26.jpg", alt="")
+        .photo
+          img(src="img/photos/27.jpg", alt="")
+        .photo
+          img(src="img/photos/28.jpg", alt="")
+        .photo
+          img(src="img/photos/29.jpg", alt="")
+
+      .photos__box
+        .photo
+          img(src="img/photos/30.jpg", alt="")
   //end photos
 
   //begin features
@@ -236,7 +272,7 @@ block content
         .column
           .figure
             .figure__icon
-              +icon-grad("step")
+              +icon-blue("step")
             .figure__text
               | на любой стадии разработки
 
@@ -247,7 +283,7 @@ block content
         .column
           .figure
             .figure__icon
-              +icon-grad("business")
+              +icon-blue("business")
             .figure__text
               | для всех типов бизнеса
 
@@ -271,61 +307,60 @@ block content
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("graph")
+                  +icon-green("graph")
                 .figure__text
                   | оторваться от конкурентов
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("flag")
+                  +icon-green("flag")
                 .figure__text
                   | узнать насколько удобен продукт
           .helping__row
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("chart")
+                  +icon-green("chart")
                 .figure__text
                   | повысить эффективность и прибыльность
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("heart")
+                  +icon-green("heart")
                 .figure__text
                   | найти технические, маркетинговые и другие недоработки
           .helping__row
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("settings")
+                  +icon-green("settings")
                 .figure__text
                   | автоматизировать и оптимизировать процессы
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("clock")
+                  +icon-green("clock")
                 .figure__text
                   | сэкономить время и деньги на будущей разработке
           .helping__row
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("sofa")
+                  +icon-green("sofa")
                 .figure__text
                   | облегчить  жизнь пользователям
             .helping__cell
               .figure
                 .figure__icon
-                  +icon-grad("person")
+                  +icon-green("person")
                 .figure__text
                   | понять, что люди думают о проекте
 
         .helping__center
           .helping__center-inner
-            //- img(src="img/svg/pacman.svg", alt="pacman")
-            #pacman-labirint.is-animate
-              include ../img/svg/labirint.svg
+            #pacman-labirint
               .pacman
+              include ../img/svg/labirint.svg
 
             p.text.text_center.text_light
               | Вы знаете свой продукт досконально, однако пользователи могут в нём теряться.

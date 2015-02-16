@@ -3,8 +3,15 @@ mixin icon(name)
     svg
       use(xlink:href="#icon-" + name)
 
-mixin icon-grad(name)
-  div(class="icon icon-" + name)
+mixin icon-blue(name)
+  div(class="icon icon_blue icon-" + name)
+    svg
+      use(xlink:href="#icon-" + name)
+
+mixin icon-green(name)
+  div(class="icon icon_green icon-" + name)
+    svg
+      use(xlink:href="#icon-" + name)
 
 
 doctype html

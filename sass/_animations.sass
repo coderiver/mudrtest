@@ -20,3 +20,26 @@
     fill: #FFF
     transform: translateZ(0) scale(1)
 
+
+@keyframes photos
+  0%
+    transform: translate3d(0,0,0)
+  49.95%
+    transform: translate3d(-100%,0,0)
+  50%
+    transform: translate3d(100%,0,0)
+  99.95%, 100%
+    transform: translate3d(0,0,0)
+
+@keyframes photos-cloned
+  0%
+    transform: translate3d(100%,0,0)
+    z-index: 1
+  49.95%, 50%
+    transform: translate3d(0,0,0)
+    z-index: 2
+  99.95%
+    transform: translate3d(-100%,0,0)
+    z-index: 1
+  100%
+    transform: translate3d(100%,0,0)

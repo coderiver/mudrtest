@@ -111,10 +111,15 @@
   // &-clock,
   // &-person
   //   +size(60,60)
+.icon_blue
+  fill: url('#blue-gradient')
 
-@function gradient-icon($name)
-  @return url("../img/svg/gradient-icons/#{$name}.svg")
+.icon_green
+  fill: url('#green-gradient')
 
-@each $i in business,chart,clock,cloud,computer,flag,graph,heart,person,iphone,settings,sofa,stample,step,store,windows
-  .icon-#{$i}
-    background-image: gradient-icon(#{$i})
+// @function gradient-icon($name)
+//   @return url("../img/svg/gradient-icons/#{$name}.svg")
+
+// @each $i in business,chart,clock,cloud,computer,flag,graph,heart,person,iphone,settings,sofa,stample,step,store,windows
+//   .icon-#{$i}
+//     background-image: gradient-icon(#{$i})
