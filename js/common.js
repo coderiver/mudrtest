@@ -7,7 +7,7 @@ head.ready(function() {
 
             slider.slick({
                 autoplay: true,
-                autoplaySpeed: 6000,
+                autoplaySpeed: 5000,
                 dots: true,
                 slide: '.slider__slide',
                 prevArrow: '.slider__prev',
@@ -71,6 +71,33 @@ head.ready(function() {
         });
     });
 
+    //toggle play/pause youtube video in iframe
+    var toggleVideo = function (state) {
+        // if state == 'hide', hide. Else: show video
+        var div = $('.js-yt');
+        var iframe = div.find('iframe')[0].contentWindow;
+        // div.style.display = state == 'hide' ? 'none' : '';
+        func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+        iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
+    };
+
+    var toggleBodyScroll = function(body) {
+        body.toggleClass('no-scroll');
+        if (body.hasClass('no-scroll')) {
+            var posTop = -$(document).scrollTop();
+            body.css({
+                position : 'fixed',
+                top      : posTop
+            });
+        } else {
+            var scrollPos = -body.offset().top;
+            body.css({
+                position : '',
+                top      : ''
+            });
+            $(window).scrollTop(scrollPos);
+        }
+    };
 
     var togglePopup = function(popupId) {
         var popup,
@@ -88,10 +115,7 @@ head.ready(function() {
 
         if ( !popup.is(':visible') ) {
 
-            body.css({
-                position : 'fixed',
-                top      : -body.scrollTop()
-            });
+            toggleBodyScroll(body);
 
             popup.fadeIn(200);
             setTimeout(function() {
@@ -100,15 +124,16 @@ head.ready(function() {
 
         } else {
 
-            body.css({
-                position : '',
-                top      : ''
-            });
+            toggleBodyScroll(body);
 
             popupInner.removeClass(visibleClass);
             setTimeout(function() {
                 popup.fadeOut(200);
             }, 200);
+
+            if (popup.hasClass('js-yt')) {
+                toggleVideo('hide');
+            }
 
         }
     };
@@ -179,33 +204,6 @@ head.ready(function() {
         });
     })();
 
-    // (function() {
-    //     var path = document.querySelectorAll('#labirint path');
-
-    //     if ( path.length ) {
-
-    //         for (var i = 0; i < path.length; i++) {
-    //             var length = Math.ceil(path[i].getTotalLength());
-
-    //             console.log(length);
-
-    //             // // Clear any previous transition
-    //             // path[i].style.transition = path[i].style.WebkitTransition = 'none';
-    //             // // Set up the starting positions
-    //             // path[i].style.strokeDasharray = length + ' ' + length;
-    //             // path[i].style.strokeDashoffset = length;
-    //             // // Trigger a layout so styles are calculated & the browser
-    //             // // picks up the starting position before animating
-    //             // path[i].getBoundingClientRect();
-    //             // // Define our transition
-    //             // path[i].style.transition = path[i].style.WebkitTransition = 'stroke-dashoffset 5s linear';
-    //             // // Go!
-    //             // path[i].style.strokeDashoffset = '0';
-    //         }
-
-    //     }
-    // })();
-
     (function(){
         var labirint    = $('#pacman-labirint'),
             initClass   = 'pacman-load',
@@ -218,7 +216,7 @@ head.ready(function() {
 
             setTimeout(function() {
                 labirint.removeClass(activeClass);
-            }, 23000);
+            }, 21000);
         };
 
         var calculatePosition = function() {
@@ -231,7 +229,7 @@ head.ready(function() {
                 showPacman();
                 setInterval(function() {
                     showPacman();
-                }, 28000);
+                }, 24000);
 
             }
         });
@@ -288,12 +286,57 @@ head.ready(function() {
 
             wrapper.addClass('is-redy');
 
-            setInterval(function() {
-                shufflePhoto(cloned);
-                shufflePhoto(inner);
-            }, dur/2);
+            // setInterval(function() {
+            //     shufflePhoto(cloned);
+            //     shufflePhoto(inner);
+            // }, dur);
 
         }
+
+    })();
+
+
+    (function(){
+
+        var fadeElement = $('.js-fade');
+
+        if ( fadeElement.length ) {
+            var  scrollPosition;
+
+
+            $(window).on('scroll', function() {
+                scrollPosition = $(window).scrollTop() + $(window).height();
+            });
+
+
+            var calcShowPoint = function(element) {
+                return element.offset().top + 150;
+            };
+
+            fadeElement.each(function() {
+                var el          = $(this),
+                    elShowPoint = calcShowPoint(el);
+
+                el.css({
+                    opacity : '0'
+                });
+
+                $(window).on('scroll', function() {
+                    if ( scrollPosition >= elShowPoint ) {
+                        el.css({
+                            opacity : '1'
+                        });
+                    }
+                });
+
+                $(window).on('resize', function() {
+                    elShowPoint = calcShowPoint(el);
+                });
+            });
+        }
+
+
+
 
     })();
 

@@ -3,21 +3,19 @@ extend _layout
 block title
   title Index
 
-//- block svg-sprite
-  //- .svg-sprite
-  //-   include ../img/icons.svg
-  //- script
-  //-   include ../js/load-svg-sprite.js
-
 block load-svg-sprite
   script(type="text/javascript", src="js/load-svg-sprite.js")
-
-block facebook
-  //- include includes/fb-script.html
 
 block svg-sprite
   .svg-sprite
     include ../img/svg/gradients.svg
+  //- .svg-sprite
+  //-   include ../img/icons.svg
+
+
+block facebook
+  include includes/fb-script.html
+
 
 block content
   //begin toparea
@@ -37,16 +35,16 @@ block content
               ul.menu__list
                 li
                   a(href="#what-is-it").menu__link
-                    | что это
+                    span что это
                 li
                   a(href="#what-for").menu__link
-                    | зачем
+                    span зачем
                 li
                   a(href="#how").menu__link
-                    | как
+                    span как
                 li
                   a(href="#reviews").menu__link
-                    | отзывы
+                    span отзывы
             //end menu
 
             a(href="#contact-us").btn
@@ -84,83 +82,85 @@ block content
   //begin section what-is-it
   .section(name="what-is-it")
     .l
-      h3.title
-        span.title__text
-          | Тестирование интерфейса
+      .js-fade
+        h3.title
+          span.title__text
+            | Тестирование интерфейса
 
-      h2.heading
-        | Это объективное исследование, которое покажет, насколько удобно людям пользоваться вашим проектом
+        h2.heading.js-fade
+          | Это объективное исследование, которое покажет, насколько удобно людям пользоваться вашим проектом
 
-      p.text.text_center
-        | Тестирование похоже на метод <a class="link link_icon" href="#">«тайного покупателя»</a>,
-        | только для цифровых продуктов и на подходящей вашему проекту целевой аудитории.
-        | С помощью серии экспериментов мы узнаем, с какими трудностями сталкиваются пользователи
-        | и чего им не хватает в вашем цифровом продукте. Мудрый Тест — закрытое исследование.
-        | О его проведении и результатах никто не узнает без вашего согласия, кроме сотрудников и респондентов.
+        p.text.text_center.js-fade
+          | Тестирование похоже на метод <a class="link link_icon" href="#">«тайного покупателя»</a>,
+          | только для цифровых продуктов и на подходящей вашему проекту целевой аудитории.
+          | С помощью серии экспериментов мы узнаем, с какими трудностями сталкиваются пользователи
+          | и чего им не хватает в вашем цифровом продукте. Мудрый Тест — закрытое исследование.
+          | О его проведении и результатах никто не узнает без вашего согласия, кроме сотрудников и респондентов.
 
-      h3.title
-        span.title__text
-          | подойдёт любому продукту, отображающемуся на экране
+      .js-fade
+        h3.title
+          span.title__text
+            | подойдёт любому продукту, отображающемуся на экране
 
-      //begin icons
-      ul.icons
-        li.icons__item
-          .figure
-            .figure__icon
-              +icon-green("store")
-            .figure__text
-              | интернет
-              br
-              | магазинам
-        li.icons__item
-          .figure
-            .figure__icon
-              +icon-green("iphone")
-            .figure__text
-              | мобильным
-              br
-              | приложениям
-        li.icons__item
-          .figure
-            .figure__icon
-              +icon-green("cloud")
-            .figure__text
-              | онлайн
-              br
-              | сервисам
-        li.icons__item
-          .figure
-            .figure__icon
-              +icon-green("computer")
-            .figure__text
-              | компьютерным
-              br
-              | программам
-        li.icons__item
-          .figure
-            .figure__icon
-              +icon-green("windows")
-            .figure__text
-              | любым
-              br
-              | веб-сайтам
-        li.icons__item
-          .figure
-            .figure__icon
-              +icon-green("stample")
-            .figure__text
-              | др. цифровым
-              br
-              | проектам
-      //end icons
+        //begin icons
+        ul.icons.js-fade
+          li.icons__item
+            .figure
+              .figure__icon
+                +icon-green("store")
+              .figure__text
+                | интернет
+                br
+                | магазинам
+          li.icons__item
+            .figure
+              .figure__icon
+                +icon-green("iphone")
+              .figure__text
+                | мобильным
+                br
+                | приложениям
+          li.icons__item
+            .figure
+              .figure__icon
+                +icon-green("cloud")
+              .figure__text
+                | онлайн
+                br
+                | сервисам
+          li.icons__item
+            .figure
+              .figure__icon
+                +icon-green("computer")
+              .figure__text
+                | компьютерным
+                br
+                | программам
+          li.icons__item
+            .figure
+              .figure__icon
+                +icon-green("windows")
+              .figure__text
+                | любым
+                br
+                | веб-сайтам
+          li.icons__item
+            .figure
+              .figure__icon
+                +icon-green("stample")
+              .figure__text
+                | др. цифровым
+                br
+                | проектам
+        //end icons
 
-      p.text.text_center.text_light
-        | Однажды нам довелось протестировать даже автомобильный навигатор
-        | и интерфейс для телевизора, так что нас мало что может удивить :)
+        p.text.text_center.text_light
+          | Однажды нам довелось протестировать даже автомобильный навигатор
+          | и интерфейс для телевизора, так что нас мало что может удивить :)
   //end section what-is-it
 
   //begin photos
-  .photos
+  .photos.js-fade
     .photos__inner
       .photos__box
         .photo
@@ -242,33 +242,34 @@ block content
   //begin features
   .section.features
     .l
-      h3.title
-        span.title__text
-          | несколько интересных особенностей тестирования
+      .js-fade
+        h3.title
+          span.title__text
+            | несколько интересных особенностей тестирования
 
-      .features__text
-        .features__text-column
-          p.text
-            | Во время тестирования, вашим проектом будут пользоваться люди,
-            |  подходящие под целевую аудиторию и (чаще всего) ранее не знакомые с продуктом.
-        .features__text-column
-          p.text
-            | Они будут выполнять типовые (для вашего проекта) задачи, которые обычно решают пользователи.
-        .features__text-column
-          p.text
-            | Всё происходит под наблюдением профессионалов, которые снимают происходящее на фото видео,
-            | записывают на микрофон и ведут процесс в целом.
-        .features__text-column
-          p.text
-            | Исследователи анализируют записанные материалы и готовят отчёт
-            | о найденных проблемах с рекомендациями по их решению.
+        .features__text
+          .features__text-column
+            p.text
+              | Во время тестирования, вашим проектом будут пользоваться люди,
+              |  подходящие под целевую аудиторию и (чаще всего) ранее не знакомые с продуктом.
+          .features__text-column
+            p.text
+              | Они будут выполнять типовые (для вашего проекта) задачи, которые обычно решают пользователи.
+          .features__text-column
+            p.text
+              | Всё происходит под наблюдением профессионалов, которые снимают происходящее на фото видео,
+              | записывают на микрофон и ведут процесс в целом.
+          .features__text-column
+            p.text
+              | Исследователи анализируют записанные материалы и готовят отчёт
+              | о найденных проблемах с рекомендациями по их решению.
 
-      p.text.text_center.text_light
-        | Вы сможете совершенствовать свой проект, основываясь на решении
-        | пользовательских проблем, о которых ранее могли и не догадываться.
+        p.text.text_center.text_light
+          | Вы сможете совершенствовать свой проект, основываясь на решении
+          | пользовательских проблем, о которых ранее могли и не догадываться.
 
 
-      .l-columns
+      .l-columns.mrg-80.js-fade
         .column
           .figure
             .figure__icon
@@ -294,16 +295,16 @@ block content
 
   //begin what-for
   .section(name="what-for")
-    .section__separator
+    .section__separator.js-fade
       +icon("separator")
     .l
-      h2.heading
+      h2.heading.js-fade
         | Мудрый Тест поможет вашему проекту
 
 
       .helping
         .helping__table
-          .helping__row
+          .helping__row.js-fade
             .helping__cell
               .figure
                 .figure__icon
@@ -316,7 +317,7 @@ block content
                   +icon-green("flag")
                 .figure__text
                   | узнать насколько удобен продукт
-          .helping__row
+          .helping__row.js-fade
             .helping__cell
               .figure
                 .figure__icon
@@ -329,7 +330,7 @@ block content
                   +icon-green("heart")
                 .figure__text
                   | найти технические, маркетинговые и другие недоработки
-          .helping__row
+          .helping__row.js-fade
             .helping__cell
               .figure
                 .figure__icon
@@ -342,7 +343,7 @@ block content
                   +icon-green("clock")
                 .figure__text
                   | сэкономить время и деньги на будущей разработке
-          .helping__row
+          .helping__row.js-fade
             .helping__cell
               .figure
                 .figure__icon
@@ -362,45 +363,46 @@ block content
               .pacman
               include ../img/svg/labirint.svg
 
-            p.text.text_center.text_light
+            p.text.text_center.text_light.js-fade
               | Вы знаете свой продукт досконально, однако пользователи могут в нём теряться.
   //end what-for
 
   //begin how
   .section.section_bg(name="how")
     .l
-      h2.heading
-        | Проводим исследование тщательно и профессионально
+      .js-fade
+        h2.heading
+          | Проводим исследование тщательно и профессионально
 
-      .l-columns.l-columns_three
-        .column
-          .figure.figure_regular
-            .figure__icon
-              +icon("video")
-            p.figure__text-small
-              | Для тестирования мы находим и приглашаем исключительно людей,
-              | подходящих под целевую аудиторию проекта. Например, если им будут
-              | пользоваться водители-женщины 20-30 лет с высшим образованиеми
-              | и высоким доходом, мы найдём именно таких людей.
-        .column
-          .figure.figure_regular
-            .figure__icon
-              +icon("location")
-            p.figure__text-small
-              | Эксперименты проходят в типичной для тестируемого продукта обстановке.
-              | Например, если мы тестируем авто-навигатор, то респонденты работают с ним в автомобиле на ходу.
-              | Если же речь об интернет-магазине, то — дома за планшетом и в комфорте.
-        .column
-          .figure.figure_regular
-            .figure__icon
-              +icon("mind")
-            p.figure__text-small
-              | Мы просим респондентов озвучивать все свои мысли (внутренний голос).
-              | Вместе с тестировщиком находится только ведущий, который не имеет
-              | права отвечать на вопросы человека и как-либо ему подсказывать.
+        .l-columns.l-columns_three
+          .column
+            .figure.figure_regular
+              .figure__icon
+                +icon("video")
+              p.figure__text-small
+                | Для тестирования мы находим и приглашаем исключительно людей,
+                | подходящих под целевую аудиторию проекта. Например, если им будут
+                | пользоваться водители-женщины 20-30 лет с высшим образованиеми
+                | и высоким доходом, мы найдём именно таких людей.
+          .column
+            .figure.figure_regular
+              .figure__icon
+                +icon("location")
+              p.figure__text-small
+                | Эксперименты проходят в типичной для тестируемого продукта обстановке.
+                | Например, если мы тестируем авто-навигатор, то респонденты работают с ним в автомобиле на ходу.
+                | Если же речь об интернет-магазине, то — дома за планшетом и в комфорте.
+          .column
+            .figure.figure_regular
+              .figure__icon
+                +icon("mind")
+              p.figure__text-small
+                | Мы просим респондентов озвучивать все свои мысли (внутренний голос).
+                | Вместе с тестировщиком находится только ведущий, который не имеет
+                | права отвечать на вопросы человека и как-либо ему подсказывать.
 
       //begin how
-      .how
+      .how.js-fade
         .how__column
           .figure
             .figure__icon
@@ -502,211 +504,218 @@ block content
               | Просматриваем записи сессий тестирования, выписываем найденные людьми проблемы и предлагаем решения.
       //end how
 
-      h3.title
-        span.title__text
-          | Взгляните на примеры смонтированых записей сессий и отчётов
 
-      //begin examples
-      ul.examples
-        li.examples__item
-          a.big-btn.big-btn_video(href="http://youtu.be/dbA8poWwqYg", target="_blank" style="background-image:url('img/btn1.jpg')")
-            .big-btn__inner
-              +icon("play")
-          span.text.text_light
-            | 1 из 22 записей
-        li.examples__item
-          a.big-btn.big-btn_video(href="http://youtu.be/5_-RoIjYbPY", target="_blank" style="background-image:url('img/btn2.jpg')")
-            .big-btn__inner
-              +icon("play")
-          span.text.text_light
-            | 1 из 32 записей
-        li.examples__item
-          a.big-btn.big-btn_video(href="http://youtu.be/IetWJs6SVW0", target="_blank" style="background-image:url('img/btn3.jpg')")
-            .big-btn__inner
-              +icon("play")
-          span.text.text_light
-            | 1 из 64 записей
-        li.examples__item
-          a.big-btn.big-btn_file(href="https://dl.dropboxusercontent.com/u/238637/testing/drivernotes.pdf", target="_blank")
-            .big-btn__inner
-              span.file-name
-                | DriverNotes.pdf
-                small 38 мегабайт
-          span.text.text_light
-            | 23 страницы
-        li.examples__item
-          a.big-btn.big-btn_file(href="https://dl.dropboxusercontent.com/u/238637/testing/nexticy.pdf", target="_blank")
-            .big-btn__inner
-              span.file-name
-                | Nexticy.pdf
-                small 38 мегабайт
-          span.text.text_light
-            | 13 страницы
-        li.examples__item
-          a.big-btn.big-btn_file(href="https://dl.dropboxusercontent.com/u/238637/testing/novaposhta.pdf", target="_blank")
-            .big-btn__inner
-              span.file-name
-                | NovaPoshta.pdf
-                small 38 мегабайт
-          span.text.text_light
-            | 22 страницы
+      .js-fade
+        h3.title
+          span.title__text
+            | Взгляните на примеры смонтированых записей сессий и отчётов
 
-      //end examples
+        //begin examples
+        ul.examples
+          li.examples__item(data-popup="video2")
+            button.big-btn.big-btn_video(type="button", style="background-image:url('img/btn1.jpg')")
+              .big-btn__inner
+                +icon("play")
+            span.text.text_light
+              | 1 из 22 записей
+          li.examples__item(data-popup="video3")
+            button.big-btn.big-btn_video(type="button", style="background-image:url('img/btn2.jpg')")
+              .big-btn__inner
+                +icon("play")
+            span.text.text_light
+              | 1 из 32 записей
+          li.examples__item(data-popup="video4")
+            button.big-btn.big-btn_video(type="button", style="background-image:url('img/btn3.jpg')")
+              .big-btn__inner
+                +icon("play")
+            span.text.text_light
+              | 1 из 64 записей
+          li.examples__item
+            a(href="https://dl.dropboxusercontent.com/u/238637/testing/drivernotes.pdf", target="_blank")
+              button.big-btn.big-btn_file(type="button")
+                .big-btn__inner
+                  span.file-name
+                    | DriverNotes.pdf
+                    small 38 мегабайт
+              span.text.text_light
+                | 23 страницы
+          li.examples__item
+            a(href="https://dl.dropboxusercontent.com/u/238637/testing/nexticy.pdf", target="_blank")
+              button.big-btn.big-btn_file(type="button")
+                .big-btn__inner
+                  span.file-name
+                    | Nexticy.pdf
+                    small 38 мегабайт
+              span.text.text_light
+                | 13 страницы
+          li.examples__item
+            a(href="https://dl.dropboxusercontent.com/u/238637/testing/novaposhta.pdf", target="_blank")
+              button.big-btn.big-btn_file(type="button")
+                .big-btn__inner
+                  span.file-name
+                    | NovaPoshta.pdf
+                    small 38 мегабайт
+              span.text.text_light
+                | 22 страницы
+        //end examples
 
-      h3.title
-        span.title__text
-          | Что следует делать с результатами тестирования
+      .js-fade
+        h3.title
+          span.title__text
+            | Что следует делать с результатами тестирования
 
-      ul.steps
-        li.steps__item
-          .step
-            span.step__num
-              span 1
-            span.step__text
-              | Попросить разработчиков или нас внедрить предложения.
-        li.steps__item
-          .step
-            span.step__num
-              span 2
-            span.step__text
-              | Отследить изменения показателей статистики и настроения людей.
-        li.steps__item
-          .step
-            span.step__num
-              span 3
-            span.step__text
-              | Радоваться повышению эффективности  работы проекта.
+        ul.steps
+          li.steps__item
+            .step
+              span.step__num
+                span 1
+              span.step__text
+                | Попросить разработчиков или нас внедрить предложения.
+          li.steps__item
+            .step
+              span.step__num
+                span 2
+              span.step__text
+                | Отследить изменения показателей статистики и настроения людей.
+          li.steps__item
+            .step
+              span.step__num
+                span 3
+              span.step__text
+                | Радоваться повышению эффективности  работы проекта.
   //end how
 
   //begin reviews
   .section(name="reviews")
     .l
-      h2.heading
-        | Нашей работой довольны
+      .js-fade
+        h2.heading
+          | Нашей работой довольны
 
-      //begin logos
-      ul.logos
-        each logo in ["nova-poshta","capable-bits","spaces","rio","mobiads","driver-notes","startask","inspire-me","ux-fox"]
-          li.logos__item
-            a(href="#").logo-link
-              +icon(logo)
-      //end logos
+        //begin logos
+        ul.logos
+          each logo in ["nova-poshta","capable-bits","spaces","rio","mobiads","driver-notes","startask","inspire-me","ux-fox"]
+            li.logos__item
+              a(href="#").logo-link
+                +icon(logo)
+        //end logos
 
-      //begin reviews
-      .slider-wrap
-        .slider.js-slick
-          .slider__slide
-            .review
-              .person
-                .person__photo
-                  img(src="img/review.jpg", alt="")
-                strong.person__name
-                  | Евгений Плохой
-                span.person__about
-                  | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
+      .js-fade
+        //begin reviews
+        .slider-wrap
+          .slider.js-slick
+            .slider__slide
+              .review
+                .person
+                  .person__photo
+                    img(src="img/review.jpg", alt="")
+                  strong.person__name
+                    | Евгений Плохой
+                  span.person__about
+                    | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
 
-              .review__arrow
-              .review__text
-                p
-                  |Благодаря Мудрому Тесту получили массу очень полезной информации,
-                  | которую не смогла собрать ни одна система аналитики. 
-                p
-                  | Увидели не только проблемные места в приложении, рекомендации по их устранению,
-                  | а также живую реакцию настоящих пользователей.
+                .review__arrow
+                .review__text
+                  p
+                    |Благодаря Мудрому Тесту получили массу очень полезной информации,
+                    | которую не смогла собрать ни одна система аналитики. 
+                  p
+                    | Увидели не только проблемные места в приложении, рекомендации по их устранению,
+                    | а также живую реакцию настоящих пользователей.
 
-          .slider__slide
-            .review
-              .person
-                .person__photo
-                  img(src="img/review.jpg", alt="")
-                strong.person__name
-                  | Евгений Плохой
-                span.person__about
-                  | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
+            .slider__slide
+              .review
+                .person
+                  .person__photo
+                    img(src="img/review.jpg", alt="")
+                  strong.person__name
+                    | Евгений Плохой
+                  span.person__about
+                    | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
 
-              .review__arrow
-              .review__text
-                p
-                  | Благодаря Мудрому Тесту получили массу очень полезной информации,
-                  | которую не смогла собрать ни одна система аналитики. 
+                .review__arrow
+                .review__text
+                  p
+                    | Благодаря Мудрому Тесту получили массу очень полезной информации,
+                    | которую не смогла собрать ни одна система аналитики. 
 
-          .slider__slide
-            .review
-              .person
-                .person__photo
-                  img(src="img/review.jpg", alt="")
-                strong.person__name
-                  | Евгений Плохой
-                span.person__about
-                  | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
-                  | Длинная подпись, длинная подпись
+            .slider__slide
+              .review
+                .person
+                  .person__photo
+                    img(src="img/review.jpg", alt="")
+                  strong.person__name
+                    | Евгений Плохой
+                  span.person__about
+                    | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
+                    | Длинная подпись, длинная подпись
 
-              .review__arrow
-              .review__text
-                p
-                  | Благодаря Мудрому Тесту получили массу очень полезной информации,
-                  | которую не смогла собрать ни одна система аналитики. 
+                .review__arrow
+                .review__text
+                  p
+                    | Благодаря Мудрому Тесту получили массу очень полезной информации,
+                    | которую не смогла собрать ни одна система аналитики. 
 
-          button(type="button").slider__prev
-            +icon("arr-prev")
-          button(type="button").slider__next
-            +icon("arr-next")
-
-      //end reviews
+            button(type="button").slider__prev
+              +icon("arr-prev")
+            button(type="button").slider__next
+              +icon("arr-next")
+        //end reviews
   //end reviews
 
   //begin contact-us
   .section(name="contact-us")
-    .section__separator
+    .section__separator.js-fade
       +icon("separator")
     .l
-      h3.title
-        span.title__text
-          | Вы столько всего прочли, осталось самое простое
+      .js-fade
+        h3.title
+          span.title__text
+            | Вы столько всего прочли, осталось самое простое
 
-      h2.heading
-        | Напишите, с нами легко связаться и приятно работать
+        h2.heading
+          | Напишите, с нами легко связаться и приятно работать
 
-      //begin form
-      form.form
-        .form__three
-          .form__field
-            .field
-              input.field__input(type="text", placeholder="Как к вам обращаться?")
-              .field__back
-              span.error
-                | Похоже, вы ввели в поле недопустимые символы
-          .form__field
-            .field
-              input.field__input(type="text", placeholder="Ваш контактный e-mail")
-              .field__back
-              span.error
-                | Похоже, вы ввели в поле недопустимые символы
-          .form__field
-            .field.is-error
-              input.field__input(type="text", placeholder="Ссылка на проект (не обязательно)")
-              .field__back
-              span.error
-                | Похоже, вы ввели в поле недопустимые символы
-        .field
-          textarea.field__input(rows="5", placeholder="Опишите свой продукт в двух предложениях (не обязательно)")
-          .field__back
+        //begin form
+        form.form.is-error
+          .form__three
+            .form__field
+              .field
+                input.field__input(type="text", placeholder="Как к вам обращаться?")
+                .field__back
+                span.error
+                  | Похоже, вы ввели в поле недопустимые символы
+            .form__field
+              .field
+                input.field__input(type="text", placeholder="Ваш контактный e-mail")
+                .field__back
+                span.error
+                  | Похоже, вы ввели в поле недопустимые символы
+            .form__field
+              .field.is-error
+                input.field__input(type="text", placeholder="Ссылка на проект (не обязательно)")
+                .field__back
+                span.error
+                  | Похоже, вы ввели в поле недопустимые символы
+          .field
+            textarea.field__input(rows="5", placeholder="Опишите свой продукт в двух предложениях (не обязательно)")
+            .field__back
 
-        .form__footer
-          .form__footer-cell
-            | За консультацию о проекте денег не возьмём
-          .form__footer-cell.form__footer-btn.is-error
-            button.btn.btn_green(type="submit")
-              | Отправить нам сообщение
-            span.error
-              | При отправке формы произошла ошибка.
-              | Пожалуйста, отправьте её повторно
-          .form__footer-cell
-            | Постараемся ответить как можно скорее :)
-      //end form
+          .form__footer
+            .form__footer-cell
+              | За консультацию о проекте денег не возьмём
+            .form__footer-cell.form__footer-btn.is-error
+              button.btn.btn_green(type="submit")
+                | Отправить нам сообщение
+              span.error
+                | При отправке формы произошла ошибка.
+                | Пожалуйста, отправьте её повторно
+            .form__footer-cell
+              | Постараемся ответить как можно скорее :)
+        //end form
 
       //begin contacts
-      .contacts
+      .contacts.js-fade
         .contacts__column
           .contact
             +icon("phone")
@@ -722,8 +731,6 @@ block content
               | Дзержинского, 84, офис 308
         .contacts__column
           .map
-            //- +icon("ukr-map")
-            //- img(src="img/svg/icons-other/ukr-map.svg", alt="")
             span.map__baloon
               | Украина, Запорожье
 
@@ -736,13 +743,13 @@ block content
       //end contacts
 
       //begin social
-      .social-wrap(style="overflow:hidden")
+      .social-wrap.js-fade(style="overflow:hidden")
         include includes/fb-tag.html
       //end social
   //end contact-us
 
   //begin section
-  footer.section.section_footer
+  footer.section.section_footer.js-fade
     .section__separator
     .l
       .footer
@@ -758,10 +765,40 @@ block content
 
 block popup
   //begin popup
-  #video.popup.popup_video
+  #video.popup.popup_video.js-yt
     .popup__inner
-      .video
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg" frameborder="0" allowfullscreen></iframe>
+      .popup__frame
+        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+
+      button.popup__close
+        +icon("close")
+  //end popup
+
+  //begin popup
+  #video2.popup.popup_video.js-yt
+    .popup__inner
+      .popup__frame
+        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+
+      button.popup__close
+        +icon("close")
+  //end popup
+
+  //begin popup
+  #video3.popup.popup_video.js-yt
+    .popup__inner
+      .popup__frame
+        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+
+      button.popup__close
+        +icon("close")
+  //end popup
+
+  //begin popup
+  #video4.popup.popup_video.js-yt
+    .popup__inner
+      .popup__frame
+        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")

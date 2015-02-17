@@ -13,7 +13,7 @@
   font-family: "Kelson Sans Bold", "Trebuchet MS", "Arial", "sans-serif"
   font-weight: normal
 
-=trans($property: all, $duration: 0.1s, $easing: ease)
+=trans($property: all, $duration: 0.05s, $easing: ease)
   transition: $property $duration $easing
 
 
@@ -24,6 +24,10 @@
 
 =mobile
   +r(750)
+    @content
+
+=wide
+  +rmin(1201)
     @content
 
 @function image-url($image)
@@ -38,6 +42,8 @@
 
 html
   font-size: 62.5%
+  // +wide
+  //   font-size: 0.84vw
 
 body
   min-width: 320px
@@ -57,6 +63,9 @@ a
   height: 0 !important
   overflow: hidden
 
+.js-fade
+  transition: opacity 1s ease
+
 
 
 
@@ -71,7 +80,7 @@ a
 .heading
   display: block
   text-align: center
-  max-width: 770px
+  max-width: em(770,32)
   margin: 0 auto 35px
   +light
   +fs(32)
@@ -105,7 +114,9 @@ a
   text-transform: uppercase
   line-height: 1.5
   letter-spacing: (2/14)+em
-  &:first-child
+  .section > &:first-child
+    margin-top: 0
+  .section .js-fade:first-child > &
     margin-top: 0
   .title__text
     display: inline-block
@@ -144,7 +155,7 @@ a
   text-decoration: none
   text-align: center
   +text-overflow
-  +trans(all, 0.2s, linear)
+  +trans(all, 0.05s, linear)
   &:hover, &:focus
     // background: #FFF
     box-shadow: inset 0 0 0 em(50) #FFF
@@ -194,7 +205,7 @@ a.btn
     height: 4px
     background: $action
     margin-top: em(8)
-    +tr(right 0.2s ease)
+    +tr(right)
   &:hover, &:focus
     color: $action
     text-decoration: none
@@ -467,7 +478,7 @@ textarea.field__input
   left: 0
   right: 0
   bottom: 100%
-  max-width: 310px
+  max-width: em(310,12)
   margin-left: auto
   margin-right: auto
   padding: em(6,12) em(10,12)
@@ -480,7 +491,7 @@ textarea.field__input
   visibility: hidden
   opacity: 0
   transform: translateY(100%)
-  transition: all 0.1s ease
+  transition: all 0.05s ease
   &:before
     content: ""
     position: absolute
@@ -492,14 +503,14 @@ textarea.field__input
     left: -2px
     right: -2px
     margin-bottom: 15px
-  .is-error &
+  .is-error > &
     visibility: visible
     transform: translateY(0)
     opacity: 1
 
   .ie-8 &
     display: none
-    .is-error &
+    .is-error > &
       display: block
 
 

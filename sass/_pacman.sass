@@ -6,13 +6,18 @@
 =move($X, $Y, $rotate)
   transform: translate3d(em($X),em($Y),0) rotateZ(#{$rotate}deg)
 
-$draw-labirint-dur: 3s
+// =moveon($step, $X, $Y, $rotate)
+//   $percent: percentage($step/30)
+//   #{$percent}
+//     transform: translate3d(em($X),em($Y),0) rotateZ(#{$rotate}deg)
+
+$draw-labirint-dur: 1s
 
 
 #pacman-labirint
   position: relative
-  width: em(304)
-  height: em(338)
+  width: em(300)
+  height: em(333)
   > svg
     width: 100%
     height: 100%
@@ -104,21 +109,21 @@ $draw-labirint-dur: 3s
   0%, 100%
     transform: translate3d(0,0,0)
   50%
-    transform: translate3d(0,em(60),0)
+    transform: translate3d(0,380%,0)
 
 
 @keyframes blue-ghost
   0%, 100%
     transform: translate3d(0,0,0)
   50%
-    transform: translate3d(em(60),0,0)
+    transform: translate3d(380%,0,0)
 
 
 @keyframes green-ghost
   0%, 100%
     transform: translate3d(0,0,0)
   50%
-    transform: translate3d(em(-90),0,0)
+    transform: translate3d(-580%,0,0)
 
 
 @keyframes pacman-top

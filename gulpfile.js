@@ -70,7 +70,7 @@ gulp.task('jade-all', function() {
 
 //sass
 gulp.task('sass', function() {
-    return sass('sass', {
+    return sass('./sass', {
         sourcemap: true,
         style: 'compact'
     })
@@ -85,7 +85,7 @@ gulp.task('sass', function() {
         includeContent: false,
         sourceRoot: '../sass'
     }))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('./css'));
 });
 
 //svg sprite
