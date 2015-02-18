@@ -300,7 +300,7 @@ head.ready(function() {
 
         var fadeElement = $('.js-fade');
 
-        if ( fadeElement.length ) {
+        if ( fadeElement.length && $(window).width() > 1024 ) {
             var  scrollPosition;
 
 
@@ -310,7 +310,7 @@ head.ready(function() {
 
 
             var calcShowPoint = function(element) {
-                return element.offset().top + 150;
+                return element.offset().top + 100;
             };
 
             fadeElement.each(function() {
@@ -334,9 +334,6 @@ head.ready(function() {
                 });
             });
         }
-
-
-
 
     })();
 

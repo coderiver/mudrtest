@@ -326,18 +326,17 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 .header .logo { vertical-align: top; }
 @media only screen and (max-width: 750px) { .header .menu { position: static; margin: 1.42857em 0; }
   .header .btn { display: none; } }
-.header.is-fixed { position: fixed; z-index: 100; background: #FFF; color: #9CA5BF; top: 0; left: 0; right: 0; box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1); }
+.header.is-fixed { position: fixed; min-width: 320px; z-index: 100; background: #FFF; color: #9CA5BF; top: 0; left: 0; right: 0; box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1); }
 .header.is-fixed .menu__link { line-height: 4.28571em; color: #9CA5BF; }
 .header.is-fixed .menu__link:hover { color: #2196F3; }
 .header.is-fixed .menu__link:active { color: #2868B3; }
 .header.is-fixed .btn { background: #4CAF50; box-shadow: none; }
 .header.is-fixed .btn:hover, .header.is-fixed .btn:focus { background: #118915; box-shadow: none; color: #FFF; }
 .header.is-fixed .btn:active { background: #106F13; }
-.header.is-fixed .logo { padding: 7px 0 8px; }
+.header.is-fixed .logo { line-height: 4.28571em; width: auto; }
 .header.is-fixed .logo .icon-logo { display: none; }
-.header.is-fixed .logo .icon-logo-small { display: block; }
-@media only screen and (max-width: 750px) { .header.is-fixed { padding: 23px 0 19px; }
-  .header.is-fixed .menu { margin: 0; }
+.header.is-fixed .logo .icon-logo-small { display: inline-block; }
+@media only screen and (max-width: 750px) { .header.is-fixed .menu { margin: 0; }
   .header.is-fixed .logo { display: none; } }
 
 .logo { display: inline-block; text-decoration: none; width: 12.57143em; line-height: 10.71429em; }
@@ -345,8 +344,7 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 .logo .icon-logo-small { display: none; fill: #333333; }
 @media only screen and (max-width: 750px) { .logo { line-height: 4.28571em; width: auto; } }
 
-.menu { font-size: 14px; font-size: 1.4rem; line-height: 1.28; }
-@media only screen and (max-width: 750px) { .menu { margin-left: -0.71429em; margin-right: -0.71429em; } }
+.menu { font-size: 14px; font-size: 1.4rem; }
 
 .menu__list { font-size: 0; }
 .menu__list li { display: inline-block; vertical-align: middle; position: relative; font-size: 14px; font-size: 1.4rem; }
@@ -359,14 +357,14 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 @media only screen and (max-width: 750px) { .menu__list li:last-child { margin-right: -0.57143em; } }
 
 .menu__link { display: inline-block; position: relative; line-height: 10.71429em; padding: 0 1.07143em; color: inherit; text-decoration: none; font-family: "Kelson Sans Bold", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 14px; font-size: 1.4rem; color: #FFF; letter-spacing: 0.14286em; text-transform: uppercase; -webkit-transition: color 0.05 linear; transition: color 0.05 linear; }
-.menu__link:before { content: ""; position: absolute; top: 50%; left: 0; width: 0.21429em; height: 0.21429em; border-radius: 50%; background: #FFF; margin: -0.10714em 0 0 -0.10714em; }
-.menu__link > span { display: inline-block; vertical-align: middle; line-height: 1.2; position: relative; }
-.menu__link > span:after { content: ""; position: absolute; top: 100%; left: 0; right: 100%; height: 4px; background: #2196F3; font-size: 1em; margin-top: 1.07143em; -webkit-transition: right; transition: right; }
+.menu__link:before { content: ""; position: absolute; top: 50%; left: 0; width: 0.21429em; height: 0.21429em; border-radius: 50%; background: currentColor; margin: -0.10714em 0 0 -0.10714em; }
+.menu__link > span { display: inline-block; vertical-align: middle; line-height: 4.28571em; position: relative; }
+.menu__link > span:after { content: ""; position: absolute; bottom: 0; left: 0; right: 100%; height: 4px; background: #2196F3; font-size: 1em; margin-top: 1.07143em; -webkit-transition: right; transition: right; }
 .menu__link:hover span:after, .menu__link:focus span:after, .menu__link.is-active span:after { right: 0.14286em; }
 .menu__link:active { color: #2196F3; }
 @media only screen and (max-width: 900px) { .menu__link { padding-left: 0.57143em; padding-right: 0.57143em; }
   .menu__link:before { display: none; } }
-@media only screen and (max-width: 750px) { .menu__link { padding-left: 1.07143em; padding-right: 1.07143em; line-height: 4.28571em; }
+@media only screen and (max-width: 750px) { .menu__link { padding-left: 0.71429em; padding-right: 0.71429em; line-height: 4.28571em; }
   .menu__link:before { display: block; } }
 
 .section { position: relative; padding: 5.71429em 0; }
