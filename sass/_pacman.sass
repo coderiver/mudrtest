@@ -18,6 +18,8 @@ $draw-labirint-dur: 1s
   position: relative
   width: em(300)
   height: em(333)
+  transition: transform 1s ease
+  transform: translateY(-100%)
   > svg
     width: 100%
     height: 100%
@@ -26,7 +28,7 @@ $draw-labirint-dur: 1s
     path
       stroke-dashoffset: 400
       stroke-dasharray: 400
-      transition: stroke-dashoffset $draw-labirint-dur linear
+      transition: stroke-dashoffset $draw-labirint-dur linear 1s
 
   #main-line
     stroke-dashoffset: 0
@@ -70,9 +72,12 @@ $draw-labirint-dur: 1s
       transform-origin: center top
 
   &.show-pacman
+    transition: none
+    transform: translateY(0)
     #borders
       path
         stroke-dashoffset: 0
+        transition-delay: 0
 
     #red-ghost,
     #green-ghost,
