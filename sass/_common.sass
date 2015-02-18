@@ -42,8 +42,8 @@
 
 html
   font-size: 62.5%
-  // +wide
-  //   font-size: 0.84vw
+  +wide
+    font-size: 0.84vw
 
 body
   min-width: 320px
@@ -59,9 +59,10 @@ a
   color: $interactive
 
 .svg-sprite
+  position: absolute !important
   width: 0 !important
   height: 0 !important
-  overflow: hidden
+  overflow: hidden !important
 
 .js-fade
   transition: opacity 1s ease
@@ -81,7 +82,7 @@ a
   display: block
   text-align: center
   max-width: em(770,32)
-  margin: 0 auto 35px
+  margin: 0 auto em(35,32)
   +light
   +fs(32)
   line-height: 1.33
@@ -99,14 +100,14 @@ a
 
 .subtitle_toparea
   display: block
-  margin-top: (40/14)+em
+  margin-top: em(35)
   opacity: 0.75
 
 
 .title
   display: block
   position: relative
-  margin: 80px 0 40px
+  margin: em(75) 0 em(35)
   text-align: center
   +bold
   +fs(14)

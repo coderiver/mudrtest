@@ -1,7 +1,10 @@
 extend _layout
 
 block title
-  title Index
+  title
+    | Мудрый Тест • Тестирование удобства интерфейсов интернет-магазинов,
+    | мобильных приложений, стартапов, онлайн сервисов, сайтов,
+    | десктопных программ и любых других цифровых продуктов
 
 block load-svg-sprite
   script(type="text/javascript", src="js/load-svg-sprite.js")
@@ -21,6 +24,11 @@ block content
   //begin toparea
   .toparea(name="top")
     .toparea__outer
+      .toparea__video
+        //- video(autoplay="autoplay" poster="img/photo.jpg"  loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
+          source(src="video/video.m4v" type="video/mp4")
+          source(src="video/video.webm" type="video/webm")
+          source(src="video/video.ogv" type="video/ogg")
 
       //begin toparea__header
       .toparea__header

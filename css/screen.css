@@ -61,6 +61,7 @@ table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 @font-face { font-family: "Kelson Sans Light"; src: url("../fonts/kelson_sans_light_ru.eot"); src: url("../fonts/kelson_sans_light_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_light_ru.woff") format("woff"), url("../fonts/kelson_sans_light_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "Kelson Sans Regular"; src: url("../fonts/kelson_sans_regular_ru.eot"); src: url("../fonts/kelson_sans_regular_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_regular_ru.woff") format("woff"), url("../fonts/kelson_sans_regular_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 html { font-size: 62.5%; }
+@media only screen and (min-width: 1201px) { html { font-size: 0.84vw; } }
 
 body { min-width: 320px; color: #333333; font-family: "Kelson Sans Regular", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 14px; font-size: 1.4rem; line-height: 1.43; }
 
@@ -68,19 +69,19 @@ body { min-width: 320px; color: #333333; font-family: "Kelson Sans Regular", "Tr
 
 a { color: #2196F3; }
 
-.svg-sprite { width: 0 !important; height: 0 !important; overflow: hidden; }
+.svg-sprite { position: absolute !important; width: 0 !important; height: 0 !important; overflow: hidden !important; }
 
 .js-fade { -webkit-transition: opacity 1s ease; transition: opacity 1s ease; }
 
-.heading { display: block; text-align: center; max-width: 24.0625em; margin: 0 auto 35px; font-family: "Kelson Sans Light", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 32px; font-size: 3.2rem; line-height: 1.33; color: inherit; }
+.heading { display: block; text-align: center; max-width: 24.0625em; margin: 0 auto 1.09375em; font-family: "Kelson Sans Light", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 32px; font-size: 3.2rem; line-height: 1.33; color: inherit; }
 
 .heading_toparea { font-size: 40px; font-size: 4rem; color: #FFF; }
 
 .subtitle { display: inline-block; line-height: 1.5; font-family: "Kelson Sans Regular", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; }
 
-.subtitle_toparea { display: block; margin-top: 2.85714em; opacity: 0.75; }
+.subtitle_toparea { display: block; margin-top: 2.5em; opacity: 0.75; }
 
-.title { display: block; position: relative; margin: 80px 0 40px; text-align: center; font-family: "Kelson Sans Bold", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 14px; font-size: 1.4rem; color: #9CA5BF; text-transform: uppercase; line-height: 1.5; letter-spacing: 0.14286em; }
+.title { display: block; position: relative; margin: 5.35714em 0 2.5em; text-align: center; font-family: "Kelson Sans Bold", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 14px; font-size: 1.4rem; color: #9CA5BF; text-transform: uppercase; line-height: 1.5; letter-spacing: 0.14286em; }
 .section > .title:first-child { margin-top: 0; }
 .section .js-fade:first-child > .title { margin-top: 0; }
 .title .title__text { display: inline-block; padding: 0 1.71429em; position: relative; }
@@ -294,24 +295,29 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 .icon-questionnaire { font-size: 42px; font-size: 4.2rem; height: 1.42857em; }
 .icon-birzool { font-size: 74px; font-size: 7.4rem; height: 0.21622em; }
 
-.icon_blue { fill: url("#blue-gradient"); }
+.icon_blue { fill: url("/#blue-gradient"); }
 
-.icon_green { fill: url("#green-gradient"); }
+.icon_green { fill: url("/#green-gradient"); }
 
-.toparea { display: table; table-layout: fixed; border-collapse: collapse; border-spacing: 0; width: 100%; height: 100%; height: 100vh; color: #FFF; background: url("../img/toparea-photo.jpg") no-repeat center center; background-size: cover; }
+.toparea { display: table; table-layout: fixed; border-collapse: collapse; border-spacing: 0; width: 100%; height: 100%; height: 100vh; color: #FFF; background: url("../img/toparea-photo.jpg") no-repeat center center; background-size: cover; overflow: hidden; }
 @media only screen and (max-width: 750px) { .toparea { display: block; height: auto; } }
 
 .toparea__outer { position: relative; display: table-cell; width: 100%; height: 100%; vertical-align: middle; background: url("../img/toparea-mask.png") no-repeat center center; background-size: cover; }
 @media only screen and (max-width: 750px) { .toparea__outer { display: block; height: auto; background: none; } }
 
-.toparea__header { position: absolute; top: 0; left: 0; right: 0; text-align: center; }
+.toparea__video { position: absolute; z-index: 0; top: 0; left: 0; right: 0; bottom: 0; }
+.toparea__video:before { content: ""; position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; background: url("../img/toparea-mask.png") no-repeat center center; background-size: cover; }
+.toparea__video video { position: relative; z-index: 0; min-width: 100%; min-height: 100%; }
+@media only screen and (max-width: 1024px) { .toparea__video { display: none; } }
+
+.toparea__header { position: absolute; z-index: 1; top: 0; left: 0; right: 0; text-align: center; }
 @media only screen and (max-width: 750px) { .toparea__header { padding-top: 2.85714em; position: static; } }
 
-.toparea__inner { text-align: center; padding: 170px 0; }
+.toparea__inner { text-align: center; padding: 170px 0; position: relative; z-index: 1; }
 .toparea__inner .video-link { margin-top: 5.42857em; }
 @media only screen and (max-width: 750px) { .toparea__inner { padding: 0; margin: 80px 0; } }
 
-.toparea__footer { position: absolute; bottom: 0; left: 0; right: 0; box-sizing: border-box; padding-bottom: 80px; text-align: center; }
+.toparea__footer { position: absolute; z-index: 1; bottom: 0; left: 0; right: 0; box-sizing: border-box; padding-bottom: 80px; text-align: center; }
 .toparea__footer .arrows-down { display: inline-block; }
 @media only screen and (max-width: 750px) { .toparea__footer { position: static; padding-bottom: 40px; } }
 
@@ -375,6 +381,8 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 .section__separator .icon { display: none; background: no-repeat center center; }
 
 .section_bg { background: url("../img/bg.jpg") no-repeat center center; background-size: cover; color: #FFF; overflow: hidden; }
+@media only screen and (max-width: 900px) { .section_bg { background-image: url("../img/bg-md.jpg"); } }
+@media only screen and (max-width: 750px) { .section_bg { background-image: url("../img/bg-sm.jpg"); } }
 
 .section_footer { padding-bottom: 40px; }
 
@@ -619,7 +627,7 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 .popup_video .popup__inner:before { content: ""; display: block; padding-bottom: 52.875%; }
 .popup_video .popup__frame { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 
-.mrg-80 { margin: 80px; }
+.mrg-80 { margin-top: 5.71429em; margin-bottom: 5.71429em; }
 .mrg-80:first-child { margin-top: 0; }
 .mrg-80:last-child { margin-bottom: 0; }
 
