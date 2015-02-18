@@ -56,19 +56,89 @@ head.ready(function() {
 
     // smooth scrolling to anchor link
     $(function() {
-        $('a[href*=#]:not([href=#])').on('click', function(event) {
-            event.preventDefault();
+        var links          = $('a[href*=#]:not([href=#])'),
+            section        = $('.section[name]'),
+            activeClass    = 'is-active',
+            activeSectionName;
 
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                }
+        // console.log(section);
+
+        $(window).on('scroll', function() {
+            scrollPosition = $(window).scrollTop();
+            if ( scrollPosition <= 0 ) {
+                links.removeClass(activeClass);
             }
         });
+
+        section.each(function() {
+            var el = $(this);
+
+            var offset = el.offset().top;
+
+            $(window).on('resize', function() {
+                offset = el.offset().top;
+            });
+
+            $(window).on('scroll', function() {
+                if ( scrollPosition >= offset - 10 ) {
+
+                    var thisSectionName = el.attr('name');
+                    var targetLink = $('a[href=#' + thisSectionName + ']');
+
+                    if ( !targetLink.hasClass(activeClass) ) {
+
+                        if ( activeSectionName ) {
+                            $('a[href=#' + activeSectionName + ']').removeClass(activeClass);
+                            // links.removeClass(activeClass);
+                        }
+
+                        targetLink.addClass(activeClass);
+                        activeSectionName = thisSectionName;
+                    }
+
+                }
+            });
+
+        });
+
+        links.each(function() {
+
+            $(this).on('click', function(event) {
+                event.preventDefault();
+
+                // activeSectionName = $(this).attr('href').slice(1);
+                // console.log(activeSectionName);
+
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                    }
+                }
+            });
+
+        });
+
+        // $(sections).each(function(index, el) {
+        //     $(window).on('scroll', function(){
+        //             // console.log(scrollPosition);
+        //             console.log(el.offset().top);
+
+        //         if ( scrollPosition >= el.offset().top ) {
+        //             console.log(index);
+
+        //             if ( typeof(activeLinkIndex) !== 'undefined') {
+        //                 $(link[activeLinkIndex]).removeClass(activeClass);
+        //             }
+
+        //             $(link[index]).addClass(activeClass);
+        //             activeLinkIndex = index;
+        //         }
+        //     });
+        // });
     });
 
     //toggle play/pause youtube video in iframe
@@ -207,7 +277,15 @@ head.ready(function() {
     (function(){
         var labirint    = $('#pacman-labirint'),
             initClass   = 'pacman-load',
-            activeClass = 'show-pacman';
+            activeClass = 'show-pacman',
+            chageClass  = 'change-labirint';
+
+        var changeLabirint = function() {
+            labirint.addClass(chageClass);
+            setTimeout(function() {
+                labirint.removeClass(chageClass);
+            }, 2000);
+        };
 
         var showPacman = function() {
             labirint
@@ -216,8 +294,10 @@ head.ready(function() {
 
             setTimeout(function() {
                 labirint.removeClass(activeClass);
+                changeLabirint();
             }, 21000);
         };
+
 
         var calculatePosition = function() {
             return $(window).scrollTop() + $(window).height() / 2;
@@ -229,7 +309,7 @@ head.ready(function() {
                 showPacman();
                 setInterval(function() {
                     showPacman();
-                }, 24000);
+                }, 23000);
 
             }
         });

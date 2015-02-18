@@ -13,13 +13,18 @@
 
 $draw-labirint-dur: 1s
 
+.pacman-wrapper
+  overflow: hidden
 
 #pacman-labirint
   position: relative
   width: em(300)
   height: em(333)
-  transition: transform 1s ease
-  transform: translateY(-100%)
+  // transition: all 1s linear
+  // opacity: 0
+  // transform: translateY(-100%)
+  // animation: change-labirint 1s linear
+  animation-fill-mode: backwards
   > svg
     width: 100%
     height: 100%
@@ -28,7 +33,7 @@ $draw-labirint-dur: 1s
     path
       stroke-dashoffset: 400
       stroke-dasharray: 400
-      transition: stroke-dashoffset $draw-labirint-dur linear 1s
+      transition: stroke-dashoffset $draw-labirint-dur linear
 
   #main-line
     stroke-dashoffset: 0
@@ -71,14 +76,13 @@ $draw-labirint-dur: 1s
       border-radius: 0 0 em(16) em(16)
       transform-origin: center top
 
-  &.show-pacman
-    transition: none
-    transform: translateY(0)
+  &.pacman-load
     #borders
       path
         stroke-dashoffset: 0
         transition-delay: 0
 
+  &.show-pacman
     #red-ghost,
     #green-ghost,
     #blue-ghost,
@@ -102,6 +106,19 @@ $draw-labirint-dur: 1s
     #green-ghost
       animation: green-ghost 4s linear infinite $draw-labirint-dur
 
+  &.change-labirint
+    animation: change-labirint 2s linear
+
+
+@keyframes change-labirint
+  0%, 100%
+    transform: translateY(0)
+    opacity: 1
+  50%
+    transform: translateY(-100%)
+    opacity: 0
+  50.1%
+    transform: translateY(100%)
 
 @keyframes hide-dots
   from

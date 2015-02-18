@@ -9,7 +9,8 @@
   color: #FFF
   background: image-url('toparea-photo.jpg') no-repeat center center
   background-size: cover
-  overflow: hidden
+  position: relative
+  z-index: 10
   +mobile
     display: block
     height: auto
@@ -35,6 +36,7 @@
   left: 0
   right: 0
   bottom: 0
+  overflow: hidden
   &:before
     content: ""
     position: absolute
@@ -141,6 +143,8 @@
     .menu__link
       line-height: em(60)
       color: $passive
+      &:before
+        background: $passive
       &:hover
         color: $interactive
       &:active
@@ -174,11 +178,16 @@
   text-decoration: none
   width: em(176)
   line-height: em(150)
+  .icon
+    +trans
   .icon-logo
     fill: #FFF
   .icon-logo-small
     display: none
     fill: $main
+  &:hover
+    .icon
+      fill: $interactive
   +mobile
     line-height: em(60)
     width: auto
@@ -254,7 +263,7 @@
     width: em(3)
     height: em(3)
     border-radius: 50%
-    background: currentColor
+    background: #FFF
     margin: em(-1.5) 0 0 em(-1.5)
   > span
     display: inline-block
@@ -272,7 +281,7 @@
       font-size: 1em
       margin-top: em(15)
       +tr(right)
-  &:hover, &:focus, &.is-active
+  &:hover, &.is-active
     span:after
       right: em(2)
   &:active
@@ -356,6 +365,7 @@
 
 .photos
   position: relative
+  z-index: 0
   height: em(300)
   overflow: hidden
 
@@ -774,8 +784,8 @@
 .slider__next
   background: none
   position: absolute
-  padding: 15px
-  margin: -15px
+  padding: 21px 23px
+  margin: -21px -23px
   top: 50%
   .icon
     fill: $interactive
@@ -1050,6 +1060,7 @@
   overflow: auto
   +vertical
   white-space: nowrap
+  cursor: pointer
 
 .popup__inner
   display: inline-block
@@ -1060,6 +1071,7 @@
   white-space: normal
   opacity: 0
   transition: all 0.5s ease
+  cursor: default
   &.is-visible
     transform: translateY(0)
     opacity: 1
@@ -1073,13 +1085,13 @@
   +fs(37)
   line-height: 1
   margin: -0.5em -0.5em 0 0
-  +trans(all, 0.05s)
+  +trans
   .icon
     vertical-align: top
     font-size: inherit
     fill: $passive
   &:hover, &:focus
-    transform: rotate(90deg)
+    // transform: rotate(90deg)
     .icon
       fill: $interactive
   &:active

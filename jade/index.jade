@@ -25,7 +25,7 @@ block content
   .toparea(name="top")
     .toparea__outer
       .toparea__video
-        //- video(autoplay="autoplay" poster="img/photo.jpg"  loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
+        video(autoplay="autoplay" poster="img/photo.jpg"  loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
           source(src="video/video.m4v" type="video/mp4")
           source(src="video/video.webm" type="video/webm")
           source(src="video/video.ogv" type="video/ogg")
@@ -367,9 +367,10 @@ block content
 
         .helping__center
           .helping__center-inner
-            #pacman-labirint
-              .pacman
-              include ../img/svg/labirint.svg
+            .pacman-wrapper
+              #pacman-labirint
+                .pacman
+                include ../img/svg/labirint.svg
 
             p.text.text_center.text_light.js-fade
               | Вы знаете свой продукт досконально, однако пользователи могут в нём теряться.
@@ -776,7 +777,7 @@ block popup
   #video.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7L92QyrPIzI?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")
@@ -786,7 +787,7 @@ block popup
   #video2.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")
@@ -796,7 +797,7 @@ block popup
   #video3.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")
@@ -806,7 +807,7 @@ block popup
   #video4.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")
