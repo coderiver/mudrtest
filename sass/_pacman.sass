@@ -55,6 +55,19 @@ $draw-labirint-dur: 1s
   .blue-ghost
     position: absolute
     z-index: 1
+    &:before
+      content: ""
+      position: absolute
+      z-index: 0
+      top: 50%
+      left: 50%
+      width: em(10)
+      height: em(8)
+      margin: em(-4) 0 0 em(-5)
+      background: #FFF
+    .icon
+      position: relative
+      z-index: 1
 
   .red-ghost
     fill: $error
