@@ -142,10 +142,10 @@ head.ready(function() {
     });
 
     //toggle play/pause youtube video in iframe
-    var toggleVideo = function (state) {
+    var toggleVideo = function (context, state) {
         // if state == 'hide', hide. Else: show video
-        var div = $('.js-yt');
-        var iframe = div.find('iframe')[0].contentWindow;
+        // var div = $('.js-yt');
+        var iframe = context.find('iframe')[0].contentWindow;
         // div.style.display = state == 'hide' ? 'none' : '';
         func = state == 'hide' ? 'pauseVideo' : 'playVideo';
         iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
@@ -202,7 +202,7 @@ head.ready(function() {
             }, 200);
 
             if (popup.hasClass('js-yt')) {
-                toggleVideo('hide');
+                toggleVideo(popup, 'hide');
             }
 
         }
@@ -380,7 +380,7 @@ head.ready(function() {
 
         var fadeElement = $('.js-fade');
 
-        if ( fadeElement.length && $(window).width() > 1024 ) {
+        if ( fadeElement.length && $(window).width() > 1024 && $(window).scrollTop() === 0) {
             var  scrollPosition;
 
 
@@ -401,18 +401,25 @@ head.ready(function() {
                     opacity : '0'
                 });
 
-                $(window).on('scroll', function() {
-                    if ( scrollPosition >= elShowPoint ) {
+                function showEl() {
+                   if ( scrollPosition >= elShowPoint ) {
                         el.css({
                             opacity : '1'
                         });
                     }
+                }
+
+                showEl();
+
+                $(window).on('scroll', function() {
+                    showEl();
                 });
 
                 $(window).on('resize', function() {
                     elShowPoint = calcShowPoint(el);
                 });
             });
+
         }
 
     })();

@@ -205,7 +205,7 @@ a.btn
     top: 50%
     left: 0
     right: 100%
-    height: em(4)
+    height: em(2)
     background: $action
     margin-top: em(8)
     +trans(right)
@@ -228,14 +228,15 @@ a.btn
     +fs(10)
     width: 1em
     height: 1em
-    margin-top: -0.7em
+    margin-top: -0.6em
     background: no-repeat center center
     background-image: url('../img/svg/icons-other/link.svg')
+    background-size: cover
   &:hover, &:focus
     color: $interactive
     text-decoration: none
-    &:before
-      right: em(14)
+    // &:before
+    //   right: em(14)
 
 
 
@@ -248,6 +249,8 @@ a.btn
   background: none
   text-decoration: none
   text-transform: uppercase
+  padding: em(26) em(33)
+  margin: em(-26) em(-33)
   +trans
   > span
     display: inline-block
@@ -255,14 +258,13 @@ a.btn
   .icon
     position: relative
     vertical-align: middle
-    top: (-2/30)+em
-    margin-right: (9/30)+em
+    top: em(-2,30)
+    margin-right: em(9,30)
     +trans
   &:hover, &:focus
     color: $interactive
     .icon
       fill: $interactive
-
 
 .arrows-down
   display: inline-block
@@ -354,6 +356,8 @@ a.btn
 
 .big-btn_video
   position: relative
+  .icon
+    +trans
   &:after
     content: ""
     position: absolute
@@ -365,7 +369,9 @@ a.btn
     border-radius: 10px
     +trans
   &:hover, &:focus, &:active
-    box-shadow: inset 0 0 0 em(5) #FFF
+    box-shadow: inset 0 0 0 em(5) $interactive
+    .icon
+      fill: $interactive
   &:active
     &:after
       background: rgba(#FFF, 0.4)

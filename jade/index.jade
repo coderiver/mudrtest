@@ -17,7 +17,7 @@ block svg-sprite
 
 
 block facebook
-  //- include includes/fb-script.html
+  include includes/fb-script.html
 
 
 block content
@@ -25,8 +25,8 @@ block content
   .toparea(name="top")
     .toparea__outer
       .toparea__video
-        //- video(autoplay="autoplay" poster="img/toparea.jpg"  loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
-          source(src="video/back.m4v" type="video/mp4")
+        video(autoplay="autoplay" poster="img/toparea.jpg"  loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
+          source(src="video/back.mp4" type="video/mp4")
           source(src="video/back.webm" type="video/webm")
           source(src="video/back.ogv" type="video/ogg")
 
@@ -70,8 +70,9 @@ block content
             |  пользоваться вашим продуктом и помогаем его улучшить.
 
           button.video-link(data-popup="video")
-            +icon("play")
-            span видео-презентация
+            .video-link__inner
+              +icon("play")
+              span видео-презентация
       //end toparea__inner
 
       //begin toparea__center
@@ -804,9 +805,8 @@ block content
           | © 2015, Мудрый Тест. Все права защищены.
         .footer__right
           | По всем вопросам пишите на <a class="link" href="#">hey@wisetest.me</a>
-        .footer__center
-          a.logo-link(href="http://birzool.com", target="_blank")
-            +icon("birzool")
+        a.footer__center.logo-link(href="http://birzool.com", target="_blank")
+          +icon("birzool")
   //end section
 
 
@@ -815,7 +815,7 @@ block popup
   #video.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7L92QyrPIzI?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7L92QyrPIzI?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")
@@ -825,7 +825,7 @@ block popup
   #video2.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")
@@ -835,7 +835,7 @@ block popup
   #video3.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")
@@ -845,7 +845,7 @@ block popup
   #video4.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 
       button.popup__close
         +icon("close")

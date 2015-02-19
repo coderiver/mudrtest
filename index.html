@@ -13,8 +13,20 @@
     <link rel="stylesheet" media="all" href="css/screen.css">
     <script type="text/javascript" src="js/load-svg-sprite.js"></script><!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   </head>
-  <body>
-    
+  <body><div id="fb-root"></div>
+<script>
+
+  (function(d, s, id) {
+
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+
+  }(document, 'script', 'facebook-jssdk'));
+
+</script>
     <div class="svg-sprite"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <defs>
@@ -38,6 +50,11 @@
       <div name="top" class="toparea">
         <div class="toparea__outer">
           <div class="toparea__video">
+            <video autoplay="autoplay" poster="img/toparea.jpg" loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)">
+              <source src="video/back.mp4" type="video/mp4">
+              <source src="video/back.webm" type="video/webm">
+              <source src="video/back.ogv" type="video/ogg">
+            </video>
           </div>
           <!--begin toparea__header-->
           <div class="toparea__header">
@@ -74,11 +91,13 @@
                 Узнаём с помощью тестирования интерфейсов, насколько удобно людям
                  пользоваться вашим продуктом и помогаем его улучшить.</strong>
               <button data-popup="video" class="video-link">
-                <div class="icon icon-play">
-                  <svg>
-                    <use xlink:href="#icon-play"></use>
-                  </svg>
-                </div><span>видео-презентация</span>
+                <div class="video-link__inner">
+                  <div class="icon icon-play">
+                    <svg>
+                      <use xlink:href="#icon-play"></use>
+                    </svg>
+                  </div><span>видео-презентация</span>
+                </div>
               </button>
             </div>
           </div>
@@ -1085,13 +1104,12 @@
         <div class="l">
           <div class="footer">
             <div class="footer__left">© 2015, Мудрый Тест. Все права защищены.</div>
-            <div class="footer__right">По всем вопросам пишите на <a class="link" href="#">hey@wisetest.me</a></div>
-            <div class="footer__center"><a href="http://birzool.com" target="_blank" class="logo-link">
-                <div class="icon icon-birzool">
-                  <svg>
-                    <use xlink:href="#icon-birzool"></use>
-                  </svg>
-                </div></a></div>
+            <div class="footer__right">По всем вопросам пишите на <a class="link" href="#">hey@wisetest.me</a></div><a href="http://birzool.com" target="_blank" class="footer__center logo-link">
+              <div class="icon icon-birzool">
+                <svg>
+                  <use xlink:href="#icon-birzool"></use>
+                </svg>
+              </div></a>
           </div>
         </div>
       </footer>
@@ -1102,8 +1120,7 @@
     <!--begin popup-->
     <div id="video" class="popup popup_video js-yt">
       <div class="popup__inner">
-        <div class="popup__frame">
-        </div>
+        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/7L92QyrPIzI?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
         <button class="popup__close">
           <div class="icon icon-close">
             <svg>
@@ -1117,8 +1134,7 @@
     <!--begin popup-->
     <div id="video2" class="popup popup_video js-yt">
       <div class="popup__inner">
-        <div class="popup__frame">
-        </div>
+        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
         <button class="popup__close">
           <div class="icon icon-close">
             <svg>
@@ -1132,8 +1148,7 @@
     <!--begin popup-->
     <div id="video3" class="popup popup_video js-yt">
       <div class="popup__inner">
-        <div class="popup__frame">
-        </div>
+        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
         <button class="popup__close">
           <div class="icon icon-close">
             <svg>
@@ -1147,8 +1162,7 @@
     <!--begin popup-->
     <div id="video4" class="popup popup_video js-yt">
       <div class="popup__inner">
-        <div class="popup__frame">
-        </div>
+        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
         <button class="popup__close">
           <div class="icon icon-close">
             <svg>
