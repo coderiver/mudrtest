@@ -25,10 +25,10 @@ block content
   .toparea(name="top")
     .toparea__outer
       .toparea__video
-        video(autoplay="autoplay" poster="img/photo.jpg"  loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
-          source(src="video/video.m4v" type="video/mp4")
-          source(src="video/video.webm" type="video/webm")
-          source(src="video/video.ogv" type="video/ogg")
+        video(autoplay="autoplay" poster="img/toparea.jpg"  loop="loop" onended="var v=this;setTimeout(function(){v.play()},300)")
+          source(src="video/back.m4v" type="video/mp4")
+          source(src="video/back.webm" type="video/webm")
+          source(src="video/back.ogv" type="video/ogg")
 
       //begin toparea__header
       .toparea__header
@@ -370,6 +370,12 @@ block content
             .pacman-wrapper
               #pacman-labirint
                 .pacman
+                .red-ghost
+                  +icon('red-ghost')
+                .green-ghost
+                  +icon('green-ghost')
+                .blue-ghost
+                  +icon('blue-ghost')
                 include ../img/svg/labirint.svg
 
             p.text.text_center.text_light.js-fade

@@ -7,7 +7,7 @@
   height: 100%
   height: 100vh
   color: #FFF
-  background: image-url('toparea-photo.jpg') no-repeat center center
+  background: image-url('toparea.jpg') no-repeat center center
   background-size: cover
   position: relative
   z-index: 10
@@ -22,7 +22,7 @@
   width: 100%
   height: 100%
   vertical-align: middle
-  background: url('../img/toparea-mask.png') no-repeat center center
+  // background: url('../img/toparea-mask.png') no-repeat center center
   background-size: cover
   +mobile
     display: block
@@ -37,16 +37,16 @@
   right: 0
   bottom: 0
   overflow: hidden
-  &:before
-    content: ""
-    position: absolute
-    z-index: 1
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: url('../img/toparea-mask.png') no-repeat center center
-    background-size: cover
+  // &:before
+  //   content: ""
+  //   position: absolute
+  //   z-index: 1
+  //   top: 0
+  //   left: 0
+  //   right: 0
+  //   bottom: 0
+  //   background: url('../img/toparea-mask.png') no-repeat center center
+  //   background-size: cover
   video
     position: relative
     z-index: 0
@@ -57,7 +57,7 @@
 
 .toparea__header
   position: absolute
-  z-index: 1
+  z-index: 3
   top: 0
   left: 0
   right: 0
@@ -254,7 +254,7 @@
   color: #FFF
   letter-spacing: em(2)
   text-transform: uppercase
-  +trans(color, 0.05, linear)
+  +trans(color)
   &:before
     content: ""
     position: absolute
@@ -280,7 +280,7 @@
       background: $interactive
       font-size: 1em
       margin-top: em(15)
-      +tr(right)
+      +trans(right)
   &:hover, &.is-active
     span:after
       right: em(2)

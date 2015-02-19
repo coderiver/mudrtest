@@ -295,7 +295,7 @@ head.ready(function() {
             setTimeout(function() {
                 labirint.removeClass(activeClass);
                 changeLabirint();
-            }, 21000);
+            }, 31000);
         };
 
 
@@ -309,7 +309,7 @@ head.ready(function() {
                 showPacman();
                 setInterval(function() {
                     showPacman();
-                }, 23000);
+                }, 33000);
 
             }
         });
@@ -416,5 +416,9 @@ head.ready(function() {
         }
 
     })();
+
+    // var path = document.querySelector('#main-line');
+    // var length = path.getTotalLength();
+    // console.log(length);
 
 });

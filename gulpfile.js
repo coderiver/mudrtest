@@ -100,7 +100,7 @@ gulp.task('svgsprite', function() {
         ]}))
         .pipe(cheerio({
             run: function ($, file) {
-                $('[fill]').removeAttr('fill');
+                $('[fill]:not([fill="currentColor"])').removeAttr('fill');
             },
             parserOptions: { xmlMode: true }
         }))

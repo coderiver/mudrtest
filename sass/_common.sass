@@ -13,7 +13,7 @@
   font-family: "Kelson Sans Bold", "Trebuchet MS", "Arial", "sans-serif"
   font-weight: normal
 
-=trans($property: all, $duration: 0.05s, $easing: ease)
+=trans($property: all, $duration: 0.200s, $easing: ease)
   transition: $property $duration $easing
 
 
@@ -156,7 +156,7 @@ a
   text-decoration: none
   text-align: center
   +text-overflow
-  +trans(all, 0.05s, linear)
+  +trans(all, 0.200s, linear)
   &:hover, &:focus
     // background: #FFF
     box-shadow: inset 0 0 0 em(50) #FFF
@@ -206,7 +206,7 @@ a.btn
     height: 4px
     background: $action
     margin-top: em(8)
-    +tr(right)
+    +trans(right)
   &:hover, &:focus
     color: $action
     text-decoration: none
@@ -496,7 +496,7 @@ textarea.field__input
   visibility: hidden
   opacity: 0
   transform: translateY(100%)
-  transition: all 0.05s ease
+  transition: all 0.200s ease
   &:before
     content: ""
     position: absolute
