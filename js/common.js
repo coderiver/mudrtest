@@ -1,5 +1,7 @@
 head.ready(function() {
 
+    var toparea = $('.toparea');
+
     (function() {
         var slider = $('.js-slick');
 
@@ -17,16 +19,34 @@ head.ready(function() {
         }
     })();
 
+    // toparea.bind('mouseover', function(event) {
+    //     var scroll     = 0,
+    //         prevScroll = 0;
+    //         body       = $('body');
+    //     $(window).on('scroll', function() {
+    //         scroll = $(window).scrollTop();
+    //         if ( scroll > prevScroll ) {
+    //             body.animate({scrollTop: $(this).height() }, 1000);
+    //         }
+    //         else {
+    //             body.animate({scrollTop: 0 }, 1000);
+    //         }
+    //         prevScroll = scroll;
+    //     });
+    // });
+
 
     (function() {
-        var header      = $('.header'),
-            wrapper     = header.parent(),
-            toparea     = $('.toparea'),
-            fixed       = 'is-fixed',
-            visible     = 'is-visible',
-            secondPoint = toparea.height() - 10,
-            firstPoint  = secondPoint / 2,
-            headerHeight;
+        var header        = $('.header'),
+            wrapper       = header.parent(),
+            fixed         = 'is-fixed',
+            visible       = 'is-visible',
+            topareaHeight = toparea.height(),
+            secondPoint   = topareaHeight - 10,
+            firstPoint    = secondPoint / 2,
+            win           = $(window),
+            headerHeight,
+            prevScrollPos = 0;
 
         function calcHeaderHeight() {
             var height = header.height();
@@ -39,19 +59,20 @@ head.ready(function() {
 
         calcHeaderHeight();
 
-        $(window).on('resize', function(event) {
-            secondPoint = toparea.height() - 10;
-            firstPoint  = secondPoint / 2;
+        win.on('resize', function(event) {
+            topareaHeight = toparea.height();
+            secondPoint   = topareaHeight - 10;
+            firstPoint    = secondPoint / 2;
             calcHeaderHeight();
         });
 
-        if ( $(window).scrollTop() >= firstPoint && !header.hasClass(fixed) ) {
+        if ( win.scrollTop() >= firstPoint && !header.hasClass(fixed) ) {
             wrapper.css('height', headerHeight);
             header.addClass(fixed);
         }
 
-        $(window).on('scroll', function(event) {
-            var scroll = $(window).scrollTop();
+        win.on('scroll', function(event) {
+            var scroll = win.scrollTop();
 
             if ( scroll >= firstPoint && !header.hasClass(fixed) ) {
                 wrapper.css('height', headerHeight);
@@ -404,17 +425,51 @@ head.ready(function() {
 
             fadeElement.each(function() {
                 var el          = $(this),
-                    elShowPoint = calcShowPoint(el);
+                    elShowPoint = calcShowPoint(el),
+                    fadeDelay   = el.find('.js-fade-delay');
 
+                //hide elements
                 el.css({
                     opacity : '0'
                 });
 
+                if ( fadeDelay.length ) {
+                    var delayStep = 500;
+
+                    fadeDelay.each(function(index) {
+                        $(this).css({
+                            opacity               : '0',
+                            webkitTransitionDelay : delayStep * index / 1000 + 's',
+                            transitionDelay       : delayStep * index / 1000 + 's'
+                        });
+                    });
+                }
+
+                function showElWithDelay() {
+                    fadeDelay.each(function() {
+                        $(this).css({
+                            opacity               : ''
+                        });
+                    });
+                    setTimeout(function() {
+                        fadeDelay.each(function() {
+                            $(this).css({
+                                webkitTransitionDelay : '',
+                                transitionDelay       : ''
+                            });
+                        });
+                    }, delayStep * fadeDelay.length);
+                }
+
                 function showEl() {
                    if ( scrollPosition >= elShowPoint ) {
                         el.css({
-                            opacity : '1'
+                            opacity : ''
                         });
+
+                        if ( fadeDelay.length ) {
+                            showElWithDelay();
+                        }
                     }
                 }
 

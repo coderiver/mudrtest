@@ -810,13 +810,16 @@
   padding: 21px 23px
   margin: -21px -23px
   top: 50%
+  +trans
   .icon
     fill: $interactive
     +trans
-  &:hover, &:focus
+  &:hover
+    transform: scale(1.2)
     .icon
       fill: $action
   &:active
+    transform: scale(0.8)
     .icon
       fill: $active-green
   +mobile

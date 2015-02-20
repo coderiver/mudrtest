@@ -64,7 +64,7 @@ a { color: #2196F3; }
 
 .svg-sprite { position: absolute !important; width: 0 !important; height: 0 !important; overflow: hidden !important; }
 
-.js-fade { -webkit-transition: opacity 1s ease; transition: opacity 1s ease; }
+.js-fade, .js-fade-delay { -webkit-transition: opacity 1s ease; transition: opacity 1s ease; }
 
 .heading { display: block; text-align: center; max-width: 24.0625em; margin: 0 auto 1.09375em; font-family: "Kelson Sans Light", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 32px; font-size: 3.2rem; line-height: 1.33; color: inherit; }
 
@@ -536,9 +536,11 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 
 .slider__slide { padding: 0 40px; }
 
-.slider__prev, .slider__next { background: none; position: absolute; padding: 21px 23px; margin: -21px -23px; top: 50%; }
+.slider__prev, .slider__next { background: none; position: absolute; padding: 21px 23px; margin: -21px -23px; top: 50%; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
 .slider__prev .icon, .slider__next .icon { fill: #2196F3; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
-.slider__prev:hover .icon, .slider__prev:focus .icon, .slider__next:hover .icon, .slider__next:focus .icon { fill: #4CAF50; }
+.slider__prev:hover, .slider__next:hover { -webkit-transform: scale(1.2); -ms-transform: scale(1.2); transform: scale(1.2); }
+.slider__prev:hover .icon, .slider__next:hover .icon { fill: #4CAF50; }
+.slider__prev:active, .slider__next:active { -webkit-transform: scale(0.8); -ms-transform: scale(0.8); transform: scale(0.8); }
 .slider__prev:active .icon, .slider__next:active .icon { fill: #106F13; }
 @media only screen and (max-width: 750px) { .slider__prev, .slider__next { top: 31%; } }
 
