@@ -733,8 +733,11 @@
   color: inherit
   text-decoration: none
   &:hover
-    .link:before
-      right: 0
+    .link
+      color: $action
+      &:before
+        right: 0
+        background: $action
 
 
 .person__photo

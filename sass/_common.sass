@@ -210,12 +210,13 @@ a.btn
     height: em(2)
     background: $action
     margin-top: em(8)
-    +trans(right)
+    +trans(all)
   &:hover, &:focus
     color: $action
     text-decoration: none
     &:before
       right: 0
+      background: $action
 
 .link_icon
   padding-right: em(14)
@@ -235,7 +236,7 @@ a.btn
     background-image: url('../img/svg/icons-other/link.svg')
     background-size: cover
   &:hover, &:focus
-    color: $interactive
+    // color: $interactive
     text-decoration: none
     // &:before
     //   right: em(14)
