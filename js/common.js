@@ -19,11 +19,13 @@ head.ready(function() {
 
 
     (function() {
-        var header       = $('.header'),
-            wrapper      = header.parent(),
-            toparea      = $('.toparea'),
-            fixed        = 'is-fixed',
-            topPoint     = toparea.height() - 10,
+        var header      = $('.header'),
+            wrapper     = header.parent(),
+            toparea     = $('.toparea'),
+            fixed       = 'is-fixed',
+            visible     = 'is-visible',
+            secondPoint = toparea.height() - 10,
+            firstPoint  = secondPoint - 100,
             headerHeight;
 
         function calcHeaderHeight() {
@@ -38,15 +40,28 @@ head.ready(function() {
         calcHeaderHeight();
 
         $(window).on('resize', function(event) {
-            topPoint = toparea.height();
+            secondPoint = toparea.height() - 10;
+            firstPoint  = secondPoint - 100;
             calcHeaderHeight();
         });
 
         $(window).on('scroll', function(event) {
-            if ( $(window).scrollTop() >= topPoint ) {
+            var scroll = $(window).scrollTop();
+
+            if ( scroll >= firstPoint && !header.hasClass(fixed) ) {
                 wrapper.css('height', headerHeight);
                 header.addClass(fixed);
-            } else {
+            }
+
+            if ( scroll >= secondPoint && !header.hasClass(visible) ) {
+                header.addClass(visible);
+            }
+
+            if ( scroll < secondPoint && header.hasClass(visible) ) {
+                header.removeClass(visible);
+            }
+
+            if ( scroll < firstPoint && header.hasClass(fixed) ) {
                 wrapper.css('height', '');
                 header.removeClass(fixed);
             }
@@ -88,8 +103,8 @@ head.ready(function() {
                     if ( !targetLink.hasClass(activeClass) ) {
 
                         if ( activeSectionName ) {
-                            $('a[href=#' + activeSectionName + ']').removeClass(activeClass);
-                            // links.removeClass(activeClass);
+                            $('a[href=#' + activeSectionName + ']')
+                                .removeClass(activeClass);
                         }
 
                         targetLink.addClass(activeClass);
@@ -112,7 +127,7 @@ head.ready(function() {
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                    if (target.length) {
+                    if ( target.length ) {
                         $('html,body').animate({
                             scrollTop: target.offset().top
                         }, 1000);
@@ -121,25 +136,8 @@ head.ready(function() {
             });
 
         });
-
-        // $(sections).each(function(index, el) {
-        //     $(window).on('scroll', function(){
-        //             // console.log(scrollPosition);
-        //             console.log(el.offset().top);
-
-        //         if ( scrollPosition >= el.offset().top ) {
-        //             console.log(index);
-
-        //             if ( typeof(activeLinkIndex) !== 'undefined') {
-        //                 $(link[activeLinkIndex]).removeClass(activeClass);
-        //             }
-
-        //             $(link[index]).addClass(activeClass);
-        //             activeLinkIndex = index;
-        //         }
-        //     });
-        // });
     });
+
 
     //toggle play/pause youtube video in iframe
     var toggleVideo = function (context, state) {
@@ -314,6 +312,7 @@ head.ready(function() {
             }
         });
     })();
+
 
     (function() {
         var wrapper = $('.photos');

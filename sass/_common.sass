@@ -150,7 +150,6 @@ a
   padding: 0 em(20)
   background: none
   border-radius: em(20)
-  // border: 2px solid #FFF
   box-shadow: inset 0 0 0 2px #FFF
   +fs(14)
   +regular
@@ -159,15 +158,13 @@ a
   text-align: center
   +text-overflow
   +trans(all, 0.200s, linear)
-  &:hover, &:focus
-    // background: #FFF
+  &:hover
     box-shadow: inset 0 0 0 em(50) #FFF
     color: $main
   &:active
     color: #FFF
     background: $active
     box-shadow: none
-    // border-color: $active
 
   .ie8 &
     padding: 0 em(18)
