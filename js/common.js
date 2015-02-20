@@ -25,7 +25,7 @@ head.ready(function() {
             fixed       = 'is-fixed',
             visible     = 'is-visible',
             secondPoint = toparea.height() - 10,
-            firstPoint  = secondPoint - 100,
+            firstPoint  = secondPoint / 2,
             headerHeight;
 
         function calcHeaderHeight() {
@@ -41,9 +41,14 @@ head.ready(function() {
 
         $(window).on('resize', function(event) {
             secondPoint = toparea.height() - 10;
-            firstPoint  = secondPoint - 100;
+            firstPoint  = secondPoint / 2;
             calcHeaderHeight();
         });
+
+        if ( $(window).scrollTop() >= firstPoint && !header.hasClass(fixed) ) {
+            wrapper.css('height', headerHeight);
+            header.addClass(fixed);
+        }
 
         $(window).on('scroll', function(event) {
             var scroll = $(window).scrollTop();
@@ -121,9 +126,6 @@ head.ready(function() {
             $(this).on('click', function(event) {
                 event.preventDefault();
 
-                // activeSectionName = $(this).attr('href').slice(1);
-                // console.log(activeSectionName);
-
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -139,33 +141,41 @@ head.ready(function() {
     });
 
 
-    //toggle play/pause youtube video in iframe
-    var toggleVideo = function (context, state) {
-        // if state == 'hide', hide. Else: show video
-        // var div = $('.js-yt');
-        var iframe = context.find('iframe')[0].contentWindow;
-        // div.style.display = state == 'hide' ? 'none' : '';
-        func = state == 'hide' ? 'pauseVideo' : 'playVideo';
-        iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
-    };
+    $('[data-video-id]').each(function() {
+        var el = $(this);
+        el.on('click', function() {
+            setTimeout(function(){
+                playVideo(el.data('video-id'));
+            }, 100);
+        });
+    });
+
 
     var toggleBodyScroll = function(body) {
+
         body.toggleClass('no-scroll');
+
         if (body.hasClass('no-scroll')) {
-            var posTop = -$(document).scrollTop();
-            body.css({
-                position : 'fixed',
-                top      : posTop
+            // var posTop = -$(window).scrollTop();
+            // body.css({
+            //     position : 'fixed',
+            //     top      : posTop
+            // });
+            body.bind('touchmove', function(event) {
+                event.preventDefault();
             });
         } else {
-            var scrollPos = -body.offset().top;
-            body.css({
-                position : '',
-                top      : ''
-            });
-            $(window).scrollTop(scrollPos);
+            // var scrollPos = -body.offset().top;
+            // body.css({
+            //     position : '',
+            //     top      : ''
+            // });
+            // $(window).scrollTop(scrollPos);
+            body.unbind('touchmove');
         }
     };
+
+
 
     var togglePopup = function(popupId) {
         var popup,
@@ -200,7 +210,7 @@ head.ready(function() {
             }, 200);
 
             if (popup.hasClass('js-yt')) {
-                toggleVideo(popup, 'hide');
+                pauseVideo();
             }
 
         }
@@ -423,8 +433,7 @@ head.ready(function() {
 
     })();
 
+});
     // var path = document.querySelector('#main-line');
     // var length = path.getTotalLength();
     // console.log(length);
-
-});

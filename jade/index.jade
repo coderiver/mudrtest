@@ -6,6 +6,9 @@ block title
     | мобильных приложений, стартапов, онлайн сервисов, сайтов,
     | десктопных программ и любых других цифровых продуктов
 
+block load-yt-script
+  script(type="text/javascript" src="js/yt-videos.js")
+
 block load-svg-sprite
   script(type="text/javascript", src="js/load-svg-sprite.js")
 
@@ -69,7 +72,7 @@ block content
             | Узнаём с помощью тестирования интерфейсов, насколько удобно людям
             |  пользоваться вашим продуктом и помогаем его улучшить.
 
-          button.video-link(data-popup="video")
+          button.video-link(data-popup="video", data-video-id="7L92QyrPIzI")
             .video-link__inner
               +icon("play")
               span видео-презентация
@@ -527,19 +530,19 @@ block content
 
         //begin examples
         ul.examples
-          li.examples__item(data-popup="video2")
+          li.examples__item(data-popup="video", data-video-id="dbA8poWwqYg")
             button.big-btn.big-btn_video(type="button", style="background-image:url('img/btn1.jpg')")
               .big-btn__inner
                 +icon("play")
             span.text.text_light
               | 1 из 22 записей
-          li.examples__item(data-popup="video3")
+          li.examples__item(data-popup="video", data-video-id="5_-RoIjYbPY")
             button.big-btn.big-btn_video(type="button", style="background-image:url('img/btn2.jpg')")
               .big-btn__inner
                 +icon("play")
             span.text.text_light
               | 1 из 32 записей
-          li.examples__item(data-popup="video4")
+          li.examples__item(data-popup="video", data-video-id="IetWJs6SVW0")
             button.big-btn.big-btn_video(type="button", style="background-image:url('img/btn3.jpg')")
               .big-btn__inner
                 +icon("play")
@@ -644,13 +647,13 @@ block content
           .slider.js-slick
             .slider__slide
               .review
-                .person
+                a(href="#").person
                   .person__photo
                     img(src="img/review.jpg", alt="")
                   strong.person__name
                     | Евгений Плохой
                   span.person__about
-                    | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
+                    | Исполнительный директор в <span class="link link_icon">Capable Bits</span>
 
                 .review__arrow
                 .review__text
@@ -663,35 +666,36 @@ block content
 
             .slider__slide
               .review
-                .person
+                a(href="#").person
                   .person__photo
                     img(src="img/review.jpg", alt="")
                   strong.person__name
                     | Евгений Плохой
                   span.person__about
-                    | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
-
+                    | Исполнительный директор в <span class="link link_icon">Capable Bits</span>
                 .review__arrow
                 .review__text
                   p
-                    | Благодаря Мудрому Тесту получили массу очень полезной информации,
+                    |Благодаря Мудрому Тесту получили массу очень полезной информации,
                     | которую не смогла собрать ни одна система аналитики. 
+                  p
+                    | Увидели не только проблемные места в приложении, рекомендации по их устранению,
+                    | а также живую реакцию настоящих пользователей.
 
             .slider__slide
               .review
-                .person
+                a(href="#").person
                   .person__photo
                     img(src="img/review.jpg", alt="")
                   strong.person__name
                     | Евгений Плохой
                   span.person__about
-                    | Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
-                    | Длинная подпись, длинная подпись
+                    | Исполнительный директор в <span class="link link_icon">Capable Bits</span>
 
                 .review__arrow
                 .review__text
                   p
-                    | Благодаря Мудрому Тесту получили массу очень полезной информации,
+                    |Благодаря Мудрому Тесту получили массу очень полезной информации,
                     | которую не смогла собрать ни одна система аналитики. 
 
             button(type="button").slider__prev
@@ -815,38 +819,42 @@ block popup
   #video.popup.popup_video.js-yt
     .popup__inner
       .popup__frame
-        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7L92QyrPIzI?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7L92QyrPIzI?enablejsapi=1&version=3&vq=hd720&playerapiid=video1" frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
+        #yt-video
 
       button.popup__close
         +icon("close")
   //end popup
 
-  //begin popup
-  #video2.popup.popup_video.js-yt
-    .popup__inner
-      .popup__frame
-        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+  //- //begin popup
+  //- #video2.popup.popup_video.js-yt
+  //-   .popup__inner
+  //-     .popup__frame
+  //-       //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1&version=3&vq=hd720&playerapiid=video2" frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
+  //-       #yt-video2
 
-      button.popup__close
-        +icon("close")
-  //end popup
+  //-     button.popup__close
+  //-       +icon("close")
+  //- //end popup
 
-  //begin popup
-  #video3.popup.popup_video.js-yt
-    .popup__inner
-      .popup__frame
-        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+  //- //begin popup
+  //- #video3.popup.popup_video.js-yt
+  //-   .popup__inner
+  //-     .popup__frame
+  //-       //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1&version=3&vq=hd720&playerapiid=video3" frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
+  //-       #yt-video3
 
-      button.popup__close
-        +icon("close")
-  //end popup
+  //-     button.popup__close
+  //-       +icon("close")
+  //- //end popup
 
-  //begin popup
-  #video4.popup.popup_video.js-yt
-    .popup__inner
-      .popup__frame
-        | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+  //- //begin popup
+  //- #video4.popup.popup_video.js-yt
+  //-   .popup__inner
+  //-     .popup__frame
+  //-       //- | <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1&version=3&vq=hd720&playerapiid=video4" frameborder="0" allowfullscreen allowscriptaccess="always"></iframe>
+  //-       #yt-video4
 
-      button.popup__close
-        +icon("close")
-  //end popup
+  //-     button.popup__close
+  //-       +icon("close")
+  //- //end popup

@@ -51,6 +51,11 @@ body
   +regular
   +fs(14)
   line-height: 1.43
+  &.no-scroll
+    height: 100%
+    overflow: hidden
+    left: 0
+    right: 0
 
 .out
   overflow: hidden
@@ -179,7 +184,7 @@ a.btn
 .btn_green
   background: $action
   box-shadow: none
-  &:hover, &:focus
+  &:hover
     background: $hover-green
     box-shadow: none
     color: #FFF
@@ -278,6 +283,13 @@ a.btn
   &:hover
     > .icon
       fill: $interactive
+  .no-scroll &
+    > .icon
+      transform: scale(0.67)
+      &:first-child
+        animation: none
+      &:last-child
+        animation: none
 
 
 .text

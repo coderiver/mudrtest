@@ -152,7 +152,7 @@
     .btn
       background: $action
       box-shadow: none
-      &:hover, &:focus
+      &:hover
         background: $hover-green
         box-shadow: none
         color: #FFF
@@ -726,7 +726,16 @@
 
 .person
   display: block
+  max-width: em(300)
+  padding: em(10) 0
+  margin: em(-10) auto
   text-decoration: none
+  color: inherit
+  text-decoration: none
+  &:hover
+    .link:before
+      right: 0
+
 
 .person__photo
   width: em(100)
@@ -1107,15 +1116,17 @@
     font-size: inherit
     fill: $passive
   &:hover, &:focus
-    // transform: rotate(90deg)
+    transform: rotate(90deg)
     .icon
       fill: $interactive
   &:active
     .icon
       fill: $active
   +r(980)
-    top: 0
+    top: auto
+    bottom: 100%
     right: 0
+    margin: 0 0 0.2em
 
 .popup_video
   .popup__inner
@@ -1123,10 +1134,11 @@
     width: 100%
     min-width: em(200)
     border: 1px solid $interactive
+    background: $interactive
     &:before
       content: ""
       display: block
-      padding-bottom: percentage(423/800)
+      padding-bottom: percentage(450/800)
   .popup__frame
     position: absolute
     top: 0

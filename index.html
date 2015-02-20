@@ -11,6 +11,7 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="/favicon.png" type="image/png">
     <link rel="stylesheet" media="all" href="css/screen.css">
+    <script type="text/javascript" src="js/yt-videos.js"></script>
     <script type="text/javascript" src="js/load-svg-sprite.js"></script><!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   </head>
   <body><div id="fb-root"></div>
@@ -90,7 +91,7 @@
               <h1 class="heading heading_toparea">Помогаем повышать прибыльность проектов и отрываться от конкурентов</h1><strong class="subtitle subtitle_toparea">
                 Узнаём с помощью тестирования интерфейсов, насколько удобно людям
                  пользоваться вашим продуктом и помогаем его улучшить.</strong>
-              <button data-popup="video" class="video-link">
+              <button data-popup="video" data-video-id="7L92QyrPIzI" class="video-link">
                 <div class="video-link__inner">
                   <div class="icon icon-play">
                     <svg>
@@ -779,7 +780,7 @@
             <h3 class="title"><span class="title__text">Взгляните на примеры смонтированых записей сессий и отчётов</span></h3>
             <!--begin examples-->
             <ul class="examples">
-              <li data-popup="video2" class="examples__item">
+              <li data-popup="video" data-video-id="dbA8poWwqYg" class="examples__item">
                 <button type="button" style="background-image:url('img/btn1.jpg')" class="big-btn big-btn_video">
                   <div class="big-btn__inner">
                     <div class="icon icon-play">
@@ -790,7 +791,7 @@
                   </div>
                 </button><span class="text text_light">1 из 22 записей</span>
               </li>
-              <li data-popup="video3" class="examples__item">
+              <li data-popup="video" data-video-id="5_-RoIjYbPY" class="examples__item">
                 <button type="button" style="background-image:url('img/btn2.jpg')" class="big-btn big-btn_video">
                   <div class="big-btn__inner">
                     <div class="icon icon-play">
@@ -801,7 +802,7 @@
                   </div>
                 </button><span class="text text_light">1 из 32 записей</span>
               </li>
-              <li data-popup="video4" class="examples__item">
+              <li data-popup="video" data-video-id="IetWJs6SVW0" class="examples__item">
                 <button type="button" style="background-image:url('img/btn3.jpg')" class="big-btn big-btn_video">
                   <div class="big-btn__inner">
                     <div class="icon icon-play">
@@ -913,10 +914,8 @@
             <div class="slider-wrap">
               <div class="slider js-slick">
                 <div class="slider__slide">
-                  <div class="review">
-                    <div class="person">
-                      <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a></span>
-                    </div>
+                  <div class="review"><a href="#" class="person">
+                      <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">Исполнительный директор в <span class="link link_icon">Capable Bits</span></span></a>
                     <div class="review__arrow"></div>
                     <div class="review__text">
                       <p>
@@ -931,26 +930,24 @@
                   </div>
                 </div>
                 <div class="slider__slide">
-                  <div class="review">
-                    <div class="person">
-                      <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a></span>
-                    </div>
+                  <div class="review"><a href="#" class="person">
+                      <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">Исполнительный директор в <span class="link link_icon">Capable Bits</span></span></a>
                     <div class="review__arrow"></div>
                     <div class="review__text">
                       <p>
                         Благодаря Мудрому Тесту получили массу очень полезной информации,
                         которую не смогла собрать ни одна система аналитики. 
                       </p>
+                      <p>
+                        Увидели не только проблемные места в приложении, рекомендации по их устранению,
+                        а также живую реакцию настоящих пользователей.
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="slider__slide">
-                  <div class="review">
-                    <div class="person">
-                      <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">
-                        Исполнительный директор в <a class="link link_icon" href="#">Capable Bits</a>
-                        Длинная подпись, длинная подпись</span>
-                    </div>
+                  <div class="review"><a href="#" class="person">
+                      <div class="person__photo"><img src="img/review.jpg" alt=""></div><strong class="person__name">Евгений Плохой</strong><span class="person__about">Исполнительный директор в <span class="link link_icon">Capable Bits</span></span></a>
                     <div class="review__arrow"></div>
                     <div class="review__text">
                       <p>
@@ -1120,49 +1117,9 @@
     <!--begin popup-->
     <div id="video" class="popup popup_video js-yt">
       <div class="popup__inner">
-        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/7L92QyrPIzI?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
-        <button class="popup__close">
-          <div class="icon icon-close">
-            <svg>
-              <use xlink:href="#icon-close"></use>
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-    <!--end popup-->
-    <!--begin popup-->
-    <div id="video2" class="popup popup_video js-yt">
-      <div class="popup__inner">
-        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/dbA8poWwqYg?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
-        <button class="popup__close">
-          <div class="icon icon-close">
-            <svg>
-              <use xlink:href="#icon-close"></use>
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-    <!--end popup-->
-    <!--begin popup-->
-    <div id="video3" class="popup popup_video js-yt">
-      <div class="popup__inner">
-        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/5_-RoIjYbPY?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
-        <button class="popup__close">
-          <div class="icon icon-close">
-            <svg>
-              <use xlink:href="#icon-close"></use>
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-    <!--end popup-->
-    <!--begin popup-->
-    <div id="video4" class="popup popup_video js-yt">
-      <div class="popup__inner">
-        <div class="popup__frame"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/IetWJs6SVW0?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
+        <div class="popup__frame">
+          <div id="yt-video"></div>
+        </div>
         <button class="popup__close">
           <div class="icon icon-close">
             <svg>
