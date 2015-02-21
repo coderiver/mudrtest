@@ -68,14 +68,14 @@
 
 .toparea__inner
   text-align: center
-  padding: 170px 0
+  padding: em(170) 0
   position: relative
   z-index: 1
   .video-link
     margin-top: em(50)
   +mobile
     padding: 0
-    margin: 80px 0
+    margin: 60px 0 80px
 
 .toparea__footer
   position: absolute
@@ -120,7 +120,7 @@
   .logo
     vertical-align: top
   +mobile
-    margin-bottom: em(-20)
+    // margin-bottom: em(-20)
     .menu
       position: static
       margin: em(20) 0
@@ -139,7 +139,7 @@
     color: $passive
     opacity: 0
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.10)
-    transition: all 0.3s ease
+    // transition: all 0.3s ease
     .menu__link
       line-height: em(60)
       color: $passive
@@ -173,6 +173,7 @@
     &.is-visible
       opacity: 1
       top: 0
+      transition: all 0.3s ease
 
 
 
@@ -383,10 +384,10 @@
   +clr
   .is-redy &
     &:first-child
-      animation: photos 60s linear infinite
+      animation: photos 150s linear infinite
     &:nth-child(2)
       z-index: 2
-      animation: photos-cloned 60s linear infinite
+      animation: photos-cloned 150s linear infinite
 
 .photos__box
   float: left
@@ -971,7 +972,7 @@
 
 .map__baloon
   position: absolute
-  width: em(130,12)
+  width: em(135,12)
   box-sizing: border-box
   bottom: percentage(58/100)
   right: percentage(43/153)
@@ -981,6 +982,7 @@
   background: $main
   border-radius: 3px
   color: #FFF
+  text-align: center
   margin-right: percentage(-65/153)
   &:after
     content: ""
@@ -1121,10 +1123,10 @@
     vertical-align: top
     font-size: inherit
     fill: $passive
-  &:hover, &:focus
-    transform: rotate(90deg)
-    .icon
-      fill: $interactive
+  // &:hover, &:focus
+  //   transform: rotate(90deg)
+  //   .icon
+  //     fill: $interactive
   &:active
     .icon
       fill: $active
@@ -1145,12 +1147,26 @@
       content: ""
       display: block
       padding-bottom: percentage(450/800)
+    &:hover
+      .popup__close
+        transform: rotate(0)
+        .icon
+          fill: $passive
+        &:hover
+          transform: rotate(90deg)
+          .icon
+            fill: $interactive
   .popup__frame
     position: absolute
     top: 0
     left: 0
     right: 0
     bottom: 0
+  &:hover
+    .popup__close
+      transform: rotate(90deg)
+      .icon
+        fill: $interactive
 
 
 .message

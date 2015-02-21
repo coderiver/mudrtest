@@ -1,52 +1,42 @@
 head.ready(function() {
 
-    var toparea = $('.toparea');
+    var canScrollToparea;
 
-    (function() {
-        var slider = $('.js-slick');
-
-        if ( slider.length ) {
-
-            slider.slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                dots: true,
-                slide: '.slider__slide',
-                prevArrow: '.slider__prev',
-                nextArrow: '.slider__next',
-                mobileFirst: true
-            });
+    var checkAbilityScrollToparea = function() {
+        if ( $(window).width() > 1024 ) {
+            canScrollToparea = true;
+        } else {
+            canScrollToparea = false;
         }
-    })();
+    };
 
-    // toparea.bind('mouseover', function(event) {
-    //     var scroll     = 0,
-    //         prevScroll = 0;
-    //         body       = $('body');
-    //     $(window).on('scroll', function() {
-    //         scroll = $(window).scrollTop();
-    //         if ( scroll > prevScroll ) {
-    //             body.animate({scrollTop: $(this).height() }, 1000);
-    //         }
-    //         else {
-    //             body.animate({scrollTop: 0 }, 1000);
-    //         }
-    //         prevScroll = scroll;
-    //     });
-    // });
+    var toggleAbilityScrollToparea = function(timeout) {
+        if ( canScrollToparea ) {
+            var delay = timeout ? timeout : 1000;
+            canScrollToparea = false;
+            setTimeout(function() {
+                canScrollToparea = true;
+            }, delay);
+        }
+    };
 
+    checkAbilityScrollToparea();
 
     (function() {
         var header        = $('.header'),
             wrapper       = header.parent(),
+            toparea       = $('.toparea'),
+            body          = $('body'),
             fixed         = 'is-fixed',
             visible       = 'is-visible',
             topareaHeight = toparea.height(),
             secondPoint   = topareaHeight - 10,
             firstPoint    = secondPoint / 2,
             win           = $(window),
-            headerHeight,
-            prevScrollPos = 0;
+            winWidth      = win.width(),
+            scroll        = win.scrollTop(),
+            prevScroll    = scroll,
+            headerHeight;
 
         function calcHeaderHeight() {
             var height = header.height();
@@ -57,18 +47,33 @@ head.ready(function() {
             }
         }
 
-        calcHeaderHeight();
-
         win.on('resize', function(event) {
             topareaHeight = toparea.height();
             secondPoint   = topareaHeight - 10;
             firstPoint    = secondPoint / 2;
+            winWidth      = win.width();
             calcHeaderHeight();
+            checkAbilityScrollToparea();
         });
+
+        function scrollToparea(direction) {
+            if ( direction == 'top' ) {
+                body.animate({
+                    scrollTop: 0
+                }, 800);
+            } else {
+                body.animate({
+                    scrollTop: topareaHeight
+                }, 800);
+            }
+            toggleAbilityScrollToparea(800);
+        }
+
+        calcHeaderHeight();
 
         if ( win.scrollTop() >= firstPoint && !header.hasClass(fixed) ) {
             wrapper.css('height', headerHeight);
-            header.addClass(fixed);
+            header.addClass(fixed).addClass(visible);
         }
 
         win.on('scroll', function(event) {
@@ -91,9 +96,35 @@ head.ready(function() {
                 wrapper.css('height', '');
                 header.removeClass(fixed);
             }
+            // if now you are on toparea and scroll to bottom
+            if ( canScrollToparea && scroll < topareaHeight && scroll > prevScroll ) {
+                scrollToparea();
+            }
+            // if now you are on toparea and scroll to top
+            if ( canScrollToparea && scroll < topareaHeight && scroll < prevScroll ) {
+                scrollToparea('top');
+            }
+
+            prevScroll = scroll;
         });
     })();
 
+    (function() {
+        var slider = $('.js-slick');
+
+        if ( slider.length ) {
+
+            slider.slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                dots: true,
+                slide: '.slider__slide',
+                prevArrow: '.slider__prev',
+                nextArrow: '.slider__next',
+                mobileFirst: true
+            });
+        }
+    })();
 
     // smooth scrolling to anchor link
     $(function() {
@@ -146,6 +177,7 @@ head.ready(function() {
 
             $(this).on('click', function(event) {
                 event.preventDefault();
+                toggleAbilityScrollToparea(1200);
 
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
