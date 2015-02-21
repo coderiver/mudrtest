@@ -233,8 +233,10 @@ a.btn
     height: 1em
     margin-top: -0.6em
     background: no-repeat center center
-    background-image: url('../img/svg/icons-other/link.svg')
+    background-image: url('../img/link.svg')
     background-size: cover
+    .ie8 &
+      +sprite(link)
   &:hover, &:focus
     // color: $interactive
     text-decoration: none
@@ -487,6 +489,9 @@ a.btn
   &:focus
     +placeholder
       opacity: 0.5
+
+  .ie8 &
+    border: 2px solid $passive
 
 textarea.field__input
   resize: none

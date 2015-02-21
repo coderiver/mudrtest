@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="9px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9971) - http://www.bohemiancoding.com/sketch -->
+    <title>link</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="link" sketch:type="MSLayerGroup" transform="translate(0.952273, 0.000000)" fill="#2196F3">
+            <path d="M7.26776695,1 L7.97487373,1.70710678 L3.73223305,5.94974747 L3.02512627,5.24264069 L7.26776695,1 L7.26776695,1 Z" id="Rectangle-24" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-23" sketch:type="MSShapeGroup" x="2" y="4" width="3" height="3"></rect>
+            <path d="M8.7248737,3.2499999 L5.72487384,0.250000034 L8.72487377,0.250000102 L8.7248737,3.2499999 Z" id="Triangle-4" sketch:type="MSShapeGroup"></path>
+            <path d="M4.82702409,2 L3.8499732,3.00799561 L1.05309832,3.00799561 L1.05309832,8.03924561 L5.9905982,8.03924561 L5.9905982,5.08612061 L7,4.078125 L7,9 L0,9 L0,2 L4.82702409,2 Z" id="Rectangle-22" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
