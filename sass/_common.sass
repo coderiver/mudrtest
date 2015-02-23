@@ -218,30 +218,60 @@ a.btn
       right: 0
       background: $action
 
+.link__arrow
+  speak: none
+  position: absolute
+  top: 50%
+  right: 0
+  right: 0
+  +fs(10)
+  width: 1em
+  height: 1em
+  margin-top: -0.6em
+  background: no-repeat center center
+  background-image: url('../img/link.svg')
+  background-size: cover
+  &:before
+    content: ""
+    position: absolute
+    opacity: 0
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: no-repeat center center
+    background-image: url('../img/link-hover.svg')
+    background-size: cover
+    +trans(opacity)
+  .ie8 &
+    +sprite(link)
+    &:before
+      +sprite(link-hover)
+
+
 .link_icon
   padding-right: em(14)
   &:before
     background: $interactive
-  &:after
-    content: ""
-    display: block
-    position: absolute
-    top: 50%
-    right: 0
-    +fs(10)
-    width: 1em
-    height: 1em
-    margin-top: -0.6em
-    background: no-repeat center center
-    background-image: url('../img/link.svg')
-    background-size: cover
-    .ie8 &
-      +sprite(link)
+  // &:after
+  //   content: ""
+  //   display: block
+  //   position: absolute
+  //   top: 50%
+  //   right: 0
+  //   +fs(10)
+  //   width: 1em
+  //   height: 1em
+  //   margin-top: -0.6em
+  //   background: no-repeat center center
+  //   background-image: url('../img/link.svg')
+  //   background-size: cover
+  //   .ie8 &
+  //     +sprite(link)
   &:hover, &:focus
-    // color: $interactive
     text-decoration: none
-    // &:before
-    //   right: em(14)
+    .link__arrow:before
+      opacity: 1
 
 
 
