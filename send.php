@@ -28,7 +28,7 @@
         $footer .= "Content-type: text/html; charset=UTF-8" ."\r\n" ;
         $footer .= "From: Wisetest <info@wisetest.ru>" . "\r\n";
         $footer .= "\nUseragent:\n=====".$_SERVER["HTTP_USER_AGENT"]."\n=====".$_SERVER["REMOTE_ADDR"];
-        mail("hey@wisetest.me", "[WISETEST] Beta", $footer, $message,);
+        mail("hey@wisetest.me", "[WISETEST] Beta", $message);
         // print_r($message);
         // print_r($footer);
         echo "Sent success";
