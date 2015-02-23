@@ -236,7 +236,7 @@ a.btn { line-height: 2.92857em; }
 
 .step__text { display: block; font-size: 1em; padding-left: 4.28571em; }
 
-.field { position: relative; box-sizing: border-box; border: 1px solid #9CA5BF; border-radius: 4px; }
+.field { position: relative; z-index: 0; box-sizing: border-box; border: 1px solid #9CA5BF; border-radius: 4px; }
 .field .error { z-index: 0; }
 .field.is-error .field__back { opacity: 1; background: #F44336; box-shadow: none; }
 
