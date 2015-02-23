@@ -987,34 +987,34 @@
             <h2 class="heading">Напишите, с нами легко связаться и приятно работать</h2>
             <div class="form-wrapper">
               <!--begin form-->
-              <form class="form is-error">
+              <form method="POST" class="form">
                 <div class="form__three">
                   <div class="form__field">
                     <div class="field">
-                      <input type="text" placeholder="Как к вам обращаться?" class="field__input">
+                      <input type="text" name="name" placeholder="Как к вам обращаться?" class="field__input">
                       <div class="field__back"></div><span class="error">Похоже, вы ввели в поле недопустимые символы</span>
                     </div>
                   </div>
                   <div class="form__field">
                     <div class="field">
-                      <input type="text" placeholder="Ваш контактный e-mail" class="field__input">
+                      <input type="text" name="email" placeholder="Ваш контактный e-mail" class="field__input">
                       <div class="field__back"></div><span class="error">Похоже, вы ввели в поле недопустимые символы</span>
                     </div>
                   </div>
                   <div class="form__field">
-                    <div class="field is-error">
-                      <input type="text" placeholder="Ссылка на проект (не обязательно)" class="field__input">
+                    <div class="field">
+                      <input type="text" name="link-to-project" placeholder="Ссылка на проект (не обязательно)" class="field__input">
                       <div class="field__back"></div><span class="error">Похоже, вы ввели в поле недопустимые символы</span>
                     </div>
                   </div>
                 </div>
                 <div class="field">
-                  <textarea rows="5" placeholder="Опишите свой продукт в двух предложениях (не обязательно)" class="field__input"></textarea>
+                  <textarea rows="5" name="description" placeholder="Опишите свой продукт в двух предложениях (не обязательно)" class="field__input"></textarea>
                   <div class="field__back"></div>
                 </div>
                 <div class="form__footer">
                   <div class="form__footer-cell">За консультацию о проекте денег не возьмём</div>
-                  <div class="form__footer-cell form__footer-btn is-error">
+                  <div class="form__footer-cell form__footer-btn">
                     <button type="submit" class="btn btn_green">Отправить нам сообщение</button><span class="error">
                       При отправке формы произошла ошибка.
                       Пожалуйста, отправьте её повторно</span>

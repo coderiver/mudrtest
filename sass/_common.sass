@@ -170,6 +170,14 @@ a
     color: #FFF
     background: $active
     box-shadow: none
+  &:disabled, .is-inactive
+    background: none
+    border: 1px solid $passive
+    cursor: default
+    color: $passive
+    &:hover
+      background: none
+      color: $passive
 
   .ie8 &
     padding: 0 em(18)
@@ -190,9 +198,6 @@ a.btn
     color: #FFF
   &:active
     background: $active-green
-
-.is-error .btn
-  background: $alert
 
 
 .link
@@ -475,6 +480,8 @@ a.btn
   box-sizing: border-box
   border: 1px solid $passive
   border-radius: 4px
+  .error
+    z-index: 0
   &.is-error
     .field__back
       opacity: 1
@@ -560,7 +567,7 @@ textarea.field__input
     left: -2px
     right: -2px
     margin-bottom: 15px
-  .is-error > &
+  &.is-visible
     visibility: visible
     transform: translateY(0)
     opacity: 1

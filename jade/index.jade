@@ -720,34 +720,34 @@ block content
 
         .form-wrapper
           //begin form
-          form.form.is-error
+          form.form(method="POST")
             .form__three
               .form__field
                 .field
-                  input.field__input(type="text", placeholder="Как к вам обращаться?")
+                  input.field__input(type="text", name="name", placeholder="Как к вам обращаться?")
                   .field__back
                   span.error
                     | Похоже, вы ввели в поле недопустимые символы
               .form__field
                 .field
-                  input.field__input(type="text", placeholder="Ваш контактный e-mail")
+                  input.field__input(type="text", name="email", placeholder="Ваш контактный e-mail")
                   .field__back
                   span.error
                     | Похоже, вы ввели в поле недопустимые символы
               .form__field
-                .field.is-error
-                  input.field__input(type="text", placeholder="Ссылка на проект (не обязательно)")
+                .field
+                  input.field__input(type="text", name="link-to-project", placeholder="Ссылка на проект (не обязательно)")
                   .field__back
                   span.error
                     | Похоже, вы ввели в поле недопустимые символы
             .field
-              textarea.field__input(rows="5", placeholder="Опишите свой продукт в двух предложениях (не обязательно)")
+              textarea.field__input(rows="5", name="description", placeholder="Опишите свой продукт в двух предложениях (не обязательно)")
               .field__back
 
             .form__footer
               .form__footer-cell
                 | За консультацию о проекте денег не возьмём
-              .form__footer-cell.form__footer-btn.is-error
+              .form__footer-cell.form__footer-btn
                 button.btn.btn_green(type="submit")
                   | Отправить нам сообщение
                 span.error

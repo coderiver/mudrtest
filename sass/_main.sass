@@ -854,8 +854,10 @@
         margin-top: 20px
         &:first-child
           margin-top: 0
-  &.is-error
-    animation: form-error 0.15s linear 5
+  &.is-shake
+    animation: form-error 0.1s linear 5
+  &.is-alert .btn
+    background: $alert
   .is-success &, &.is-success
     display: none
 
@@ -911,6 +913,10 @@
     left: 10px
     right: 10px
     margin-bottom: 10px
+    .is-alert &
+      visibility: visible
+      transform: translateY(0)
+      opacity: 1
 
 .contacts
   margin: 80px -10px

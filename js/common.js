@@ -520,6 +520,215 @@ head.ready(function() {
 
     })();
 
+    (function() {
+        var form         = $('.form'),
+            name         = form.find('input[name="name"]'),
+            email        = form.find('input[name="email"]'),
+            btn          = form.find('[type=submit]'),
+            nameField    = name.parents('.field'),
+            emailField   = email.parents('.field'),
+            field        = '.field',
+            errorClass   = 'is-error',
+            visibleClass = 'is-visible',
+            successClass = 'is-success',
+            alertClass   = 'is-alert',
+            sendingClass = 'is-sending',
+            error        = [false, false];
+            blackList    = [
+                'sharklasers.com',
+                'guerrillamailblock.com',
+                'guerrillamail.com',
+                'guerrillamail.net',
+                'guerrillamail.biz',
+                'guerrillamail.org',
+                'guerrillamail.de',
+                'spam4.me',
+                'mailspeed.ru',
+                'mqkr.net',
+                '12minutemail.com',
+                'mytempemail.com',
+                'spamobox.com',
+                'vipmail.pw',
+                'shitmail.me',
+                'disposableinbox.com',
+                'filzmail.com',
+                'freemail.msuroid.com',
+                'anonymbox.com',
+                'yopmail.com',
+                'TempEMail.net',
+                'spambog.com',
+                'spambog.de',
+                'mfsa.ru',
+                'spam.su',
+                'nospam.ws',
+                'mailinator.com',
+                'safetymail.info',
+                'trashcanmail.com',
+                'mintemail.com',
+                'jetable.org',
+                'dispostable.com',
+                'spamgourmet.com'
+            ];
+
+        function validateEmail(email) {
+            var check;
+            var re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+            if (re.test(email)) {
+                check = true;
+            } else {
+                check = false;
+            }
+            return check;
+        }
+
+        function checkBlackList(email) {
+            var check = false,
+                i     = 0,
+                max   = blackList.length - 1;
+            while( check === false ){
+                var domain = new RegExp(blackList[i]);
+                if ( domain.test(email) ) {
+                    console.log(email, domain);
+                    check = true;
+                    return check;
+                } else if ( i < max ) {
+                    i++;
+                } else {
+                    check = false;
+                    return check;
+                }
+            }
+        }
+
+        function checkStatus() {
+           if ( error.indexOf(true) === -1 ) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function isFormError() {
+            if ( !form.hasClass(errorClass) ) {
+                form.addClass(errorClass);
+                btn.attr('disabled', 'disabled');
+            }
+            shakeForm();
+        }
+
+        function removeFormError() {
+            if ( checkStatus() ) {
+                form.removeClass(errorClass);
+                btn.removeAttr('disabled');
+            }
+        }
+
+        function shakeForm() {
+            form.addClass('is-shake');
+            setTimeout(function() {
+                form.removeClass('is-shake');
+            }, 500);
+        }
+
+        function showErrorMsg(context) {
+            var errorMsg = context.siblings('.error');
+            context.parents(field).addClass(errorClass);
+            errorMsg.addClass(visibleClass);
+            setTimeout(function() {
+                errorMsg.removeClass(visibleClass);
+            }, 3000);
+        }
+
+        function hideErrorMsg(context) {
+            var errorMsg = context.siblings('.error');
+            context.parents(field).removeClass(errorClass);
+            errorMsg.removeClass(visibleClass);
+        }
+
+        function checkName() {
+            if ( name.val() === '' ) {
+                showErrorMsg(name);
+                isFormError();
+                error[1] = true;
+            } else {
+                error[1] = false;
+                removeFormError();
+            }
+        }
+
+        function checkEmail() {
+            var emailStr = email.val();
+            if ( validateEmail(emailStr) ) {
+                if ( checkBlackList(emailStr) ) {
+                    showErrorMsg(el);
+                    isFormError();
+                    error[2] = true;
+                } else {
+                    error[2] = false;
+                    removeFormError();
+                }
+            } else {
+                showErrorMsg(email);
+                isFormError();
+                error[2] = true;
+            }
+        }
+
+        name.on('blur', function() {
+            checkName();
+        });
+
+        name.on('focus', function(event) {
+            hideErrorMsg($(this));
+        });
+
+        email.on('blur', function() {
+            checkEmail();
+        });
+
+        email.on('focus', function(event) {
+            hideErrorMsg($(this));
+        });
+
+        form.submit(function(event) {
+            event.preventDefault();
+            checkName();
+            checkEmail();
+            if ( checkStatus() ) {
+                var url = "/send.php"; // the script where you handle the form input.
+
+                form.parent().addClass(sendingClass);
+
+                setTimeout(function() {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: form.serialize(), // serializes the form's elements.
+                        success: function(data) {
+                            form.parent()
+                                .removeClass(sendingClass)
+                                .addClass(successClass);
+                            form.find('input, textarea').val('');
+                            if ( form.hasClass(alertClass) ) {
+                                form.removeClass(alertClass);
+                            }
+                            console.log(data);
+                            setTimeout(function() {
+                                form.parent().removeClass(successClass);
+                            }, 5000);
+                        },
+                        error: function(data) {
+                            console.log(data.resppondText, data.statusText);
+                            form.parent().removeClass(sendingClass);
+                            form.addClass(alertClass);
+                        }
+                    });
+                }, 2000);
+            }
+        });
+    })();
+
+
 });
     // var path = document.querySelector('#main-line');
     // var length = path.getTotalLength();
