@@ -291,7 +291,7 @@ block content
 
           p.text.text_center
             | Для тестирования подойдёт как уже работающий проект, так и его интерактивный
-            | прототип. Скетчи на бумаге тестировать не рекомендуем.
+            | прототип.  Скетчи на бумаге тестировать не рекомендуем.
 
         .column
           .figure
@@ -302,7 +302,7 @@ block content
 
           p.text.text_center
             | Не имеет значения новый у вас продукт или уже давно работающий. 
-            | Существующий, новая версия, стартап, ешё не на рынке.
+            | Существующий, новая версия, стартап, ещё не на рынке.
   //end features
 
   //begin what-for
@@ -796,7 +796,7 @@ block content
                     | Похоже, вы ввели в поле недопустимые символы
               .form__field
                 .field
-                  input.field__input(type="text", name="email", placeholder="Ваш контактный e-mail")
+                  input.field__input(type="email", name="email", placeholder="Ваш контактный e-mail")
                   .field__back
                   span.error
                     | Похоже, вы ввели в поле недопустимые символы
@@ -815,7 +815,9 @@ block content
                 | За консультацию о проекте денег не возьмём
               .form__footer-cell.form__footer-btn
                 button.btn.btn_green.btn_load(type="submit")
-                  span Отправить нам сообщение
+                  span.btn__text
+                    | Отправить нам сообщение
+                  .btn__spinner
                 span.error
                   | При отправке формы произошла ошибка.
                   | Пожалуйста, отправьте её повторно
@@ -892,3 +894,30 @@ block popup
       button.popup__close
         +icon("close")
   //end popup
+
+  //- //begin popup
+  //- #video2.popup.popup_video.js-yt
+  //-   .popup__inner
+  //-     .popup__frame
+  //-       #yt-video2
+  //-     button.popup__close
+  //-       +icon("close")
+  //- //end popup
+
+  //- //begin popup
+  //- #video3.popup.popup_video.js-yt
+  //-   .popup__inner
+  //-     .popup__frame
+  //-       #yt-video3
+  //-     button.popup__close
+  //-       +icon("close")
+  //- //end popup
+
+  //- //begin popup
+  //- #video4.popup.popup_video.js-yt
+  //-   .popup__inner
+  //-     .popup__frame
+  //-       #yt-video4
+  //-     button.popup__close
+  //-       +icon("close")
+  //- //end popup

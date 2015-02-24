@@ -553,7 +553,7 @@
   margin: 65px -17px
   font-size: 0
   .figure
-    min-height: 250px
+    min-height: em(250)
   +r(1000)
     margin-left: 0
     margin-right: 0
@@ -1095,11 +1095,11 @@
   display: none
   position: fixed
   z-index: 101
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  padding: 20px
+  top: -60px
+  left: -60px
+  right: -60px
+  bottom: -60px
+  padding: 80px
   background: rgba(0,0,0,0.75)
   overflow: auto
   +vertical
@@ -1152,7 +1152,6 @@
     max-width: em(800)
     width: 100%
     min-width: em(200)
-    border: 1px solid $interactive
     background: $interactive
     &:before
       content: ""
@@ -1169,6 +1168,8 @@
             fill: $interactive
   .popup__frame
     position: absolute
+    // border: 1px solid $interactive
+    box-shadow: 0 0 0 1px $interactive
     top: 0
     left: 0
     right: 0

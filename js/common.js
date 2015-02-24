@@ -198,15 +198,28 @@ head.ready(function() {
         });
     });
 
-
     $('[data-video-id]').each(function() {
         var el = $(this);
         el.on('click', function() {
             setTimeout(function(){
-                playVideo(el.data('video-id'));
-            }, 100);
+                loadVideo(el.data('video-id'));
+
+                if ( $('html').hasClass('desktop') ) {
+                    playVideo();
+                }
+            }, 200);
         });
     });
+
+    // function toggleVideo(context, state) {
+    //     // if state == 'hide', hide. Else: show video
+    //     // var div = document.getElementById("popupVid");
+    //     // var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+    //     var iframe = context.find('iframe')[0].contentWindow;
+    //     // div.style.display = state == 'hide' ? 'none' : '';
+    //     func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+    //     iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+    // }
 
 
     var toggleBodyScroll = function(body) {
@@ -214,22 +227,24 @@ head.ready(function() {
         body.toggleClass('no-scroll');
 
         if (body.hasClass('no-scroll')) {
+            disableScroll();
             // var posTop = -$(window).scrollTop();
             // body.css({
             //     position : 'fixed',
             //     top      : posTop
             // });
-            body.bind('touchmove', function(event) {
-                event.preventDefault();
-            });
+            // body.bind('touchmove', function(event) {
+            //     event.preventDefault();
+            // });
         } else {
+             enableScroll();
             // var scrollPos = -body.offset().top;
             // body.css({
             //     position : '',
             //     top      : ''
             // });
             // $(window).scrollTop(scrollPos);
-            body.unbind('touchmove');
+            // body.unbind('touchmove');
         }
     };
 
@@ -258,6 +273,10 @@ head.ready(function() {
                 popupInner.addClass(visibleClass);
             }, 200);
 
+            // if (popup.hasClass('js-yt')) {
+            //     setTimeout(toggleVideo(popup), 200);
+            // }
+
         } else {
 
             toggleBodyScroll(body);
@@ -269,6 +288,7 @@ head.ready(function() {
 
             if (popup.hasClass('js-yt')) {
                 pauseVideo();
+                // toggleVideo(popup, 'hide');
             }
 
         }
@@ -284,7 +304,7 @@ head.ready(function() {
         togglePopup(this);
     });
 
-    $('.popup__close').on('click', function(event) {
+    $('.popup__close').on('click touchend', function(event) {
         event.preventDefault();
         togglePopup($(this).parents('.popup'));
     });
@@ -765,7 +785,7 @@ head.ready(function() {
       if (window.addEventListener) {
           window.addEventListener('DOMMouseScroll', wheel, false);
       }
-      window.onmousewheel = document.onmousewheel = wheel;
+      window.onmousewheel = document.onmousewheel = window.ontouchmove = document.ontouchmove = wheel;
       document.onkeydown = keydown;
     }
 
@@ -773,7 +793,7 @@ head.ready(function() {
         if (window.removeEventListener) {
             window.removeEventListener('DOMMouseScroll', wheel, false);
         }
-        window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+        window.onmousewheel = document.onmousewheel = window.ontouchmove = document.ontouchmove = document.onkeydown = null;
     }
 
 });

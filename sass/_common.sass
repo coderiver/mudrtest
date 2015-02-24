@@ -189,6 +189,23 @@ a
 a.btn
   line-height: em(41)
 
+.btn__spinner
+  display: none
+  position: absolute
+  z-index: 1
+  top: 50%
+  left: 50%
+  width: em(20)
+  height: em(20)
+  margin: em(-10) 0 0 em(-10)
+  box-sizing: border-box
+  border: solid em(2) transparent
+  border-top-color: $main
+  border-left-color: $main
+  border-radius: 50%
+  animation: spinner 0.5s linear infinite
+
+
 .btn_green
   background: $action
   box-shadow: none
@@ -205,23 +222,26 @@ a.btn
 .btn.btn_load
   overflow: hidden
   position: relative
-  &:before
-    content: ""
-    position: absolute
-    top: 0
-    left: 0
-    bottom: 0
-    right: 100%
-    background: $main
+  // &:before
+  //   content: ""
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   bottom: 0
+  //   right: 100%
+  //   background: $main
+
   &.is-load, .is-sending &
     transition: none
     background: none
-    border: 1px solid $main
-    > span
+    border: 1px solid $passive
+    .btn__text
       display: none
-    &:before
-      right: 0
-      transition: right 0.5s linear
+    .btn__spinner
+      display: block
+    // &:before
+    //   right: 0
+    //   transition: right 0.5s linear
 
 
 .link

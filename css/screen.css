@@ -111,6 +111,8 @@ table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 @keyframes form-error { 0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
   33.33% { -webkit-transform: translateX(3px); transform: translateX(3px); }
   66.66% { -webkit-transform: translateX(-3px); transform: translateX(-3px); } }
+@-webkit-keyframes spinner { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@keyframes spinner { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 @font-face { font-family: "Kelson Sans Bold"; src: url("../fonts/kelson_sans_bold_ru.eot"); src: url("../fonts/kelson_sans_bold_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_bold_ru.woff") format("woff"), url("../fonts/kelson_sans_bold_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "Kelson Sans Light"; src: url("../fonts/kelson_sans_light_ru.eot"); src: url("../fonts/kelson_sans_light_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_light_ru.woff") format("woff"), url("../fonts/kelson_sans_light_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: "Kelson Sans Regular"; src: url("../fonts/kelson_sans_regular_ru.eot"); src: url("../fonts/kelson_sans_regular_ru.eot?#iefix") format("embedded-opentype"), url("../fonts/kelson_sans_regular_ru.woff") format("woff"), url("../fonts/kelson_sans_regular_ru.ttf") format("truetype"); font-weight: normal; font-style: normal; }
@@ -155,6 +157,8 @@ a { color: #2196F3; }
 
 a.btn { line-height: 2.92857em; }
 
+.btn__spinner { display: none; position: absolute; z-index: 1; top: 50%; left: 50%; width: 1.42857em; height: 1.42857em; margin: -0.71429em 0 0 -0.71429em; box-sizing: border-box; border: solid 0.14286em transparent; border-top-color: #333333; border-left-color: #333333; border-radius: 50%; -webkit-animation: spinner 0.5s linear infinite; animation: spinner 0.5s linear infinite; }
+
 .btn_green { background: #4CAF50; box-shadow: none; }
 .btn_green:hover, .form .btn_green:focus { background: #118915; box-shadow: none; color: #FFF; }
 .btn_green:active { background: #106F13; }
@@ -162,10 +166,9 @@ a.btn { line-height: 2.92857em; }
 .form.is-alert .btn { background: #FFB03B; }
 
 .btn.btn_load { overflow: hidden; position: relative; }
-.btn.btn_load:before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; right: 100%; background: #333333; }
-.btn.btn_load.is-load, .is-sending .btn.btn_load { -webkit-transition: none; transition: none; background: none; border: 1px solid #333333; }
-.btn.btn_load.is-load > span, .is-sending .btn.btn_load > span { display: none; }
-.btn.btn_load.is-load:before, .is-sending .btn.btn_load:before { right: 0; -webkit-transition: right 0.5s linear; transition: right 0.5s linear; }
+.btn.btn_load.is-load, .is-sending .btn.btn_load { -webkit-transition: none; transition: none; background: none; border: 1px solid #9CA5BF; }
+.btn.btn_load.is-load .btn__text, .is-sending .btn.btn_load .btn__text { display: none; }
+.btn.btn_load.is-load .btn__spinner, .is-sending .btn.btn_load .btn__spinner { display: block; }
 
 .link { display: inline-block; position: relative; text-decoration: none; color: #2196F3; -webkit-transition: color 0.2s ease; transition: color 0.2s ease; }
 .link:before { content: ""; position: absolute; top: 50%; left: 0; right: 100%; height: 0.14286em; background: #4CAF50; margin-top: 0.57143em; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
@@ -532,7 +535,7 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
   .helping__cell:first-child { padding: 0; } }
 
 .how { margin: 65px -17px; font-size: 0; }
-.how .figure { min-height: 250px; }
+.how .figure { min-height: 17.85714em; }
 @media only screen and (max-width: 1000px) { .how { margin-left: 0; margin-right: 0; }
   .how .how__column { display: block; width: auto; padding: 0; max-width: 50%; margin: 20px auto; }
   .how .how__column:first-child { margin-top: 0; }
@@ -700,7 +703,7 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 
 .footer__center { position: absolute; top: -0.21429em; left: 0; right: 0; width: 7.14286em; margin: auto; text-align: center; }
 
-.popup { display: none; position: fixed; z-index: 101; top: 0; left: 0; right: 0; bottom: 0; padding: 20px; background: rgba(0, 0, 0, 0.75); overflow: auto; text-align: center; font-size: 0; white-space: nowrap; cursor: pointer; }
+.popup { display: none; position: fixed; z-index: 101; top: -60px; left: -60px; right: -60px; bottom: -60px; padding: 80px; background: rgba(0, 0, 0, 0.75); overflow: auto; text-align: center; font-size: 0; white-space: nowrap; cursor: pointer; }
 .popup:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 
 .popup__inner { display: inline-block; vertical-align: middle; position: relative; -webkit-transform: translateY(50px); -ms-transform: translateY(50px); transform: translateY(50px); font-size: 14px; font-size: 1.4rem; white-space: normal; opacity: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; cursor: default; }
@@ -711,13 +714,13 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 .popup__close:active .icon { fill: #2868B3; }
 @media only screen and (max-width: 980px) { .popup__close { top: auto; bottom: 100%; right: 0; margin: 0 0 0.2em; } }
 
-.popup_video .popup__inner { max-width: 57.14286em; width: 100%; min-width: 14.28571em; border: 1px solid #2196F3; background: #2196F3; }
+.popup_video .popup__inner { max-width: 57.14286em; width: 100%; min-width: 14.28571em; background: #2196F3; }
 .popup_video .popup__inner:before { content: ""; display: block; padding-bottom: 56.25%; }
 .popup_video .popup__inner:hover .popup__close { -webkit-transform: rotate(0); -ms-transform: rotate(0); transform: rotate(0); }
 .popup_video .popup__inner:hover .popup__close .icon { fill: #9CA5BF; }
 .popup_video .popup__inner:hover .popup__close:hover { -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
 .popup_video .popup__inner:hover .popup__close:hover .icon { fill: #2196F3; }
-.popup_video .popup__frame { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.popup_video .popup__frame { position: absolute; box-shadow: 0 0 0 1px #2196F3; top: 0; left: 0; right: 0; bottom: 0; }
 .popup_video:hover .popup__close { -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
 .popup_video:hover .popup__close .icon { fill: #2196F3; }
 
