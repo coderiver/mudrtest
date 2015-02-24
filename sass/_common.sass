@@ -199,6 +199,30 @@ a.btn
   &:active
     background: $active-green
 
+.form.is-alert .btn
+  background: $alert
+
+.btn.btn_load
+  overflow: hidden
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 100%
+    background: $main
+  &.is-load, .is-sending &
+    transition: none
+    background: none
+    border: 1px solid $main
+    > span
+      display: none
+    &:before
+      right: 0
+      transition: right 0.5s linear
+
 
 .link
   display: inline-block
@@ -556,7 +580,7 @@ textarea.field__input
   visibility: hidden
   opacity: 0
   transform: translateY(100%)
-  transition: all 0.200s ease
+  transition: all 0.2s ease
   &:before
     content: ""
     position: absolute

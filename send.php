@@ -18,19 +18,15 @@
     //yb@uxdepot.ru
 
     if($fname != "") {
-        // $message = "\nName:\n ".$fname;
-        // $message .= "\n\nEmail:\n ".$femail;
-        // $message .= "\n\nLink to project:\n ".$flink_to_project;
-        // $message .= "\n\nDescription:\n ".$fdescription;
-        $message = "\n".$fname." с адресом ".$femail." написал вам с предложением протестировать проект ".$flink_to_project."\n\n"."«".$fdescription."»";
+        $header = 'MIME-Version: 1.0' . "\r\n" ;
+        $header .= 'Content-type: text/html; charset=UTF-8' . "\r\n" ;
+        $header .= 'From: '.$femail . "\r\n";
+        $message = "\n".$fname." с адресом ".$femail." написал вам с предложением протестировать проект ".$flink_to_project."\n\n<br><br>«".$fdescription."»";
+        // $message .= "\n\n\n\nUseragent:\n=====".$_SERVER["HTTP_USER_AGENT"]."\n=====".$_SERVER["REMOTE_ADDR"];
 
-        $footer = "\n\n\n\n\nMIME-Version: 1.0"."\r\n" ;
-        $footer .= "Content-type: text/html; charset=UTF-8" ."\r\n" ;
-        $footer .= "From: Wisetest <info@wisetest.ru>" . "\r\n";
-        $footer .= "\nUseragent:\n=====".$_SERVER["HTTP_USER_AGENT"]."\n=====".$_SERVER["REMOTE_ADDR"];
-        mail("hey@wisetest.me", "[WISETEST] Beta", $message);
+        mail("hey@wisetest.me", "[WISETEST] Beta", $message, $header);
+        // print_r($header);
         // print_r($message);
-        // print_r($footer);
         echo "Sent success";
     }
 ?>

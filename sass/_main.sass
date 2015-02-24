@@ -856,10 +856,10 @@
           margin-top: 0
   &.is-shake
     animation: form-error 0.1s linear 5
-  &.is-alert .btn
-    background: $alert
-  .is-success &, &.is-success
-    display: none
+  // &.is-alert .btn
+  //   background: $alert
+  // .is-success &, &.is-success
+  //   display: none
 
 
 .form__three
@@ -1181,12 +1181,14 @@
 
 
 .message
-  text-align: center
-  margin-top: em(55)
-  .form-wrapper &
-    display: none
-  .is-success &
-    display: block
+  +vertical
+  white-space: nowrap
+
+.message__inner
+  display: inline-block
+  vertical-align: middle
+  white-space: normal
+  +fs(14)
 
 .message__icon
   margin-bottom: em(35)
@@ -1199,3 +1201,32 @@
     margin-top: 0
   &:last-child
     margin-bottom: 0
+
+
+.form-wrapper
+  position: relative
+  .form
+    transition: opacity 0.5s linear
+  .form-message
+    position: absolute
+    overflow: hidden
+    z-index: -1
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+  .message
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    transform: translate3d(101%,0,0)
+    transition: transform 0.5s linear
+  &.is-success
+    .form
+      opacity: 0
+    .form-message
+      z-index: 1
+    .message
+      transform: translate3d(0,0,0)

@@ -57,18 +57,18 @@ head.ready(function() {
         });
 
         function scrollToparea(direction) {
-            disable_scroll();
+            disableScroll();
             if ( direction == 'top' ) {
                 body.animate({
                     scrollTop: 0
                 }, 800, function(){
-                      enable_scroll();
+                      enableScroll();
                 });
             } else {
                 body.animate({
                     scrollTop: topareaHeight
                 }, 800, function(){
-                      enable_scroll();
+                      enableScroll();
                 });
             }
             toggleAbilityScrollToparea(800);
@@ -665,7 +665,7 @@ head.ready(function() {
             var emailStr = email.val();
             if ( validateEmail(emailStr) ) {
                 if ( checkBlackList(emailStr) ) {
-                    showErrorMsg(el);
+                    showErrorMsg(email);
                     isFormError();
                     error[2] = true;
                 } else {
@@ -702,7 +702,7 @@ head.ready(function() {
             if ( checkStatus() ) {
                 var url = "/send.php"; // the script where you handle the form input.
 
-                form.parent().addClass(sendingClass);
+                form.addClass(sendingClass);
 
                 setTimeout(function() {
                     $.ajax({
@@ -710,25 +710,28 @@ head.ready(function() {
                         url: url,
                         data: form.serialize(), // serializes the form's elements.
                         success: function(data) {
-                            form.parent()
-                                .removeClass(sendingClass)
-                                .addClass(successClass);
-                            form.find('input, textarea').val('');
-                            if ( form.hasClass(alertClass) ) {
-                                form.removeClass(alertClass);
-                            }
+                            form.parent().addClass(successClass);
+                            setTimeout(function() {
+                                form.removeClass(sendingClass);
+                                form.find('input, textarea').val('');
+                                if ( form.hasClass(alertClass) ) {
+                                    form.removeClass(alertClass);
+                                }
+                            }, 500);
                             console.log(data);
                             setTimeout(function() {
                                 form.parent().removeClass(successClass);
-                            }, 5000);
+                            }, 10000);
                         },
                         error: function(data) {
-                            console.log(data.resppondText, data.statusText);
-                            form.parent().removeClass(sendingClass);
-                            form.addClass(alertClass);
+                            console.log(data.statusText);
+                            form.removeClass(sendingClass).addClass(alertClass);
+                            setTimeout(function() {
+                                form.removeClass(alertClass);
+                            }, 2000);
                         }
                     });
-                }, 2000);
+                }, 600);
             }
         });
     })();
@@ -742,7 +745,7 @@ head.ready(function() {
       e = e || window.event;
       if (e.preventDefault)
           e.preventDefault();
-      e.returnValue = false;  
+      e.returnValue = false;
     }
 
     function keydown(e) {
@@ -758,7 +761,7 @@ head.ready(function() {
       preventDefault(e);
     }
 
-    function disable_scroll() {
+    function disableScroll() {
       if (window.addEventListener) {
           window.addEventListener('DOMMouseScroll', wheel, false);
       }
@@ -766,11 +769,11 @@ head.ready(function() {
       document.onkeydown = keydown;
     }
 
-    function enable_scroll() {
+    function enableScroll() {
         if (window.removeEventListener) {
             window.removeEventListener('DOMMouseScroll', wheel, false);
         }
-        window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+        window.onmousewheel = document.onmousewheel = document.onkeydown = null;
     }
 
 });
