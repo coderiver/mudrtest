@@ -1,63 +1,65 @@
 $icons: (
-  arr-next: (X: -655px, Y:-253px, W: 16px, H: 30px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  arr-prev: (X: -681px, Y:-253px, W: 16px, H: 29px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  birzool: (X: -291px, Y:-221px, W: 75px, H: 16px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  book: (X: -587px, Y:-280px, W: 50px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  bookmark: (X: -517px, Y:-140px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  business: (X: -181px, Y:-406px, W: 61px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  capable-bits: (X: -210px, Y:-488px, W: 69px, H: 50px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  chart: (X: -517px, Y:-420px, W: 60px, H: 58px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  checklist: (X: -517px, Y:0px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  clock: (X: -587px, Y:-210px, W: 53px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  close: (X: -655px, Y:-185px, W: 29px, H: 28px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  cloud: (X: -430px, Y:-488px, W: 60px, H: 49px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  codedby: (X: -655px, Y:-369px, W: 47px, H: 5px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  coderiver: (X: -655px, Y:-354px, W: 49px, H: 5px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  computer: (X: -70px, Y:-558px, W: 61px, H: 54px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  dotts-b-small: (X: 0px, Y:-295px, W: 165px, H: 101px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  dotts-b: (X: -111px, Y:0px, W: 285px, H: 101px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  dotts-l: (X: 0px, Y:0px, W: 101px, H: 285px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  dotts-r: (X: -406px, Y:0px, W: 101px, H: 285px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  dotts-t-small: (X: -175px, Y:-295px, W: 165px, H: 100px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  dotts-t: (X: -111px, Y:-111px, W: 285px, H: 100px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  driver-notes: (X: -587px, Y:-480px, W: 50px, H: 50px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  email: (X: -655px, Y:-324px, W: 21px, H: 20px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  flag: (X: -252px, Y:-406px, W: 61px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  graph: (X: -110px, Y:-406px, W: 61px, H: 61px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  hand: (X: -587px, Y:0px, W: 58px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  heart: (X: -587px, Y:-70px, W: 57px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  inspire-me: (X: -111px, Y:-251px, W: 82px, H: 26px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  iphone: (X: -655px, Y:-115px, W: 36px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  link-hover: (X: -694px, Y:-204px, W: 10px, H: 9px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  link: (X: -694px, Y:-185px, W: 10px, H: 9px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  location: (X: -140px, Y:-488px, W: 60px, H: 59px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  logo-small: (X: -655px, Y:0px, W: 54px, H: 45px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  logo: (X: 0px, Y:-406px, W: 100px, H: 72px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  map: (X: -685px, Y:-293px, W: 21px, H: 20px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  mind: (X: 0px, Y:-488px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  mobiads: (X: -211px, Y:-558px, W: 70px, H: 40px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  nova-poshta: (X: -587px, Y:-350px, W: 58px, H: 50px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  person-card: (X: 0px, Y:-558px, W: 60px, H: 57px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  person: (X: -517px, Y:-210px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  phone: (X: -655px, Y:-293px, W: 20px, H: 21px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  play: (X: -655px, Y:-223px, W: 31px, H: 20px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  questionnaire: (X: -587px, Y:-410px, W: 42px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  rio: (X: -203px, Y:-251px, W: 63px, H: 26px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  separator: (X: -111px, Y:-221px, W: 170px, H: 20px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  settings: (X: -517px, Y:-70px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  sofa: (X: -393px, Y:-406px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  spaces: (X: -291px, Y:-558px, W: 70px, H: 39px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  stample: (X: -587px, Y:-140px, W: 53px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  startask: (X: -500px, Y:-488px, W: 70px, H: 41px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  step: (X: -323px, Y:-406px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  store: (X: -141px, Y:-558px, W: 60px, H: 52px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  success: (X: -517px, Y:-280px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  target: (X: -360px, Y:-488px, W: 60px, H: 50px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  tree: (X: -70px, Y:-488px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  ukr-map: (X: -350px, Y:-295px, W: 153px, H: 100px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  ux-fox: (X: -655px, Y:-55px, W: 46px, H: 50px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  video: (X: -517px, Y:-350px, W: 60px, H: 60px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
-  windows: (X: -289px, Y:-488px, W: 61px, H: 50px, TW: 709px, TH: 615px, IMG: '../img/icons.png'),
+  arr-next: (X: -600px, Y:-488px, W: 16px, H: 30px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  arr-prev: (X: 0px, Y:-650px, W: 16px, H: 29px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  birzool: (X: -513px, Y:-221px, W: 75px, H: 16px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  book: (X: -698px, Y:-386px, W: 50px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  bookmark: (X: -390px, Y:-488px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  business: (X: -291px, Y:-406px, W: 61px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  capable-bits: (X: 0px, Y:-590px, W: 69px, H: 50px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  chart: (X: -628px, Y:-209px, W: 60px, H: 58px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  checklist: (X: -503px, Y:-406px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  clock: (X: -698px, Y:-64px, W: 53px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  close: (X: -319px, Y:-590px, W: 29px, H: 28px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  cloud: (X: -698px, Y:-456px, W: 60px, H: 49px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  codedby: (X: -199px, Y:-558px, W: 47px, H: 5px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  coderiver: (X: -140px, Y:-558px, W: 49px, H: 5px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  computer: (X: -698px, Y:0px, W: 61px, H: 54px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-b-small: (X: -110px, Y:-295px, W: 165px, H: 101px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-b: (X: -333px, Y:0px, W: 285px, H: 101px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-l-2: (X: 0px, Y:-295px, W: 100px, H: 285px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-l: (X: -222px, Y:0px, W: 101px, H: 285px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-r-2: (X: 0px, Y:0px, W: 101px, H: 285px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-r: (X: -111px, Y:0px, W: 101px, H: 285px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-t-small: (X: -285px, Y:-295px, W: 165px, H: 100px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  dotts-t: (X: -333px, Y:-111px, W: 285px, H: 100px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  driver-notes: (X: -628px, Y:-414px, W: 50px, H: 50px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  email: (X: -539px, Y:-251px, W: 21px, H: 20px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  flag: (X: -362px, Y:-406px, W: 61px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  graph: (X: -220px, Y:-406px, W: 61px, H: 61px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  hand: (X: -628px, Y:-139px, W: 58px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  heart: (X: -628px, Y:-277px, W: 57px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  inspire-me: (X: -333px, Y:-251px, W: 82px, H: 26px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  iphone: (X: -573px, Y:-406px, W: 36px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  link-hover: (X: -598px, Y:-221px, W: 10px, H: 9px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  link: (X: -601px, Y:-251px, W: 10px, H: 9px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  location: (X: -628px, Y:-70px, W: 60px, H: 59px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  logo-small: (X: -628px, Y:-474px, W: 54px, H: 45px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  logo: (X: -110px, Y:-406px, W: 100px, H: 72px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  map: (X: -570px, Y:-251px, W: 21px, H: 20px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  mind: (X: -250px, Y:-488px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  mobiads: (X: -159px, Y:-590px, W: 70px, H: 40px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  nova-poshta: (X: -698px, Y:-515px, W: 58px, H: 50px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  person-card: (X: -628px, Y:-347px, W: 60px, H: 57px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  person: (X: -460px, Y:-488px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  phone: (X: -110px, Y:-558px, W: 20px, H: 21px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  play: (X: -498px, Y:-251px, W: 31px, H: 20px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  questionnaire: (X: -698px, Y:-575px, W: 42px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  rio: (X: -425px, Y:-251px, W: 63px, H: 26px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  separator: (X: -333px, Y:-221px, W: 170px, H: 20px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  settings: (X: -180px, Y:-488px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  sofa: (X: -320px, Y:-488px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  spaces: (X: -239px, Y:-590px, W: 70px, H: 39px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  stample: (X: -698px, Y:-134px, W: 53px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  startask: (X: -79px, Y:-590px, W: 70px, H: 41px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  step: (X: -628px, Y:0px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  store: (X: -698px, Y:-204px, W: 60px, H: 52px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  success: (X: -110px, Y:-488px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  target: (X: -698px, Y:-326px, W: 60px, H: 50px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  tree: (X: -530px, Y:-488px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  ukr-map: (X: -460px, Y:-295px, W: 153px, H: 100px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  ux-fox: (X: -628px, Y:-529px, W: 46px, H: 50px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  video: (X: -433px, Y:-406px, W: 60px, H: 60px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
+  windows: (X: -698px, Y:-266px, W: 61px, H: 50px, TW: 759px, TH: 679px, IMG: '../img/icons.png'),
 );
 
 
@@ -81,122 +83,136 @@ $icons: (
     width: 16px;
     height: 30px;
     background-image: url('../img/icons.png');
-    background-position: -655px -253px;
+    background-position: -600px -488px;
   }
 
   .icon-arr-prev {
     width: 16px;
     height: 29px;
     background-image: url('../img/icons.png');
-    background-position: -681px -253px;
+    background-position: 0px -650px;
   }
 
   .icon-birzool {
     width: 75px;
     height: 16px;
     background-image: url('../img/icons.png');
-    background-position: -291px -221px;
+    background-position: -513px -221px;
   }
 
   .icon-book {
     width: 50px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -587px -280px;
+    background-position: -698px -386px;
   }
 
   .icon-bookmark {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -517px -140px;
+    background-position: -390px -488px;
   }
 
   .icon-business {
     width: 61px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -181px -406px;
+    background-position: -291px -406px;
   }
 
   .icon-capable-bits {
     width: 69px;
     height: 50px;
     background-image: url('../img/icons.png');
-    background-position: -210px -488px;
+    background-position: 0px -590px;
   }
 
   .icon-chart {
     width: 60px;
     height: 58px;
     background-image: url('../img/icons.png');
-    background-position: -517px -420px;
+    background-position: -628px -209px;
   }
 
   .icon-checklist {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -517px 0px;
+    background-position: -503px -406px;
   }
 
   .icon-clock {
     width: 53px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -587px -210px;
+    background-position: -698px -64px;
   }
 
   .icon-close {
     width: 29px;
     height: 28px;
     background-image: url('../img/icons.png');
-    background-position: -655px -185px;
+    background-position: -319px -590px;
   }
 
   .icon-cloud {
     width: 60px;
     height: 49px;
     background-image: url('../img/icons.png');
-    background-position: -430px -488px;
+    background-position: -698px -456px;
   }
 
   .icon-codedby {
     width: 47px;
     height: 5px;
     background-image: url('../img/icons.png');
-    background-position: -655px -369px;
+    background-position: -199px -558px;
   }
 
   .icon-coderiver {
     width: 49px;
     height: 5px;
     background-image: url('../img/icons.png');
-    background-position: -655px -354px;
+    background-position: -140px -558px;
   }
 
   .icon-computer {
     width: 61px;
     height: 54px;
     background-image: url('../img/icons.png');
-    background-position: -70px -558px;
+    background-position: -698px 0px;
   }
 
   .icon-dotts-b-small {
     width: 165px;
     height: 101px;
     background-image: url('../img/icons.png');
-    background-position: 0px -295px;
+    background-position: -110px -295px;
   }
 
   .icon-dotts-b {
     width: 285px;
     height: 101px;
     background-image: url('../img/icons.png');
-    background-position: -111px 0px;
+    background-position: -333px 0px;
+  }
+
+  .icon-dotts-l-2 {
+    width: 100px;
+    height: 285px;
+    background-image: url('../img/icons.png');
+    background-position: 0px -295px;
   }
 
   .icon-dotts-l {
+    width: 101px;
+    height: 285px;
+    background-image: url('../img/icons.png');
+    background-position: -222px 0px;
+  }
+
+  .icon-dotts-r-2 {
     width: 101px;
     height: 285px;
     background-image: url('../img/icons.png');
@@ -207,287 +223,287 @@ $icons: (
     width: 101px;
     height: 285px;
     background-image: url('../img/icons.png');
-    background-position: -406px 0px;
+    background-position: -111px 0px;
   }
 
   .icon-dotts-t-small {
     width: 165px;
     height: 100px;
     background-image: url('../img/icons.png');
-    background-position: -175px -295px;
+    background-position: -285px -295px;
   }
 
   .icon-dotts-t {
     width: 285px;
     height: 100px;
     background-image: url('../img/icons.png');
-    background-position: -111px -111px;
+    background-position: -333px -111px;
   }
 
   .icon-driver-notes {
     width: 50px;
     height: 50px;
     background-image: url('../img/icons.png');
-    background-position: -587px -480px;
+    background-position: -628px -414px;
   }
 
   .icon-email {
     width: 21px;
     height: 20px;
     background-image: url('../img/icons.png');
-    background-position: -655px -324px;
+    background-position: -539px -251px;
   }
 
   .icon-flag {
     width: 61px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -252px -406px;
+    background-position: -362px -406px;
   }
 
   .icon-graph {
     width: 61px;
     height: 61px;
     background-image: url('../img/icons.png');
-    background-position: -110px -406px;
+    background-position: -220px -406px;
   }
 
   .icon-hand {
     width: 58px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -587px 0px;
+    background-position: -628px -139px;
   }
 
   .icon-heart {
     width: 57px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -587px -70px;
+    background-position: -628px -277px;
   }
 
   .icon-inspire-me {
     width: 82px;
     height: 26px;
     background-image: url('../img/icons.png');
-    background-position: -111px -251px;
+    background-position: -333px -251px;
   }
 
   .icon-iphone {
     width: 36px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -655px -115px;
+    background-position: -573px -406px;
   }
 
   .icon-link-hover {
     width: 10px;
     height: 9px;
     background-image: url('../img/icons.png');
-    background-position: -694px -204px;
+    background-position: -598px -221px;
   }
 
   .icon-link {
     width: 10px;
     height: 9px;
     background-image: url('../img/icons.png');
-    background-position: -694px -185px;
+    background-position: -601px -251px;
   }
 
   .icon-location {
     width: 60px;
     height: 59px;
     background-image: url('../img/icons.png');
-    background-position: -140px -488px;
+    background-position: -628px -70px;
   }
 
   .icon-logo-small {
     width: 54px;
     height: 45px;
     background-image: url('../img/icons.png');
-    background-position: -655px 0px;
+    background-position: -628px -474px;
   }
 
   .icon-logo {
     width: 100px;
     height: 72px;
     background-image: url('../img/icons.png');
-    background-position: 0px -406px;
+    background-position: -110px -406px;
   }
 
   .icon-map {
     width: 21px;
     height: 20px;
     background-image: url('../img/icons.png');
-    background-position: -685px -293px;
+    background-position: -570px -251px;
   }
 
   .icon-mind {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: 0px -488px;
+    background-position: -250px -488px;
   }
 
   .icon-mobiads {
     width: 70px;
     height: 40px;
     background-image: url('../img/icons.png');
-    background-position: -211px -558px;
+    background-position: -159px -590px;
   }
 
   .icon-nova-poshta {
     width: 58px;
     height: 50px;
     background-image: url('../img/icons.png');
-    background-position: -587px -350px;
+    background-position: -698px -515px;
   }
 
   .icon-person-card {
     width: 60px;
     height: 57px;
     background-image: url('../img/icons.png');
-    background-position: 0px -558px;
+    background-position: -628px -347px;
   }
 
   .icon-person {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -517px -210px;
+    background-position: -460px -488px;
   }
 
   .icon-phone {
     width: 20px;
     height: 21px;
     background-image: url('../img/icons.png');
-    background-position: -655px -293px;
+    background-position: -110px -558px;
   }
 
   .icon-play {
     width: 31px;
     height: 20px;
     background-image: url('../img/icons.png');
-    background-position: -655px -223px;
+    background-position: -498px -251px;
   }
 
   .icon-questionnaire {
     width: 42px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -587px -410px;
+    background-position: -698px -575px;
   }
 
   .icon-rio {
     width: 63px;
     height: 26px;
     background-image: url('../img/icons.png');
-    background-position: -203px -251px;
+    background-position: -425px -251px;
   }
 
   .icon-separator {
     width: 170px;
     height: 20px;
     background-image: url('../img/icons.png');
-    background-position: -111px -221px;
+    background-position: -333px -221px;
   }
 
   .icon-settings {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -517px -70px;
+    background-position: -180px -488px;
   }
 
   .icon-sofa {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -393px -406px;
+    background-position: -320px -488px;
   }
 
   .icon-spaces {
     width: 70px;
     height: 39px;
     background-image: url('../img/icons.png');
-    background-position: -291px -558px;
+    background-position: -239px -590px;
   }
 
   .icon-stample {
     width: 53px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -587px -140px;
+    background-position: -698px -134px;
   }
 
   .icon-startask {
     width: 70px;
     height: 41px;
     background-image: url('../img/icons.png');
-    background-position: -500px -488px;
+    background-position: -79px -590px;
   }
 
   .icon-step {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -323px -406px;
+    background-position: -628px 0px;
   }
 
   .icon-store {
     width: 60px;
     height: 52px;
     background-image: url('../img/icons.png');
-    background-position: -141px -558px;
+    background-position: -698px -204px;
   }
 
   .icon-success {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -517px -280px;
+    background-position: -110px -488px;
   }
 
   .icon-target {
     width: 60px;
     height: 50px;
     background-image: url('../img/icons.png');
-    background-position: -360px -488px;
+    background-position: -698px -326px;
   }
 
   .icon-tree {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -70px -488px;
+    background-position: -530px -488px;
   }
 
   .icon-ukr-map {
     width: 153px;
     height: 100px;
     background-image: url('../img/icons.png');
-    background-position: -350px -295px;
+    background-position: -460px -295px;
   }
 
   .icon-ux-fox {
     width: 46px;
     height: 50px;
     background-image: url('../img/icons.png');
-    background-position: -655px -55px;
+    background-position: -628px -529px;
   }
 
   .icon-video {
     width: 60px;
     height: 60px;
     background-image: url('../img/icons.png');
-    background-position: -517px -350px;
+    background-position: -433px -406px;
   }
 
   .icon-windows {
     width: 61px;
     height: 50px;
     background-image: url('../img/icons.png');
-    background-position: -289px -488px;
+    background-position: -698px -266px;
   }
 
 }
