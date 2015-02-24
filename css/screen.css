@@ -120,7 +120,6 @@ html { font-size: 62.5%; }
 @media only screen and (min-width: 1201px) { html { font-size: 0.84vw; } }
 
 body { min-width: 320px; color: #333333; font-family: "Kelson Sans Regular", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; font-size: 14px; font-size: 1.4rem; line-height: 1.43; }
-body.no-scroll { height: 100%; overflow: hidden; left: 0; right: 0; }
 
 .out { overflow: hidden; }
 
