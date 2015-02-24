@@ -670,55 +670,73 @@ head.ready(function() {
             errorMsg.removeClass(visibleClass);
         }
 
-        function checkName() {
-            if ( name.val() === '' ) {
-                showErrorMsg(name);
+        function checkIfValue(field, indexInErrorStatus) {
+            if ( field.val() === '' ) {
+                showErrorMsg(field);
                 isFormError();
-                error[1] = true;
+                error[indexInErrorStatus] = true;
             } else {
+                error[indexInErrorStatus] = false;
+                removeFormError();
+            }
+        }
+
+        function checkName() {
+            var value = name.val();
+            if ( value === '' && error[1] ) {
                 error[1] = false;
+                hideErrorMsg(name);
+                removeFormError();
+            }
+            if ( value !== '' && error[1] ) {
+                error[1] = false;
+                hideErrorMsg(name);
                 removeFormError();
             }
         }
 
         function checkEmail() {
             var emailStr = email.val();
-            if ( validateEmail(emailStr) ) {
-                if ( checkBlackList(emailStr) ) {
+            // console.log(emailStr === '');
+            if ( emailStr !== '' ) {
+                if ( validateEmail(emailStr) ) {
+                    if ( checkBlackList(emailStr) ) {
+                        showErrorMsg(email);
+                        isFormError();
+                        error[2] = true;
+                    } else {
+                        error[2] = false;
+                        hideErrorMsg(email);
+                        removeFormError();
+                    }
+                } else {
                     showErrorMsg(email);
                     isFormError();
                     error[2] = true;
-                } else {
-                    error[2] = false;
-                    removeFormError();
                 }
-            } else {
-                showErrorMsg(email);
-                isFormError();
-                error[2] = true;
+            }
+            if ( emailStr === '' && error[2] ) {
+                error[2] = false;
+                hideErrorMsg(email);
+                removeFormError();
             }
         }
 
-        name.on('blur', function() {
-            checkName();
-        });
-
-        name.on('focus', function(event) {
-            hideErrorMsg($(this));
-        });
 
         email.on('blur', function() {
             checkEmail();
         });
 
-        email.on('focus', function(event) {
-            hideErrorMsg($(this));
-        });
-
         form.submit(function(event) {
             event.preventDefault();
-            checkName();
-            checkEmail();
+            // checkName();
+            // checkEmail();
+            checkIfValue(name, 1);
+            checkIfValue(email, 2);
+            name.on('blur', function(event) {
+                checkName();
+            });
+
             if ( checkStatus() ) {
                 var url = "/send.php"; // the script where you handle the form input.
 
