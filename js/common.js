@@ -30,7 +30,7 @@ head.ready(function() {
             fixed         = 'is-fixed',
             visible       = 'is-visible',
             topareaHeight = toparea.height(),
-            secondPoint   = topareaHeight - 10,
+            secondPoint   = topareaHeight - 40, // 10
             firstPoint    = secondPoint / 2,
             win           = $(window),
             winWidth      = win.width(),
@@ -136,6 +136,8 @@ head.ready(function() {
         var links          = $('a[href*=#]:not([href=#])'),
             section        = $('.section[name]'),
             activeClass    = 'is-active',
+            delta          = 30,
+            scrollPosition,
             activeSectionName;
 
         // console.log(section);
@@ -150,14 +152,14 @@ head.ready(function() {
         section.each(function() {
             var el = $(this);
 
-            var offset = el.offset().top;
+            var offset = el.offset().top - delta - 10;
 
             $(window).on('resize', function() {
-                offset = el.offset().top;
+                offset = el.offset().top - delta - 10;
             });
 
             $(window).on('scroll', function() {
-                if ( scrollPosition >= offset - 10 ) {
+                if ( scrollPosition >= offset ) {
 
                     var thisSectionName = el.attr('name');
                     var targetLink = $('a[href=#' + thisSectionName + ']');
@@ -189,7 +191,7 @@ head.ready(function() {
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
                     if ( target.length ) {
                         $('html,body').animate({
-                            scrollTop: target.offset().top
+                            scrollTop: target.offset().top - delta
                         }, 1000);
                     }
                 }
@@ -313,10 +315,9 @@ head.ready(function() {
         event.stopPropagation();
     });
 
-    $('.toparea').on('scroll', function(event) {
-        event.preventDefault();
-
-    });
+    // $('.toparea').on('scroll', function(event) {
+    //     event.preventDefault();
+    // });
 
     // change arrows top position in slider
     (function() {
