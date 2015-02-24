@@ -29,8 +29,9 @@ head.ready(function() {
             body          = $('body'),
             fixed         = 'is-fixed',
             visible       = 'is-visible',
-            topareaHeight = toparea.height(),
-            secondPoint   = topareaHeight - 40, // 10
+            delta         = 30,
+            topareaHeight = toparea.height() - delta,
+            secondPoint   = topareaHeight - 10, // 10
             firstPoint    = secondPoint / 2,
             win           = $(window),
             winWidth      = win.width(),
@@ -48,7 +49,7 @@ head.ready(function() {
         }
 
         win.on('resize', function(event) {
-            topareaHeight = toparea.height();
+            topareaHeight = toparea.height() - delta;
             secondPoint   = topareaHeight - 10;
             firstPoint    = secondPoint / 2;
             winWidth      = win.width();
@@ -381,7 +382,7 @@ head.ready(function() {
 
             setTimeout(function() {
                 labirint.removeClass(activeClass);
-                changeLabirint();
+                // changeLabirint();
             }, 31000);
         };
 

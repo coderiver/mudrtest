@@ -115,15 +115,12 @@ $draw-labirint-dur: 1s
       transform-origin: center top
 
   &.pacman-load
+
+  &.show-pacman
     #borders
       path
         stroke-dashoffset: 0
         transition-delay: 0
-
-  &.show-pacman
-    // #red-ghost,
-    // #green-ghost,
-    // #blue-ghost,
     .red-ghost,
     .green-ghost,
     .blue-ghost,
@@ -143,24 +140,21 @@ $draw-labirint-dur: 1s
       &:after
         animation: pacman-bottom 0.4s ease infinite $draw-labirint-dur
 
-    // #red-ghost
     .red-ghost
       animation: red-ghost ($anim-step-dur * 6) linear infinite ($draw-labirint-dur + $anim-step-dur * -2)
 
-    // #blue-ghost
     .blue-ghost
       animation: blue-ghost ($anim-step-dur * 8) linear infinite ($draw-labirint-dur - $anim-step-dur)
 
-    // #green-ghost
     .green-ghost
       animation: green-ghost ($anim-step-dur * 6) linear infinite ($draw-labirint-dur + $anim-step-dur)
 
-  &.change-labirint
-    animation: change-labirint 2s linear
-    .pacman
-      opacity: 0
-    #dots
-      opacity: 0
+  // &.change-labirint
+  //   animation: change-labirint 2s linear
+  //   .pacman
+  //     opacity: 0
+  //   #dots
+  //     opacity: 0
 
 .ie8
   .pacman,

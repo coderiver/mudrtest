@@ -760,7 +760,7 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 #pacman-labirint .pacman:before, #pacman-labirint .pacman:after { content: ""; position: absolute; z-index: 1; left: 0; width: 100%; height: 50%; background: #FFB03B; overflow: hidden; }
 #pacman-labirint .pacman:before { top: 0; border-radius: 1.14286em 1.14286em 0 0; -webkit-transform-origin: center bottom; -ms-transform-origin: center bottom; transform-origin: center bottom; }
 #pacman-labirint .pacman:after { bottom: 0; border-radius: 0 0 1.14286em 1.14286em; -webkit-transform-origin: center top; -ms-transform-origin: center top; transform-origin: center top; }
-#pacman-labirint.pacman-load #borders path { stroke-dashoffset: 0; -webkit-transition-delay: 0; transition-delay: 0; }
+#pacman-labirint.show-pacman #borders path { stroke-dashoffset: 0; -webkit-transition-delay: 0; transition-delay: 0; }
 #pacman-labirint.show-pacman .red-ghost, #pacman-labirint.show-pacman .green-ghost, #pacman-labirint.show-pacman .blue-ghost, #pacman-labirint.show-pacman #dots { opacity: 1; -webkit-transition: opacity 1s linear 1s; transition: opacity 1s linear 1s; }
 #pacman-labirint.show-pacman #main-line { -webkit-animation: hide-dots 30s linear 1 1s; animation: hide-dots 30s linear 1 1s; }
 #pacman-labirint.show-pacman .pacman { opacity: 1; -webkit-transition: opacity 1s linear 1s; transition: opacity 1s linear 1s; -webkit-animation: pacman-move 30s linear 1 1s; animation: pacman-move 30s linear 1 1s; }
@@ -769,9 +769,6 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 #pacman-labirint.show-pacman .red-ghost { -webkit-animation: red-ghost 1.89474s linear infinite 0.36842s; animation: red-ghost 1.89474s linear infinite 0.36842s; }
 #pacman-labirint.show-pacman .blue-ghost { -webkit-animation: blue-ghost 2.52632s linear infinite 0.68421s; animation: blue-ghost 2.52632s linear infinite 0.68421s; }
 #pacman-labirint.show-pacman .green-ghost { -webkit-animation: green-ghost 1.89474s linear infinite 1.31579s; animation: green-ghost 1.89474s linear infinite 1.31579s; }
-#pacman-labirint.change-labirint { -webkit-animation: change-labirint 2s linear; animation: change-labirint 2s linear; }
-#pacman-labirint.change-labirint .pacman { opacity: 0; }
-#pacman-labirint.change-labirint #dots { opacity: 0; }
 
 .ie8 .pacman, .ie8 .red-ghost, .ie8 .green-ghost, .ie8 .blue-ghost, .ie8 #pacman-labirint { display: none; }
 .ie8 .pacman-wrapper { width: 304px; height: 335px; background: url("../img/pacman.png") no-repeat center center; }
