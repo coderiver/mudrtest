@@ -20,7 +20,7 @@ head.ready(function() {
         }
     };
 
-    checkAbilityScrollToparea();
+    // checkAbilityScrollToparea();
 
     (function() {
         var header        = $('.header'),
@@ -54,7 +54,7 @@ head.ready(function() {
             firstPoint    = secondPoint / 2;
             winWidth      = win.width();
             calcHeaderHeight();
-            checkAbilityScrollToparea();
+            // checkAbilityScrollToparea();
         });
 
         function scrollToparea(direction) {
@@ -103,13 +103,13 @@ head.ready(function() {
                 header.removeClass(fixed);
             }
             // if now you are on toparea and scroll to bottom
-            if ( canScrollToparea && scroll < topareaHeight && scroll > prevScroll ) {
-                scrollToparea();
-            }
+            // if ( canScrollToparea && scroll < topareaHeight && scroll > prevScroll ) {
+            //     scrollToparea();
+            // }
             // if now you are on toparea and scroll to top
-            if ( canScrollToparea && scroll < topareaHeight && scroll < prevScroll ) {
-                scrollToparea('top');
-            }
+            // if ( canScrollToparea && scroll < topareaHeight && scroll < prevScroll ) {
+            //     scrollToparea('top');
+            // }
 
             prevScroll = scroll;
         });
@@ -185,7 +185,7 @@ head.ready(function() {
 
             $(this).on('click', function(event) {
                 event.preventDefault();
-                toggleAbilityScrollToparea(1200);
+                // toggleAbilityScrollToparea(1200);
 
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
@@ -465,87 +465,87 @@ head.ready(function() {
     })();
 
 
-    (function(){
+    // (function(){
 
-        var fadeElement = $('.js-fade');
+    //     var fadeElement = $('.js-fade');
 
-        if ( fadeElement.length && $(window).width() > 1024 && $(window).scrollTop() === 0) {
-            var  scrollPosition;
-
-
-            $(window).on('scroll', function() {
-                scrollPosition = $(window).scrollTop() + $(window).height();
-            });
+    //     if ( fadeElement.length && $(window).width() > 1024 && $(window).scrollTop() === 0) {
+    //         var  scrollPosition;
 
 
-            var calcShowPoint = function(element) {
-                return element.offset().top + 100;
-            };
+    //         $(window).on('scroll', function() {
+    //             scrollPosition = $(window).scrollTop() + $(window).height();
+    //         });
 
-            fadeElement.each(function() {
-                var el          = $(this),
-                    elShowPoint = calcShowPoint(el),
-                    fadeDelay   = el.find('.js-fade-delay');
 
-                //hide elements
-                el.css({
-                    opacity : '0'
-                });
+    //         var calcShowPoint = function(element) {
+    //             return element.offset().top + 100;
+    //         };
 
-                if ( fadeDelay.length ) {
-                    var delayStep = 500;
+    //         fadeElement.each(function() {
+    //             var el          = $(this),
+    //                 elShowPoint = calcShowPoint(el),
+    //                 fadeDelay   = el.find('.js-fade-delay');
 
-                    fadeDelay.each(function(index) {
-                        $(this).css({
-                            opacity               : '0',
-                            webkitTransitionDelay : delayStep * index / 1000 + 's',
-                            transitionDelay       : delayStep * index / 1000 + 's'
-                        });
-                    });
-                }
+    //             //hide elements
+    //             el.css({
+    //                 opacity : '0'
+    //             });
 
-                function showElWithDelay() {
-                    fadeDelay.each(function() {
-                        $(this).css({
-                            opacity               : ''
-                        });
-                    });
-                    setTimeout(function() {
-                        fadeDelay.each(function() {
-                            $(this).css({
-                                webkitTransitionDelay : '',
-                                transitionDelay       : ''
-                            });
-                        });
-                    }, delayStep * fadeDelay.length);
-                }
+    //             if ( fadeDelay.length ) {
+    //                 var delayStep = 500;
 
-                function showEl() {
-                   if ( scrollPosition >= elShowPoint ) {
-                        el.css({
-                            opacity : ''
-                        });
+    //                 fadeDelay.each(function(index) {
+    //                     $(this).css({
+    //                         opacity               : '0',
+    //                         webkitTransitionDelay : delayStep * index / 1000 + 's',
+    //                         transitionDelay       : delayStep * index / 1000 + 's'
+    //                     });
+    //                 });
+    //             }
 
-                        if ( fadeDelay.length ) {
-                            showElWithDelay();
-                        }
-                    }
-                }
+    //             function showElWithDelay() {
+    //                 fadeDelay.each(function() {
+    //                     $(this).css({
+    //                         opacity               : ''
+    //                     });
+    //                 });
+    //                 setTimeout(function() {
+    //                     fadeDelay.each(function() {
+    //                         $(this).css({
+    //                             webkitTransitionDelay : '',
+    //                             transitionDelay       : ''
+    //                         });
+    //                     });
+    //                 }, delayStep * fadeDelay.length);
+    //             }
 
-                showEl();
+    //             function showEl() {
+    //                if ( scrollPosition >= elShowPoint ) {
+    //                     el.css({
+    //                         opacity : ''
+    //                     });
 
-                $(window).on('scroll', function() {
-                    showEl();
-                });
+    //                     if ( fadeDelay.length ) {
+    //                         showElWithDelay();
+    //                     }
+    //                 }
+    //             }
 
-                $(window).on('resize', function() {
-                    elShowPoint = calcShowPoint(el);
-                });
-            });
+    //             showEl();
 
-        }
+    //             $(window).on('scroll', function() {
+    //                 showEl();
+    //             });
 
-    })();
+    //             $(window).on('resize', function() {
+    //                 elShowPoint = calcShowPoint(el);
+    //             });
+    //         });
+
+    //     }
+
+    // })();
 
     (function() {
         var form         = $('.form'),
