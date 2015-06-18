@@ -674,8 +674,8 @@ textarea.field__input { resize: none; border-top-width: 0; border-bottom-width: 
 .map .icon { fill: #9CA5BF; }
 .ie8 .map { background-image: url("../img/icons.png"); width: 153px; height: 100px; background-position: -460px -295px; }
 
-.map__baloon { position: absolute; width: 11.25em; box-sizing: border-box; bottom: 58.0%; right: 28.10458%; font-size: 12px; font-size: 1.2rem; line-height: 1.2; padding: 0.66667em 0.83333em; background: #333333; border-radius: 3px; color: #FFF; text-align: center; margin-right: -42.48366%; }
-.map__baloon:after { content: ""; position: absolute; top: 100%; left: 50%; width: 0px; height: 0px; border-style: solid; border-width: 8px 10px 0 10px; border-color: #333333 transparent transparent transparent; margin-left: -10px; }
+.map__baloon { position: absolute; box-sizing: border-box; bottom: 54%; left: 24.18301%; font-size: 12px; font-size: 1.2rem; line-height: 1.2; padding: 0.66667em 0.83333em; background: #333333; border-radius: 3px; color: #FFF; text-align: center; margin-right: -42.48366%; }
+.map__baloon:after { content: ""; position: absolute; top: 50%; right: 100%; width: 0px; height: 0px; border-style: solid; border-width: 10px 8px 10px 0; border-color: transparent #333333 transparent transparent; margin-top: -10px; }
 
 .link-form { display: inline-block; font-size: 14px; font-size: 1.4rem; width: 14.28571em; height: 7.14286em; line-height: 6.85714em; box-sizing: border-box; background: none; text-align: left; border: 2px solid #2196F3; color: #2196F3; border-radius: 10px; text-decoration: none; font-family: "Kelson Sans Regular", "Trebuchet MS", "Arial", "sans-serif"; font-weight: normal; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
 .link-form .icon { margin-right: 0.47619em; fill: #2196F3; float: left; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
